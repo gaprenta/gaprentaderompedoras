@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Renta de Rompedoras de Concreto</title>
+    <meta name="description" content="Renta de rompedoras de concreto Makita, DeWalt y Bosch en Monterrey. Equipos profesionales con envío a obra.">
+    <title>G-A-P | Renta de Rompedoras Profesionales</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <style>
@@ -11,42 +12,83 @@
             --amarillo: #FFD700;
             --amarillo-oscuro: #e6c200;
             --oscuro: #1a1a1a;
-            --gris-texto: #444;
+            --gris-texto: #333;
             --whatsapp: #25d366;
+            --blanco: #ffffff;
         }
+
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f4f4f4;
             color: var(--gris-texto);
+            line-height: 1.6;
         }
 
         /* --- SECCIÓN HERO --- */
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
         }
 
         .logo-main {
-            font-size: 5rem;
+            font-size: clamp(3rem, 10vw, 5.5rem);
             font-weight: 900;
             color: var(--amarillo);
             margin: 0;
-            text-shadow: 3px 3px 0px rgba(0,0,0,0.5);
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+            letter-spacing: -2px;
         }
 
         .hero-sub {
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 4vw, 1.6rem);
             font-weight: 400;
             margin-bottom: 30px;
+            text-transform: uppercase;
         }
+
+        .btn-cta {
+            background: var(--amarillo);
+            color: var(--oscuro);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: 900;
+            border-radius: 50px;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-cta:hover { transform: scale(1.05); background: white; }
+
+        /* --- MARCAS --- */
+        .marcas-bar {
+            background: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .marcas-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: #bbb;
+        }
+
+        .marcas-container span { color: #555; border: 2px solid #eee; padding: 5px 15px; border-radius: 8px; }
 
         /* --- BARRA DE SERVICIO --- */
         .area-servicio {
@@ -55,7 +97,7 @@
             padding: 15px;
             text-align: center;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
@@ -64,155 +106,115 @@
         .container {
             max-width: 1100px;
             margin: auto;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
 
         h2 {
             text-align: center;
             font-size: 2.2rem;
             color: var(--oscuro);
-            margin-bottom: 40px;
-            position: relative;
+            margin-bottom: 50px;
+            font-weight: 900;
         }
 
         h2::after {
             content: '';
-            width: 80px;
-            height: 5px;
+            width: 60px;
+            height: 6px;
             background: var(--amarillo);
             display: block;
-            margin: 10px auto;
+            margin: 15px auto;
         }
 
         /* --- GRID DE EQUIPOS --- */
         .grid-equipos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
         .card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
+            background: var(--blanco);
+            padding: 40px 30px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-bottom: 4px solid transparent;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--amarillo);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        .card:hover { transform: translateY(-10px); border-bottom: 5px solid var(--amarillo); }
+
+        .card i { font-size: 3rem; color: var(--oscuro); margin-bottom: 20px; }
+
+        .card h3 { margin: 10px 0; font-size: 1.5rem; }
+
+        .card .badge {
+            background: #f0f0f0;
+            font-size: 0.7rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
         }
 
-        .card i {
-            font-size: 2.5rem;
-            color: var(--oscuro);
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            margin: 10px 0;
-            color: var(--oscuro);
-        }
-
-        /* --- SECCIÓN MARCAS --- */
-        .marcas-section {
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .marcas-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 20px;
-        }
-
-        .marca-logo {
-            height: 45px;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-
-        .marca-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
-        /* --- SECCIÓN IDEAL PARA --- */
+        /* --- USOS --- */
         .usos-section {
             background: var(--oscuro);
             color: white;
-            padding: 60px 20px;
-            border-radius: 20px;
-            margin-top: 50px;
+            padding: 60px 40px;
+            border-radius: 30px;
+            margin-top: 80px;
         }
 
         .usos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
         }
 
-        .uso-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.1rem;
-        }
-
-        .uso-item i {
-            color: var(--amarillo);
-        }
+        .uso-item { display: flex; align-items: center; gap: 12px; }
+        .uso-item i { color: var(--amarillo); }
 
         /* --- INFO EMPRESA --- */
         .info-empresa {
             text-align: center;
-            margin-top: 60px;
+            margin-top: 80px;
             background: var(--amarillo);
-            padding: 40px;
-            border-radius: 15px;
+            padding: 50px 30px;
+            border-radius: 25px;
             color: var(--oscuro);
         }
 
-        /* --- BOTÓN WHATSAPP --- */
+        /* --- WHATSAPP --- */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background-color: var(--whatsapp);
             color: white;
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             border-radius: 50px;
-            text-align: center;
-            font-size: 35px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            z-index: 100;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #1ebe57;
-        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        footer { text-align: center; padding: 40px; color: #777; font-size: 0.85rem; }
 
         @media (max-width: 600px) {
-            .logo-main { font-size: 3rem; }
-            .hero-sub { font-size: 1.1rem; }
-            .marca-logo { height: 30px; }
+            header { padding: 80px 20px; }
+            .marcas-container { gap: 10px; }
+            .marcas-container span { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -224,83 +226,77 @@
 
     <header>
         <p class="logo-main">G-A-P</p>
-        <p class="hero-sub">Especialistas en Renta de Rompedoras de Concreto</p>
+        <p class="hero-sub">Equipos de Demolición Profesional</p>
+        <a href="https://wa.me/528119988053" class="btn-cta">RENTAR EQUIPO AHORA</a>
     </header>
 
+    <div class="marcas-bar">
+        <p style="margin-bottom: 10px; font-weight: bold; color: #888;">TRABAJAMOS CON LAS MEJORES MARCAS:</p>
+        <div class="marcas-container">
+            <span>MAKITA</span>
+            <span>DEWALT</span>
+            <span>BOSCH</span>
+            <span>EVOEVOM</span>
+        </div>
+    </div>
+
     <div class="area-servicio">
-        <i class="fas fa-map-marker-alt"></i> SERVICIO EN: JUÁREZ • GUADALUPE • APODACA • SAN NICOLÁS • MONTERREY
+        <i class="fas fa-truck"></i> ENVÍO A DOMICILIO: JUÁREZ • GUADALUPE • APODACA • SAN NICOLÁS • MONTERREY
     </div>
 
     <div class="container">
-        
-        <div class="marcas-section">
-            <h2 style="font-size: 1.5rem; margin-bottom: 20px;">Trabajamos con las mejores marcas</h2>
-            <div class="marcas-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Makita_logo.svg" alt="Makita" class="marca-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/DeWalt_Logo.svg" alt="DeWalt" class="marca-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Bosch_logo.svg" alt="Bosch" class="marca-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Hilti_logo.svg" alt="Hilti" class="marca-logo">
-            </div>
-        </div>
-
-        <h2>Equipos de Alta Potencia</h2>
+        <h2>Nuestro Equipo</h2>
         
         <div class="grid-equipos">
             <div class="card">
+                <span class="badge">LIGERA</span>
                 <i class="fas fa-hammer"></i>
-                <h3>Rompedora 8 kg</h3>
-                <p>Ideal para trabajos ligeros y muros.</p>
+                <h3>8 kg - 12 kg</h3>
+                <p>Perfectas para muros, azulejo y detalles.</p>
             </div>
             <div class="card">
-                <i class="fas fa-hammer"></i>
-                <h3>Rompedora 12 kg</h3>
-                <p>Equilibrio perfecto entre peso y potencia.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-hammer"></i>
-                <h3>Rompedora 15 kg</h3>
-                <p>Demolición eficiente de pisos y losas.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-hammer"></i>
-                <h3>Rompedora 25 kg</h3>
-                <p>Uso rudo para concreto reforzado.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-hammer"></i>
-                <h3>Rompedora 27 kg</h3>
-                <p>Máxima potencia de impacto.</p>
-            </div>
-            <div class="card" style="background-color: #fff9db;">
+                <span class="badge">ESTÁNDAR</span>
                 <i class="fas fa-tools"></i>
+                <h3>15 kg</h3>
+                <p>Potencia ideal para firmes y banquetas.</p>
+            </div>
+            <div class="card">
+                <span class="badge">INDUSTRIAL</span>
+                <i class="fas fa-hard-hat"></i>
+                <h3>25 kg - 27 kg</h3>
+                <p>Uso rudo para concreto armado y asfalto.</p>
+            </div>
+            <div class="card" style="background-color: #fffdf0;">
+                <span class="badge" style="background: var(--amarillo);">EXTRA</span>
+                <i class="fas fa-wave-square"></i>
                 <h3>Vibradores</h3>
-                <p>Calidad profesional para concreto.</p>
+                <p>Calidad profesional para vaciados de concreto.</p>
             </div>
         </div>
 
         <div class="usos-section">
-            <h2 style="color: white;">Nuestra Maquinaria es Ideal para:</h2>
+            <h2 style="color: white;">Ideales para:</h2>
             <div class="usos-grid">
-                <div class="uso-item"><i class="fas fa-check-circle"></i> Vitropiso y azulejo</div>
-                <div class="uso-item"><i class="fas fa-check-circle"></i> Ranuras en muros</div>
-                <div class="uso-item"><i class="fas fa-check-circle"></i> Demolición de paredes</div>
-                <div class="uso-item"><i class="fas fa-check-circle"></i> Vigas y contracimientos</div>
-                <div class="uso-item"><i class="fas fa-check-circle"></i> Banquetas y losas</div>
-                <div class="uso-item"><i class="fas fa-check-circle"></i> Preparación para drenaje</div>
-                <div class="uso-item"><i class="fas fa-check-circle"></i> Preparación para zapatas</div>
-                <div class="uso-item"><i class="fas fa-check-circle"></i> Escaleras de concreto</div>
+                <div class="uso-item"><i class="fas fa-check-circle"></i> Retiro de Vitropiso</div>
+                <div class="uso-item"><i class="fas fa-check-circle"></i> Ranuras de tubería</div>
+                <div class="uso-item"><i class="fas fa-check-circle"></i> Demolición de firmes</div>
+                <div class="uso-item"><i class="fas fa-check-circle"></i> Apertura de zapatas</div>
+                <div class="uso-item"><i class="fas fa-check-circle"></i> Vigas y cerramientos</div>
+                <div class="uso-item"><i class="fas fa-check-circle"></i> Escaleras y rampas</div>
+                <div class="uso-item"><i class="fas fa-check-circle"></i> Preparación de drenaje</div>
+                <div class="uso-item"><i class="fas fa-check-circle"></i> Corte de banquetas</div>
             </div>
         </div>
 
         <div class="info-empresa">
-            <h3><i class="fas fa-truck"></i> ¡Servicio Completo!</h3>
-            <p>Nuestra renta incluye el <strong>traslado de envío y la recolección</strong> del equipo en su obra.</p>
-            <p><strong>Somos una empresa local líder en el sector.</strong></p>
+            <h3><i class="fas fa-shipping-fast"></i> ¡No gaste en flete!</h3>
+            <p style="font-size: 1.2rem;">En G-A-P entregamos y recolectamos la maquinaria en su obra.</p>
+            <p><strong>Herramienta 100% profesional para resultados rápidos.</strong></p>
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 30px; color: #888; font-size: 0.8rem;">
-        © <script>document.write(new Date().getFullYear())</script> G-A-P Monterrey. Todos los derechos reservados.
+    <footer>
+        <p>&copy; 2026 G-A-P Monterrey. Equipos Makita, DeWalt, Bosch y Evoevom.</p>
     </footer>
 
 </body>
