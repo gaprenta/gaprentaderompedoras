@@ -3,123 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Renta de Rompedoras en Nuevo León</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>G-A-P | Renta de Rompedoras</title>
     <style>
-        :root {
-            --negro: #000000;
-            --rojo: #ff0000;
-            --blanco: #ffffff;
-            --gris-claro: #f4f4f4;
-            --whatsapp: #25D366;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--blanco);
-            color: var(--negro);
-        }
-
-        /* --- ENCABEZADO G-A-P --- */
-        header {
-            background-color: var(--blanco);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-            font-weight: 900;
-            font-size: 50px;
-            letter-spacing: 5px;
-            border-bottom: 2px solid #eee;
-        }
-        .letra { color: var(--negro); }
-        .division { color: var(--rojo); margin: 0 10px; }
-
-        /* --- SECCIÓN SOBRE NOSOTROS --- */
-        .hero {
-            background-color: var(--negro);
-            color: var(--blanco);
-            text-align: center;
-            padding: 60px 20px;
-        }
-        .hero h1 { font-size: 24px; margin-bottom: 20px; letter-spacing: 1px; }
-        .hero p { max-width: 800px; margin: 0 auto; line-height: 1.6; color: #ccc; }
-
-        /* --- CATÁLOGO DE EQUIPOS --- */
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        .grid-equipos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        .card {
-            border: 1px solid #ddd;
-            padding: 25px;
-            transition: 0.3s;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--rojo); }
-        .badge { background: var(--negro); color: var(--blanco); padding: 5px 15px; font-weight: bold; align-self: flex-start; }
-        .card h3 { margin: 15px 0 10px; font-size: 20px; border-bottom: 2px solid var(--rojo); display: inline-block; }
-        .specs { font-size: 0.9em; color: #555; margin-bottom: 15px; }
-        .usos { font-size: 0.85em; list-style: none; padding: 0; margin: 0 0 20px 0; }
-        .usos li::before { content: "• "; color: var(--rojo); font-weight: bold; }
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
         
-        /* Botón de cada tarjeta */
-        .btn-card {
-            background: var(--negro);
-            color: var(--blanco);
+        /* ENCABEZADO SOLICITADO: G-A-P NEGRO, DIVISIONES ROJAS, FONDO BLANCO */
+        header {
+            background: #fff;
             text-align: center;
-            text-decoration: none;
-            padding: 12px;
-            font-weight: bold;
-            margin-top: auto;
+            padding: 40px 0;
+            font-size: 60px;
+            font-weight: 900;
+            border-bottom: 1px solid #eee;
         }
-        /* Estilo especial para la de 27kg */
-        .card-pro { background: var(--negro); color: var(--blanco); border: 2px solid var(--rojo); }
-        .card-pro .badge { background: var(--rojo); }
-        .card-pro h3 { color: var(--blanco); }
-        .card-pro .specs { color: #aaa; }
-        .card-pro .btn-card { background: var(--rojo); }
+        .letra { color: #000; }
+        .division { color: #ff0000; margin: 0 10px; }
 
-        /* --- HORARIOS Y COBERTURA --- */
-        .info-extra { background: var(--gris-claro); padding: 50px 20px; margin-top: 50px; text-align: center; }
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto; }
-        .info-box h4 { text-transform: uppercase; border-bottom: 2px solid var(--rojo); display: inline-block; padding-bottom: 5px; }
-        .info-box p { margin: 10px 0; font-weight: bold; }
-        .domingo { color: #999; }
+        /* DESCRIPCIÓN DE LA EMPRESA */
+        .nosotros { background: #000; color: #fff; padding: 50px 20px; text-align: center; }
+        .nosotros h2 { color: #ff0000; margin-bottom: 20px; }
+        .nosotros p { max-width: 800px; margin: 0 auto; line-height: 1.6; font-size: 18px; }
 
-        /* --- BOTÓN WHATSAPP FLOTANTE --- */
-        .float-ws {
+        /* CATÁLOGO DE EQUIPOS */
+        .seccion-equipos { padding: 50px 20px; max-width: 1200px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { border: 2px solid #000; padding: 20px; position: relative; transition: 0.3s; }
+        .card:hover { border-color: #ff0000; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .peso-tag { background: #ff0000; color: #fff; padding: 5px 15px; font-weight: bold; position: absolute; top: 0; right: 0; }
+        .card h3 { margin-top: 10px; border-bottom: 2px solid #ff0000; padding-bottom: 5px; }
+        .specs { font-weight: bold; color: #333; margin: 15px 0; }
+        .ideal { font-size: 0.9em; color: #555; height: 60px; }
+
+        /* BOTÓN DE WHATSAPP EN CADA CARD */
+        .btn-rentar {
+            display: block;
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .btn-rentar:hover { background: #ff0000; }
+
+        /* INFO DE HORARIOS Y ÁREAS */
+        .footer-info { background: #f4f4f4; padding: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: center; }
+        .info-box h4 { border-bottom: 2px solid #ff0000; display: inline-block; padding-bottom: 5px; }
+        
+        /* BOTÓN FLOTANTE PRINCIPAL */
+        .ws-float {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: var(--whatsapp);
-            color: white;
+            background: #25D366;
+            color: #fff;
             padding: 15px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             z-index: 1000;
         }
-
-        footer { text-align: center; padding: 30px; font-size: 0.8em; color: #777; }
     </style>
 </head>
 <body>
 
     <header>
-        <span class="letra">G</span>
-        <span class="division">-</span>
-        <span class="letra">A</span>
-        <span class="division">-</span>
-        <span class="letra">P</span>
+        <span class="letra">G</span><span class="division">-</span><span class="letra">A</span><span class="division">-</span><span class="letra">P</span>
     </header>
+
+    <section class="nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos una empresa local dedicada a la renta de rompedoras profesionales en el área metropolitana de Monterrey. Nos enfocamos en brindar equipos de alta potencia y mantenimiento impecable para garantizar que tu obra nunca se detenga.</p>
+    </section>
+
+    <div class="seccion-equipos">
+        <div class="grid">
+            <div class="card">
+                <div class="peso-tag">8 KG</div>
+                <h3>Ligera Profesional</h3>
+                <p class="specs">720 Watts | 6 Joules de impacto</p>
+                <p class="ideal"><strong>Ideal para:</strong> Hacer orificios con broca de concreto y hacer ranuras en la pared. Trabajos ligeros.</p>
+                <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+            </div>
+
+            <div class="card">
+                <div class="peso-tag">12 KG</div>
+                <h3>Remodelación Media</h3>
+                <p class="specs">960 Watts | 12 Joules de impacto</p>
+                <p class="ideal"><strong>Ideal para:</strong> Quitar vitropiso, azulejos y trabajos medianos de demolición.</p>
+                <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+            </div>
+
+            <div class="card">
+                <div class="peso-tag">15 KG</div>
+                <h3>Estructural</h3>
+                <p class="specs">1200 Watts | 25 Joules de impacto</p>
+                <p class="ideal"><strong>Ideal para:</strong> Demoler paredes, muros, vigas y contra cimientos.</p>
+                <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+            </div>
+
+            <div class="card">
+                <div class="peso-tag">25 KG</div>
+                <h3>Industrial de Piso</h3>
+                <p class="specs">1800 Watts | 60 Joules de impacto</p>
+                <p class="ideal"><strong>Ideal para:</strong> Demoler pisos, banquetas, losas y escaleras de concreto.</p>
+                <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+            </div>
+
+            <div class="card" style="border-width: 4px;">
+                <div class="peso-tag">27 KG</div>
+                <h3>Máxima Potencia</h3>
+                <p class="specs">2100 Watts | 70 Joules de impacto</p>
+                <p class="ideal"><strong>Ideal para:</strong> Trabajo pesado como demoler asfalto, piedras, preparación para drenaje y zapatas.</p>
+                <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="footer-info">
+        <div class="info-box">
+            <h4>Horarios de Atención</h4>
+            <p>Lunes a Viernes: 8:00 am - 8:00 pm</p>
+            <p>Sábado: 9:00 am - 5:00 pm</p>
+            <p style="color: #999;">Domingo: Cerrado</p>
+        </div>
+        <div class="info-box">
+            <h4>Áreas de Servicio</h4>
+            <p>Juárez | Guadalupe | Apodaca</p>
+            <p>San Nicolás | Monterrey</p>
+        </div>
+    </section>
+
+    <a href="https://wa.me/528119988053" class="ws-float"> WhatsApp: 811-998-80-53 </a>
+
+</body>
+</html>
