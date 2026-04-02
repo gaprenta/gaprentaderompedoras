@@ -3,251 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Renta de Rompedoras de Concreto y Maquinaria Ligera</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <title>G-A-P | Renta de Rompedoras de Concreto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --amarillo: #FFD700;
-            --amarillo-oscuro: #e6c200;
-            --oscuro: #121212;
-            --gris-claro: #f8f8f8;
+            --amarillo: #ffcc00;
+            --negro: #1a1a1a;
+            --gris-oscuro: #333;
+            --gris-claro: #f4f4f4;
             --whatsapp: #25d366;
-            --shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
             line-height: 1.6;
+            color: var(--negro);
             background-color: #fff;
-            color: var(--oscuro);
         }
 
-        /* --- HERO SECTION --- */
+        /* --- Header --- */
         header {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
-                        url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2070&auto=format&fit=crop');
+            background: var(--negro);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 4px solid var(--amarillo);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .logo span { color: var(--amarillo); }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* Imagen genérica de construcción */
             background-size: cover;
             background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             color: white;
-            text-align: center;
-            padding: 140px 20px;
-        }
-
-        .logo-main {
-            font-size: clamp(3.5rem, 12vw, 7rem);
-            font-weight: 900;
-            color: var(--amarillo);
-            margin: 0;
-            letter-spacing: -3px;
-            text-shadow: 4px 4px 0px rgba(0,0,0,0.3);
-        }
-
-        .hero-sub {
-            font-size: clamp(1rem, 4vw, 1.4rem);
-            font-weight: 700;
-            margin: 10px 0 30px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .btn-cta {
-            background: var(--amarillo);
-            color: var(--oscuro);
-            padding: 18px 40px;
-            text-decoration: none;
-            font-weight: 900;
-            border-radius: 5px;
-            transition: 0.3s;
-            display: inline-block;
-            border: none;
-        }
-
-        .btn-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-        }
-
-        /* --- SECCIÓN MARCAS --- */
-        .brands-bar {
-            background: #eee;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .brands-bar span {
-            margin: 0 20px;
-            font-weight: 900;
-            color: #888;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
-
-        /* --- NOSOTROS --- */
-        .nosotros {
-            max-width: 900px;
-            margin: 60px auto;
-            text-align: center;
             padding: 0 20px;
         }
 
-        .nosotros h2 { font-size: 2.5rem; margin-bottom: 15px; }
-        .nosotros p { font-size: 1.1rem; color: #555; }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; }
+        .hero p { font-size: 1.2rem; margin-bottom: 25px; max-width: 700px; }
 
-        /* --- ÁREA SERVICIO --- */
-        .area-servicio {
-            background: var(--oscuro);
-            color: var(--amarillo);
-            padding: 15px;
-            text-align: center;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.8rem;
+        .btn-ws {
+            background-color: var(--whatsapp);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+            display: inline-block;
         }
+        .btn-ws:hover { transform: scale(1.05); }
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+        /* --- Secciones Comunes --- */
+        section { padding: 60px 10%; }
+        h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; position: relative; }
+        h2::after { content: ''; width: 60px; height: 4px; background: var(--amarillo); display: block; margin: 10px auto; }
 
-        /* --- GRID EQUIPOS --- */
+        /* --- Descripción --- */
+        .about { background: var(--gris-claro); text-align: center; }
+        .about p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
+
+        /* --- Catálogo (Grid) --- */
         .grid-equipos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            gap: 20px;
         }
-
         .card {
             background: white;
-            padding: 40px 20px;
-            border-radius: 4px;
+            border: 1px solid #ddd;
+            padding: 20px;
             text-align: center;
-            border: 1px solid #eee;
+            border-radius: 8px;
             transition: 0.3s;
         }
+        .card:hover { border-color: var(--amarillo); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .card h3 { color: var(--gris-oscuro); margin-bottom: 10px; }
+        .card .marca { font-size: 0.9rem; color: #777; font-weight: bold; }
 
-        .card:hover {
-            border-color: var(--amarillo);
-            box-shadow: var(--shadow);
+        /* --- Servicios / Usos --- */
+        .usos { background: var(--negro); color: white; }
+        .list-usos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .tag {
+            background: var(--gris-oscuro);
+            padding: 10px 20px;
+            border-left: 4px solid var(--amarillo);
+            font-size: 0.95rem;
         }
 
-        .card i { font-size: 2.5rem; color: #333; margin-bottom: 15px; }
-        .card h3 { margin: 10px 0; font-weight: 900; }
+        /* --- Info Footer --- */
+        .info-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            background: #fff;
+        }
+        .info-box { flex: 1; min-width: 280px; }
+        .info-box h3 { margin-bottom: 15px; border-bottom: 2px solid var(--amarillo); display: inline-block; }
+        
+        /* --- Footer Final --- */
+        footer {
+            background: var(--negro);
+            color: #999;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
 
-        /* --- WHATSAPP --- */
-        .whatsapp-float {
+        /* WhatsApp Flotante */
+        .ws-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             background: var(--whatsapp);
-            color: white;
             width: 60px;
             height: 60px;
             border-radius: 50%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            align-items: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
             z-index: 1000;
-            text-decoration: none;
         }
+        .ws-float img { width: 35px; }
 
-        .info-resaltada {
-            background: var(--amarillo);
-            padding: 50px 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        footer {
-            padding: 40px;
-            text-align: center;
-            background: var(--oscuro);
-            color: #666;
-        }
-
-        @media (max-width: 600px) {
-            .brands-bar span { display: block; margin: 10px 0; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            section { padding: 40px 5%; }
         }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/528119988053" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <header>
-        <p class="logo-main">G-A-P</p>
-        <p class="hero-sub">Equipos de Demolición de Alto Poder</p>
-        <a href="https://wa.me/528119988053" class="btn-cta">COTIZAR EQUIPO</a>
+        <div class="logo">G-A-P <span>| Renta</span></div>
+        <div class="contact-top">📞 811-998-80-53</div>
     </header>
 
-    <div class="brands-bar">
-        <span>MAKITA</span> | <span>BOSCH</span> | <span>DEWALT</span> | <span>EDOEVOM</span>
-    </div>
-
-    <section class="nosotros">
-        <h2>¿Quiénes Somos?</h2>
-        <p>En <strong>G-A-P</strong> nos dedicamos a facilitar el trabajo pesado de la construcción. Somos especialistas en la <strong>renta de maquinaria ligera y rompedoras de concreto</strong>, ofreciendo a contratistas y particulares equipos de marcas líderes que garantizan potencia, seguridad y eficiencia en cada obra.</p>
-        <p>No solo rentamos máquinas; entregamos soluciones para que tu proyecto nunca se detenga.</p>
+    <section class="hero">
+        <h1>Renta de Rompedoras de Concreto</h1>
+        <p>Solución y rapidez para su trabajo. Equipos profesionales listos para demolición y preparación de obra en Monterrey y área metropolitana.</p>
+        <a href="https://wa.me/528119988053" class="btn-ws">Solicitar Cotización por WhatsApp</a>
     </section>
 
-    <div class="area-servicio">
-        <i class="fas fa-map-marker-alt"></i> ENVIAMOS A: JUÁREZ • GUADALUPE • APODACA • SAN NICOLÁS • MONTERREY
-    </div>
+    <section class="about">
+        <h2>Nuestra Empresa</h2>
+        <p>Somos una empresa local dedicada a la renta de rompedoras de concreto y vibradores. Nos enfocamos en brindar herramientas de alta calidad que faciliten el trabajo de nuestros clientes con eficiencia y profesionalismo en cada proyecto.</p>
+    </section>
 
-    <div class="container">
-        <h2 style="text-align: center;">Nuestro Inventario</h2>
+    <section id="equipos">
+        <h2>Equipos Disponibles</h2>
         <div class="grid-equipos">
-            <div class="card">
-                <i class="fas fa-hammer"></i>
-                <h3>8 KG</h3>
-                <p>Ideal para muros y trabajos de precisión.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-hammer"></i>
-                <h3>12 KG</h3>
-                <p>Versatilidad para diversos trabajos de obra.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-hammer"></i>
-                <h3>15 KG</h3>
-                <p>El estándar para demolición de pisos y losas.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-hammer"></i>
-                <h3>25 KG</h3>
-                <p>Fuerza superior para concreto reforzado.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-hammer"></i>
-                <h3>27 KG</h3>
-                <p>Máxima potencia de impacto para asfalto.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-tools"></i>
-                <h3>VIBRADORES DE CONCRETO</h3>
-                <p>Equipos profesionales para compactación de mezclas.</p>
-            </div>
+            <div class="card"><h3>Rompedora 8 kg</h3><p>Ideal para quitar vitropiso y azulejo.</p></div>
+            <div class="card"><h3>Rompedora 12 kg</h3><p>Hacer ranuras en la pared y demolición ligera.</p></div>
+            <div class="card"><h3>Rompedora 15 kg</h3><p>Demolición de paredes y muros.</p></div>
+            <div class="card"><h3>Rompedora 25 kg</h3><p>Demoler piso y banquetas.</p></div>
+            <div class="card"><h3>Rompedora 27 kg</h3><p>Losas, escaleras y trabajos pesados.</p></div>
+            <div class="card"><h3>Vibradores de Concreto</h3><p>Preparación y acabado profesional.</p></div>
         </div>
-    </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <p class="marca">Marcas: MAKITA • DEWALT • BOSCH • EDOEVOM</p>
+        </div>
+    </section>
 
-    <div class="info-resaltada">
-        <h3><i class="fas fa-shipping-fast"></i> Logística Integral G-A-P</h3>
-        <p>Olvídate de las vueltas. Nosotros llevamos el equipo directamente a tu obra y lo recolectamos al terminar.</p>
-        <p><strong>Puntualidad y Servicio Garantizado.</strong></p>
-    </div>
+    <section class="usos">
+        <h2>Soluciones para su Obra</h2>
+        <div class="list-usos">
+            <div class="tag">Quitar Vitropiso / Azulejo</div>
+            <div class="tag">Ranuras en Pared</div>
+            <div class="tag">Demoler Paredes y Pisos</div>
+            <div class="tag">Banquetas y Losas</div>
+            <div class="tag">Escaleras</div>
+            <div class="tag">Preparación para Drenaje</div>
+            <div class="tag">Preparación para Zapatas</div>
+        </div>
+    </section>
+
+    <section class="info-container">
+        <div class="info-box">
+            <h3>Área de Servicio</h3>
+            <p>Atendemos con rapidez en:</p>
+            <ul>
+                <li>Juárez</li>
+                <li>Guadalupe</li>
+                <li>Apodaca</li>
+                <li>San Nicolás</li>
+                <li>Monterrey</li>
+            </ul>
+        </div>
+        <div class="info-box">
+            <h3>Horarios de Atención</h3>
+            <p><strong>Lunes a Viernes:</strong> 8:00 am - 8:00 pm</p>
+            <p><strong>Sábado:</strong> 9:00 am - 5:00 pm</p>
+            <p><strong>Domingo:</strong> Cerrado</p>
+        </div>
+        <div class="info-box">
+            <h3>Contacto Directo</h3>
+            <p>Teléfono: <strong>811-998-80-53</strong></p>
+            <p>Ubicación: Monterrey, N.L.</p>
+        </div>
+    </section>
 
     <footer>
-        <p>© 2024 G-A-P Monterrey | Expertos en Renta de Herramienta Eléctrica</p>
+        <p>&copy; 2024 G-A-P Renta de Rompedoras - Empresa Local.</p>
     </footer>
+
+    <a href="https://wa.me/528119988053" class="ws-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
 
 </body>
 </html>
