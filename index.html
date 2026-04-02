@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G-A-P | Renta de Rompedoras y Vibradores</title>
     <style>
-        /* COLORES ESTILO CATERPILLAR: Amarillo (#FFCD00), Negro (#000000), Blanco (#FFFFFF) */
+        /* ESTILO CATERPILLAR: Amarillo (#FFCD00), Negro (#000000) */
         body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
         
         header { background: #FFCD00; text-align: center; padding: 40px 0; border-bottom: 5px solid #000; }
         .logo-main { font-size: 65px; font-weight: 900; margin: 0; line-height: 1; color: #000; }
         .subtitulo-header { display: block; font-size: 20px; color: #000; font-weight: bold; letter-spacing: 4px; margin-top: 10px; text-transform: uppercase; }
 
-        /* SECCIÓN SOBRE NOSOTROS (TEXTO AJUSTADO) */
+        /* SECCIÓN SOBRE NOSOTROS */
         .nosotros { background: #000; color: #fff; padding: 50px 20px; text-align: center; }
         .nosotros h2 { color: #FFCD00; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
         .nosotros p { max-width: 800px; margin: 0 auto; line-height: 1.6; font-size: 18px; font-family: 'Arial', sans-serif; }
@@ -20,24 +20,47 @@
         /* CATÁLOGO DE EQUIPOS */
         .seccion-equipos { padding: 60px 20px; max-width: 1300px; margin: 0 auto; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { border: 3px solid #000; background: #fff; position: relative; transition: 0.3s; display: flex; flex-direction: column; }
+        .card { border: 3px solid #000; background: #fff; position: relative; transition: 0.3s; display: flex; flex-direction: column; overflow: hidden; }
         .card:hover { border-color: #FFCD00; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transform: translateY(-5px); }
+        
         .card-header-kg { background: #000; color: #FFCD00; padding: 20px; text-align: center; border-bottom: 4px solid #FFCD00; }
         .card-header-kg .modelo-txt { display: block; font-size: 1.4em; font-weight: 900; text-transform: uppercase; }
+        
         .card-specs-bar { background: #FFCD00; color: #000; padding: 10px; text-align: center; font-weight: bold; font-size: 1.1em; border-bottom: 2px solid #000; }
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; font-family: 'Arial', sans-serif; }
+        
         .ideal-list { list-style: none; padding: 0; margin: 15px 0 25px 0; font-size: 0.95em; color: #333; flex-grow: 1; }
         .ideal-list li { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
         .icon-usage { color: #000; background: #FFCD00; padding: 2px 5px; border-radius: 3px; font-weight: bold; font-size: 0.8em; }
+        
         .btn-rentar { display: block; background: #000; color: #FFCD00; text-align: center; padding: 18px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 1.1em; transition: 0.3s; }
         .btn-rentar:hover { background: #FFCD00; color: #000; }
 
-        /* BOTÓN WHATSAPP DESTACADO */
-        .cta-container { text-align: center; padding: 40px 20px; }
-        .btn-whatsapp-main { background: #25D366; color: #fff; padding: 20px 40px; font-size: 1.5em; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-
+        /* INFO DE HORARIOS Y ÁREAS */
         .footer-info { background: #000; color: #fff; padding: 50px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: center; }
         .info-box h4 { border-bottom: 3px solid #FFCD00; color: #FFCD00; display: inline-block; padding-bottom: 5px; text-transform: uppercase; }
+        .info-box p { font-family: 'Arial', sans-serif; margin: 10px 0; }
+
+        /* BOTÓN FLOTANTE WHATSAPP */
+        .ws-flotante {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: #FFF;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+        .ws-flotante:hover { transform: scale(1.1); background-color: #128C7E; }
     </style>
 </head>
 <body>
@@ -49,29 +72,88 @@
 
     <section class="nosotros">
         <h2>Especialistas en Equipo Ligero</h2>
-        <p>Tu aliado en Juárez y Monterrey para trabajos de construcción y remodelación. Contamos con equipo ligero de alta calidad y mantenimiento garantizado para que tu proyecto avance sin contratiempos.</p>
+        <p>Tu aliado estratégico en Juárez y Monterrey para proyectos de construcción y remodelación. Ofrecemos equipo ligero de alta eficiencia con mantenimiento garantizado para asegurar la continuidad de tu obra.</p>
     </section>
 
     <div class="seccion-equipos">
-        <h2 style="text-align: center; margin-bottom: 40px;">Nuestras Rompedoras</h2>
+        <h2 style="text-align: center; margin-bottom: 40px; text-transform: uppercase;">Catálogo de Rompedoras</h2>
         <div class="grid">
-            <div class="card"><div class="card-header-kg"><span class="modelo-txt">Rompedora de 8 KG</span></div><div class="card-specs-bar">720W | 6 Joules</div><div class="card-body"><ul class="ideal-list"><li><span class="icon-usage">CAT</span> Orificios para concreto</li><li><span class="icon-usage">CAT</span> Ranuras en pared</li></ul><a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a></div></div>
-            <div class="card"><div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG</span></div><div class="card-specs-bar">960W | 12 Joules</div><div class="card-body"><ul class="ideal-list"><li><span class="icon-usage">CAT</span> Quitar vitropiso y azulejos</li><li><span class="icon-usage">CAT</span> Demolición media</li></ul><a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a></div></div>
-            <div class="card"><div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG</span></div><div class="card-specs-bar">1200W | 25 Joules</div><div class="card-body"><ul class="ideal-list"><li><span class="icon-usage">CAT</span> Muros, paredes y vigas</li><li><span class="icon-usage">CAT</span> Contra cimientos</li></ul><a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a></div></div>
-            <div class="card"><div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG</span></div><div class="card-specs-bar">1800W | 60 Joules</div><div class="card-body"><ul class="ideal-list"><li><span class="icon-usage">CAT</span> Pisos y banquetas</li><li><span class="icon-usage">CAT</span> Losas de concreto</li></ul><a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a></div></div>
-            <div class="card"><div class="card-header-kg"><span class="modelo-txt">Rompedora de 27 KG</span></div><div class="card-specs-bar">2100W | 70 Joules</div><div class="card-body"><ul class="ideal-list"><li><span class="icon-usage">CAT</span> Asfalto y piedras</li><li><span class="icon-usage">CAT</span> Zapatas y drenaje</li></ul><a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a></div></div>
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 8 KG</span></div>
+                <div class="card-specs-bar">720 Watts | 6 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">CAT</span> Orificios con broca de concreto</li>
+                        <li><span class="icon-usage">CAT</span> Ranuras en la pared</li>
+                        <li><span class="icon-usage">CAT</span> Trabajos ligeros y acabados</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG</span></div>
+                <div class="card-specs-bar">960 Watts | 12 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">CAT</span> Quitar vitropiso y azulejos</li>
+                        <li><span class="icon-usage">CAT</span> Trabajos medianos de demolición</li>
+                        <li><span class="icon-usage">CAT</span> Ideal para interiores</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG</span></div>
+                <div class="card-specs-bar">1200 Watts | 25 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">CAT</span> Demoler paredes, muros y vigas</li>
+                        <li><span class="icon-usage">CAT</span> Contra cimientos</li>
+                        <li><span class="icon-usage">CAT</span> Uso vertical y horizontal</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG</span></div>
+                <div class="card-specs-bar">1800 Watts | 60 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">CAT</span> Demoler pisos y banquetas</li>
+                        <li><span class="icon-usage">CAT</span> Losas de concreto y firmes</li>
+                        <li><span class="icon-usage">CAT</span> Escaleras de concreto</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 27 KG</span></div>
+                <div class="card-specs-bar">2100 Watts | 70 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">CAT</span> Demoler asfalto y piedras</li>
+                        <li><span class="icon-usage">CAT</span> Preparación para drenaje</li>
+                        <li><span class="icon-usage">CAT</span> Preparación para zapatas</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
+            </div>
         </div>
 
-        <h2 style="text-align: center; margin: 60px 0 40px;">Vibradores de Concreto</h2>
+        <h2 style="text-align: center; margin: 60px 0 40px; text-transform: uppercase;">Vibradores de Concreto</h2>
         <div class="grid">
             <div class="card">
                 <div class="card-header-kg" style="background: #333;"><span class="modelo-txt">Vibrador Eléctrico</span></div>
                 <div class="card-specs-bar">Alta Frecuencia</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">CAT</span> Eliminación de burbujas</li>
+                        <li><span class="icon-usage">CAT</span> Eliminación de burbujas de aire</li>
                         <li><span class="icon-usage">CAT</span> Compactación de colados</li>
-                        <li><span class="icon-usage">CAT</span> Acabado profesional</li>
+                        <li><span class="icon-usage">CAT</span> Acabado profesional en concreto</li>
                     </ul>
                     <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
                 </div>
@@ -79,14 +161,24 @@
         </div>
     </div>
 
-    <div class="cta-container">
-        <a href="https://wa.me/528119988053" class="btn-whatsapp-main">Contactar por WhatsApp</a>
-    </div>
-
     <section class="footer-info">
-        <div class="info-box"><h4>Horarios</h4><p>L-V: 8am-8pm | Sáb: 9am-5pm | Dom: Cerrado</p></div>
-        <div class="info-box"><h4>Áreas</h4><p>Juárez | Guadalupe | Apodaca | San Nicolás | Monterrey</p></div>
+        <div class="info-box">
+            <h4>Horarios de Atención</h4>
+            <p>Lunes a Viernes: 8:00 am - 8:00 pm</p>
+            <p>Sábado: 9:00 am - 5:00 pm</p>
+            <p style="color: #666;">Domingo: Cerrado</p>
+        </div>
+        <div class="info-box">
+            <h4>Zonas de Cobertura</h4>
+            <p>Juárez | Guadalupe | Apodaca</p>
+            <p>San Nicolás | Monterrey</p>
+        </div>
     </section>
+
+    <a href="https://wa.me/528119988053" class="ws-flotante">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20" alt="WhatsApp">
+        WhatsApp: 811-998-80-53
+    </a>
 
 </body>
 </html>
