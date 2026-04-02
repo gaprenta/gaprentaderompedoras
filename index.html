@@ -14,45 +14,35 @@
             --whatsapp: #25d366;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
 
-        body {
-            line-height: 1.6;
-            color: var(--negro);
-            background-color: #fff;
-        }
+        body { line-height: 1.6; color: var(--negro); background-color: #fff; }
 
-        /* --- Header (Actualizado: Grande y Centrado) --- */
+        /* --- Header: G-A-P Grande y Centrado --- */
         header {
             background: var(--negro);
             color: white;
-            padding: 2.5rem 5%; /* Más relleno para dar espacio */
-            text-align: center; /* Centrado absoluto */
+            padding: 3rem 5%;
+            text-align: center;
             border-bottom: 5px solid var(--amarillo);
         }
 
         .logo {
-            font-size: 5rem; /* Tamaño masivo para el logotipo */
+            font-size: clamp(3rem, 10vw, 6rem); /* Tamaño dinámico según pantalla */
             font-weight: 900;
-            letter-spacing: 10px; /* Espaciado de letras para un look más industrial */
-            display: inline-block;
+            letter-spacing: 8px;
             text-transform: uppercase;
+            line-height: 1;
         }
 
         .logo span { color: var(--amarillo); }
 
-        /* Subtítulo debajo del logo */
         .header-subtext {
             font-size: 1.1rem;
             color: #ccc;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-top: -10px; /* Ajuste para pegarlo un poco al logo */
+            margin-top: 10px;
         }
 
         /* --- Hero Section --- */
@@ -60,48 +50,49 @@
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            height: 50vh; /* Altura ajustada */
+            min-height: 50vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: white;
-            padding: 0 20px;
+            padding: 40px 20px;
         }
 
-        .hero h1 { font-size: 2.8rem; margin-bottom: 5px; text-transform: uppercase; }
-        .hero .ubi-text { font-size: 1.1rem; color: var(--amarillo); font-weight: bold; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; color: #eee;}
+        .hero h1 { font-size: clamp(1.5rem, 5vw, 2.8rem); margin-bottom: 10px; text-transform: uppercase; }
+        .hero .ubi-text { font-size: 1.1rem; color: var(--amarillo); font-weight: bold; margin-bottom: 25px; }
 
+        /* --- AJUSTE DEL BOTÓN WHATSAPP --- */
         .btn-ws {
             background-color: var(--whatsapp);
             color: white;
-            padding: 18px 35px;
+            padding: 18px 30px; /* Espaciado interno cómodo */
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: clamp(0.9rem, 4vw, 1.2rem); /* El texto se ajusta al tamaño de la pantalla */
+            transition: 0.3s;
             display: inline-block;
+            max-width: 90%; /* Evita que se salga en pantallas muy chicas */
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            border: none;
         }
         .btn-ws:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6); }
 
-        /* --- Secciones Comunes --- */
+        /* --- Secciones --- */
         section { padding: 60px 10%; }
-        h2 { text-align: center; margin-bottom: 40px; font-size: 2.2rem; position: relative; text-transform: uppercase; }
+        h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; text-transform: uppercase; }
         h2::after { content: ''; width: 60px; height: 4px; background: var(--amarillo); display: block; margin: 10px auto; }
 
-        /* --- Descripción --- */
         .about { background: var(--gris-claro); text-align: center; }
-        .about p { max-width: 850px; margin: 0 auto; font-size: 1.15rem; color: #444; }
+        .about p { max-width: 850px; margin: 0 auto; font-size: 1.1rem; }
 
-        /* --- Catálogo (Grid) --- */
+        /* --- Catálogo --- */
         .grid-equipos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
         .card {
             background: white;
@@ -110,104 +101,42 @@
             text-align: center;
             border-radius: 8px;
             transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
-        .card:hover { border-color: var(--amarillo); box-shadow: 0 8px 25px rgba(0,0,0,0.07); transform: translateY(-3px); }
-        .card h3 { color: var(--gris-oscuro); margin-bottom: 12px; font-size: 1.4rem; }
-        .card p { color: #666; font-size: 0.95rem; }
+        .card:hover { border-color: var(--amarillo); transform: translateY(-5px); }
+        .card h3 { margin-bottom: 10px; }
 
-        /* Marcaje de marcas inferior */
-        .marcas-container {
-            text-align: center; 
-            margin-top: 50px; 
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-        }
-        .marcas-title { font-size: 0.9rem; color: #aaa; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
-        .marcas-list { font-size: 1.2rem; color: #666; font-weight: bold; }
-        .marcas-list span { margin: 0 10px; }
+        .marcas-container { text-align: center; margin-top: 40px; color: #777; font-weight: bold; font-size: 1.2rem; }
 
-        /* --- Servicios / Usos --- */
+        /* --- Usos --- */
         .usos { background: var(--negro); color: white; }
-        .usos h2 { color: white; }
-        .list-usos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .tag {
-            background: var(--gris-oscuro);
-            padding: 12px 22px;
-            border-left: 4px solid var(--amarillo);
-            font-size: 0.95rem;
-            border-radius: 2px;
-        }
+        .list-usos { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .tag { background: var(--gris-oscuro); padding: 10px 20px; border-left: 4px solid var(--amarillo); }
 
-        /* --- Info Footer --- */
-        .info-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 40px;
-            background: #fff;
-            padding-bottom: 80px; /* Espacio para el footer */
-        }
-        .info-box { flex: 1; min-width: 280px; }
-        .info-box h3 { margin-bottom: 20px; border-bottom: 2px solid var(--amarillo); display: inline-block; font-size: 1.3rem; text-transform: uppercase;}
-        .info-box ul { list-style: none; }
-        .info-box ul li { margin-bottom: 8px; font-size: 1.05rem; color: #555;}
-        .info-box p { font-size: 1.05rem; color: #555; margin-bottom: 8px; }
-        .info-box strong { color: var(--negro); }
-        
-        /* --- Footer Final --- */
-        footer {
-            background: var(--negro);
-            color: #999;
-            text-align: center;
-            padding: 25px;
-            font-size: 0.9rem;
-            border-top: 1px solid #333;
-        }
+        /* --- Info y Footer --- */
+        .info-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; margin-bottom: 50px; }
+        .info-box h3 { border-bottom: 2px solid var(--amarillo); display: inline-block; margin-bottom: 15px; }
 
-        /* WhatsApp Flotante */
+        footer { background: var(--negro); color: #888; text-align: center; padding: 20px; font-size: 0.8rem; }
+
+        /* Floating WhatsApp */
         .ws-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
+            bottom: 20px;
+            right: 20px;
             background: var(--whatsapp);
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 2px 4px 15px rgba(0,0,0,0.3);
             z-index: 1000;
-            transition: 0.3s;
         }
-        .ws-float:hover { transform: scale(1.1) rotate(5deg); }
-        .ws-float img { width: 38px; }
+        .ws-float img { width: 35px; }
 
-        /* Media Queries para Tablets y Móviles */
-        @media (max-width: 992px) {
-            .logo { font-size: 4rem; letter-spacing: 6px; }
-            .hero h1 { font-size: 2.2rem; }
-        }
-
-        @media (max-width: 768px) {
-            .logo { font-size: 3rem; letter-spacing: 4px; padding-bottom: 10px; }
-            .header-subtext { font-size: 0.9rem; }
-            header { padding: 1.5rem 5%; }
-            .hero { height: 60vh; }
-            .hero h1 { font-size: 1.8rem; }
-            .hero p { font-size: 1rem; }
+        @media (max-width: 600px) {
             section { padding: 40px 5%; }
-            h2 { font-size: 1.8rem; }
+            .logo { letter-spacing: 4px; }
         }
     </style>
 </head>
@@ -221,80 +150,58 @@
     <section class="hero">
         <h1>Renta de Rompedoras de Concreto</h1>
         <div class="ubi-text">📍 Monterrey y Área Metropolitana</div>
-        <p>Solución y rapidez para su trabajo. Equipos de demolición y preparación de obra listos para operar.</p>
-        <a href="https://wa.me/528119988053" class="btn-ws" target="_blank">Cotizar por WhatsApp 811-998-80-53</a>
+        <a href="https://wa.me/528119988053" class="btn-ws" target="_blank">
+            WhatsApp 811-998-80-53
+        </a>
     </section>
 
     <section class="about">
         <h2>Nuestra Empresa</h2>
-        <p>Somos una empresa local dedicada exclusivamente a la renta de rompedoras de concreto y vibradores. Nos enfocamos en brindar herramientas de alta potencia y fiabilidad que faciliten el trabajo de nuestros clientes con eficiencia, garantizando rapidez y profesionalismo en cada proyecto de construcción o remodelación.</p>
+        <p>Somos una empresa local dedicada a la renta de rompedoras de concreto y vibradores. Nos enfocamos en dar solución y rapidez para su trabajo con equipos profesionales de las mejores marcas.</p>
     </section>
 
     <section id="equipos">
         <h2>Equipos Disponibles</h2>
         <div class="grid-equipos">
-            <div class="card"><h3>Rompedora 8 kg</h3><p>Ideal para quitar vitropiso y azulejo con precisión.</p></div>
-            <div class="card"><h3>Rompedora 12 kg</h3><p>Hacer ranuras en la pared y demolición ligera.</p></div>
-            <div class="card"><h3>Rompedora 15 kg</h3><p>Demolición de paredes, muros y capas finas.</p></div>
-            <div class="card"><h3>Rompedora 25 kg</h3><p>Potencia para demoler piso y banquetas de concreto.</p></div>
-            <div class="card"><h3>Rompedora 27 kg</h3><p>Máximo poder para losas, escaleras y trabajos pesados.</p></div>
-            <div class="card"><h3>Vibradores de Concreto</h3><p>Para vaciados y acabados profesionales.</p></div>
+            <div class="card"><h3>8 kg</h3><p>Quitar vitropiso y azulejo.</p></div>
+            <div class="card"><h3>12 kg</h3><p>Ranuras en pared.</p></div>
+            <div class="card"><h3>15 kg</h3><p>Demoler paredes.</p></div>
+            <div class="card"><h3>25 kg</h3><p>Demoler piso y banquetas.</p></div>
+            <div class="card"><h3>27 kg</h3><p>Losas y escaleras.</p></div>
+            <div class="card"><h3>Vibradores</h3><p>Vaciados de concreto.</p></div>
         </div>
-        
         <div class="marcas-container">
-            <div class="marcas-title">Equipos de marcas líderes</div>
-            <div class="marcas-list">
-                <span>MAKITA</span> • <span>DEWALT</span> • <span>BOSCH</span> • <span>EDOEVOM</span>
-            </div>
+            MAKITA • DEWALT • BOSCH • EDOEVOM
         </div>
     </section>
 
     <section class="usos">
-        <h2>Soluciones Integrales</h2>
+        <h2>Ideal para:</h2>
         <div class="list-usos">
-            <div class="tag">Quitar Vitropiso / Azulejo</div>
-            <div class="tag">Ranuras en Pared</div>
-            <div class="tag">Demoler Paredes</div>
-            <div class="tag">Demoler Pisos y Banquetas</div>
-            <div class="tag">Demoler Losas</div>
-            <div class="tag">Demoler Escaleras</div>
-            <div class="tag">Preparación para Drenaje</div>
-            <div class="tag">Preparación para Zapatas</div>
+            <div class="tag">Drenaje</div>
+            <div class="tag">Zapatas</div>
+            <div class="tag">Banquetas</div>
+            <div class="tag">Pisos</div>
+            <div class="tag">Azulejo</div>
         </div>
     </section>
 
     <section class="info-container">
         <div class="info-box">
-            <h3>Área de Servicio</h3>
-            <p>Atendemos con rapidez en:</p>
-            <ul>
-                <li>• Juárez</li>
-                <li>• Guadalupe</li>
-                <li>• Apodaca</li>
-                <li>• San Nicolás</li>
-                <li>• Monterrey</li>
-            </ul>
-        </div>
-        <div class="info-box">
             <h3>Horarios</h3>
-            <p><strong>Lunes a Viernes:</strong></p>
-            <p>8:00 am - 8:00 pm</p>
-            <p><strong>Sábado:</strong></p>
-            <p>9:00 am - 5:00 pm</p>
-            <p><strong>Domingo:</strong></p>
-            <p>Cerrado</p>
+            <p>Lun - Vie: 8am a 8pm</p>
+            <p>Sáb: 9am a 5pm</p>
+            <p>Dom: Cerrado</p>
         </div>
         <div class="info-box">
-            <h3>Contacto</h3>
-            <p>Teléfono Directo / WhatsApp:</p>
-            <p style="font-size: 1.4rem; font-weight: bold; color: var(--gris-oscuro);">811-998-80-53</p>
-            <p>Ubicación:</p>
-            <p>Monterrey, N.L.</p>
+            <h3>Área de Servicio</h3>
+            <p>Juárez, Guadalupe, Apodaca,</p>
+            <p>San Nicolás, Monterrey.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 G-A-P Renta de Rompedoras. Servicio Local en Monterrey.</p>
+        &copy; 2024 G-A-P - Empresa Local Monterrey.
     </footer>
 
     <a href="https://wa.me/528119988053" class="ws-float" target="_blank">
