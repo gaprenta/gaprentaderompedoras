@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Renta de Rompedoras y Vibradores</title>
+    <title>G-A-P | Renta de Rompedoras y Vibradores de Concreto</title>
+    <meta name="description" content="Renta de rompedoras de concreto (8kg a 27kg) y vibradores en Monterrey, Guadalupe, Juárez y Apodaca. Equipos de alta potencia, mantenimiento garantizado y entrega puntual.">
+    
     <style>
         /* ESTILO CATERPILLAR: Amarillo (#FFCD00), Negro (#000000) */
         body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
@@ -33,12 +35,12 @@
             padding-top: 5px;
         }
 
-        /* SECCIÓN SOBRE NOSOTROS (ZONAS ACTUALIZADAS) */
+        /* SECCIÓN SOBRE NOSOTROS */
         .nosotros { background: #000; color: #fff; padding: 50px 20px; text-align: center; border-bottom: 5px solid #FFCD00; }
         .nosotros h2 { color: #FFCD00; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 28px; }
         .nosotros p { max-width: 850px; margin: 0 auto; line-height: 1.6; font-size: 19px; font-family: 'Arial', sans-serif; font-weight: bold; }
 
-        /* NUEVO APARTADO: VALORES DE LA EMPRESA */
+        /* VALORES DE LA EMPRESA */
         .distintivo-gap { 
             background: #f4f4f4; 
             padding: 40px 20px; 
@@ -64,6 +66,12 @@
         .card { border: 4px solid #000; background: #fff; position: relative; transition: 0.3s; display: flex; flex-direction: column; overflow: hidden; }
         .card:hover { border-color: #FFCD00; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transform: translateY(-8px); }
         
+        /* Encabezado especial para Vibradores (Efecto Precaución) */
+        .card-header-vibrador {
+            background: repeating-linear-gradient(45deg, #FFCD00, #FFCD00 10px, #e6b800 10px, #e6b800 20px);
+            color: #000; padding: 20px; text-align: center; border-bottom: 5px solid #000;
+        }
+
         .card-header-kg { background: #000; color: #FFCD00; padding: 20px; text-align: center; border-bottom: 5px solid #FFCD00; }
         .card-header-kg .modelo-txt { display: block; font-size: 1.5em; font-weight: 900; text-transform: uppercase; }
         
@@ -74,12 +82,14 @@
         .ideal-list li { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
         .icon-usage { color: #fff; background: #000; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 0.8em; }
         
-        .btn-rentar { display: block; background: #000; color: #FFCD00; text-align: center; padding: 20px; text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 1.2em; transition: 0.3s; border: none; }
+        .btn-rentar { display: block; background: #000; color: #FFCD00; text-align: center; padding: 20px; text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 1.2em; transition: 0.3s; border: none; cursor: pointer; }
         .btn-rentar:hover { background: #FFCD00; color: #000; }
+        .btn-rentar:active { transform: scale(0.95); }
 
         .footer-info { background: #000; color: #fff; padding: 60px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; border-top: 8px solid #FFCD00; }
         .info-box h4 { border-bottom: 4px solid #FFCD00; color: #FFCD00; display: inline-block; padding-bottom: 8px; text-transform: uppercase; font-size: 22px; margin-bottom: 20px; }
         .info-box p { font-family: 'Arial', sans-serif; margin: 12px 0; font-size: 18px; font-weight: bold; }
+        .horario-domingo { color: #FFCD00; } /* Resaltado para indicar que sí abren */
 
         .ws-flotante {
             position: fixed;
@@ -101,13 +111,14 @@
             font-size: 18px;
         }
         .ws-flotante:hover { transform: scale(1.1); background-color: #128C7E; }
+        .ws-flotante:active { transform: scale(0.9); }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <div class="logo-main">G-A-P</div>
+            <h1 class="logo-main">G-A-P</h1>
             <span class="subtitulo-header">Renta de Rompedoras</span>
         </div>
     </header>
@@ -134,7 +145,7 @@
         </div>
     </section>
 
-    <div class="seccion-equipos">
+    <main class="seccion-equipos">
         <div style="text-align: center;"><h2 class="titulo-seccion">Catálogo de Rompedoras</h2></div>
         <div class="grid">
             <div class="card">
@@ -145,7 +156,7 @@
                         <li><span class="icon-usage">GAP</span> Orificios con broca</li>
                         <li><span class="icon-usage">GAP</span> Ranuras en pared</li>
                     </ul>
-                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar Ahora</a>
                 </div>
             </div>
             <div class="card">
@@ -156,7 +167,7 @@
                         <li><span class="icon-usage">GAP</span> Quitar vitropiso</li>
                         <li><span class="icon-usage">GAP</span> Demolición media</li>
                     </ul>
-                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar Ahora</a>
                 </div>
             </div>
             <div class="card">
@@ -167,7 +178,7 @@
                         <li><span class="icon-usage">GAP</span> Muros y vigas</li>
                         <li><span class="icon-usage">GAP</span> Contra cimientos</li>
                     </ul>
-                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
                 </div>
             </div>
             <div class="card">
@@ -178,7 +189,7 @@
                         <li><span class="icon-usage">GAP</span> Pisos y banquetas</li>
                         <li><span class="icon-usage">GAP</span> Losas de concreto</li>
                     </ul>
-                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
                 </div>
             </div>
             <div class="card">
@@ -189,7 +200,7 @@
                         <li><span class="icon-usage">GAP</span> Asfalto y piedras</li>
                         <li><span class="icon-usage">GAP</span> Zapatas y drenaje</li>
                     </ul>
-                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
                 </div>
             </div>
         </div>
@@ -197,35 +208,35 @@
         <div style="text-align: center; margin-top: 80px;"><h2 class="titulo-seccion">Vibradores de Concreto</h2></div>
         <div class="grid">
             <div class="card">
-                <div class="card-header-kg" style="background: #333;"><span class="modelo-txt">Vibrador Eléctrico</span></div>
+                <div class="card-header-vibrador"><span class="modelo-txt" style="font-weight: 900; font-size: 1.5em; text-transform: uppercase;">Vibrador Eléctrico</span></div>
                 <div class="card-specs-bar">Alta Frecuencia</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Compactación de colados</li>
-                        <li><span class="icon-usage">GAP</span> Acabado profesional</li>
+                        <li><span class="icon-usage">GAP</span> Acabado profesional sin burbujas</li>
                     </ul>
-                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Consultar Disponibilidad</a>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <section class="footer-info">
+    <footer class="footer-info">
         <div class="info-box">
             <h4>Horarios de Atención</h4>
             <p>Lunes a Viernes: 8:00 am - 8:00 pm</p>
             <p>Sábado: 9:00 am - 5:00 pm</p>
-            <p style="color: #666;">Domingo: Cerrado</p>
+            <p class="horario-domingo">Domingo: 9:00 am - 2:00 pm</p>
         </div>
         <div class="info-box">
             <h4>Zonas de Cobertura</h4>
             <p>Juárez | Guadalupe | Apodaca</p>
             <p>San Nicolás | Monterrey</p>
         </div>
-    </section>
+    </footer>
 
-    <a href="https://wa.me/528119988053" class="ws-flotante">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="25" alt="WhatsApp">
+    <a href="https://wa.me/528119988053" class="ws-flotante" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="25" alt="WhatsApp Icon">
         811-998-80-53
     </a>
 
