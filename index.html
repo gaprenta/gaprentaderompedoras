@@ -1,37 +1,259 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>G-AP Renta de Rompedoras</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-A-P Renta de Rompedoras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange: #e67e22;
+            --dark-grey: #333;
+            --light-grey: #f4f4f4;
+            --border-color: #d1d1d1;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-grey);
+            background-color: #fff;
+        }
+
+        /* Header & Nav */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            border-bottom: 2px solid var(--orange);
+        }
+
+        .logo img { height: 50px; }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a.active { color: var(--orange); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://via.placeholder.com/1200x600?text=Fondo+Concreto') no-repeat center/cover;
+            padding: 60px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 400px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .btn-cotizar {
+            background-color: var(--orange);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            display: inline-block;
+        }
+
+        /* Equipos Section */
+        .section-title {
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            margin: 40px 0 20px;
+        }
+
+        .section-title h2 {
+            background: white;
+            padding-right: 15px;
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 28px;
+        }
+
+        .line {
+            flex-grow: 1;
+            height: 3px;
+            background-color: var(--orange);
+        }
+
+        .equipos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 0 5%;
+            text-align: center;
+        }
+
+        .card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            background: white;
+        }
+
+        .card img { max-width: 100%; height: auto; }
+        .card p { font-weight: bold; font-size: 14px; margin-top: 10px; }
+
+        .banner-text {
+            text-align: center;
+            font-size: 20px;
+            margin: 30px 0;
+            font-weight: bold;
+        }
+
+        /* Area de Servicio & Contacto */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px 5%;
+            background-image: url('https://via.placeholder.com/800x400?text=Mapa+Background');
+            background-size: cover;
+        }
+
+        .service-list { list-style: none; padding: 0; }
+        .service-list li {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+        }
+
+        .service-list li::before {
+            content: '🏗️';
+            margin-right: 10px;
+        }
+
+        .whatsapp-box {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .ws-button {
+            background-color: #25d366;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            display: block;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #eee;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+
+        .social-icons a { margin-left: 10px; text-decoration: none; font-size: 20px; }
+
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .hero { flex-direction: column; text-align: center; }
+            .hero-text h1 { font-size: 32px; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>Logo | Inicio | Equipos | Zonas | Contacto</nav>
-    </header>
 
-    <main>
-        <section id="hero">
-            <h1>RENTA DE ROMPEDORAS PROFESIONALES</h1>
-            <button>SOLICITAR COTIZACIÓN</button>
-        </section>
+<header>
+    <div class="logo"><strong>G-A-P</strong><br><small>Renta de Rompedoras</small></div>
+    <nav>
+        <a href="#" class="active">Inicio</a>
+        <a href="#">Equipos</a>
+        <a href="#">Zonas de Servicio</a>
+        <a href="#">Contacto</a>
+    </nav>
+</header>
 
-        <section id="equipos">
-            <h2>EQUIPOS</h2>
-            </section>
+<section class="hero">
+    <div class="hero-text">
+        <h1>RENTA DE<br>ROMPEDORAS<br>PROFESIONALES</h1>
+        <a href="#" class="btn-cotizar">SOLICITAR COTIZACIÓN</a>
+    </div>
+    <div class="hero-image">
+        <img src="https://via.placeholder.com/300x400?text=Rompedora" alt="Rompedora Eléctrica">
+    </div>
+</section>
 
-        <section id="cobertura">
-            <h2>ÁREA DE SERVICIO</h2>
-            <ul>
-                <li>Ciudad de Juárez</li>
-                <li>Guadalupe</li>
-                <li>Apodaca</li>
-                <li>San Nicolás de los Garza</li>
-                <li>Monterrey</li>
-            </ul>
-        </section>
+<div class="section-title">
+    <h2>EQUIPOS</h2>
+    <div class="line"></div>
+</div>
 
-        <section id="contacto">
-            <a href="https://wa.me/528119988053">WhatsApp: 811-998-80-53</a>
-        </section>
-    </main>
+<div class="equipos-container">
+    <div class="card"><img src="https://via.placeholder.com/100" alt="8kg"><p>Equipo de 8 Kg</p></div>
+    <div class="card"><img src="https://via.placeholder.com/100" alt="12kg"><p>Equipo de 12 Kg</p></div>
+    <div class="card"><img src="https://via.placeholder.com/100" alt="15kg"><p>Equipo de 15 Kg</p></div>
+    <div class="card"><img src="https://via.placeholder.com/100" alt="25kg"><p>Equipo de 25 Kg</p></div>
+    <div class="card"><img src="https://via.placeholder.com/100" alt="27kg"><p>Equipo de 27 Kg</p></div>
+</div>
+
+<p class="banner-text">Amplia gama de equipos para cada necesidad. Desde 8 Kg a 27 Kg</p>
+
+<div class="section-title">
+    <h2>ÁREA DE SERVICIO</h2>
+    <div class="line"></div>
+</div>
+
+<section class="info-grid">
+    <div>
+        <ul class="service-list">
+            <li>Ciudad de Juárez</li>
+            <li>Guadalupe</li>
+            <li>Apodaca</li>
+            <li>San Nicolás de los Garza</li>
+            <li>Monterrey</li>
+        </ul>
+    </div>
+    <div class="contact-side">
+        <div class="whatsapp-box">
+            <p>Contáctanos directamente</p>
+            <a href="https://wa.me/528119988053" class="ws-button">WhatsApp<br>811-998-80-53</a>
+            <p><small>Clic para iniciar chat</small></p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div>
+        <strong>SERVICIOS INTEGRALES</strong><br>
+        GAP Renta de Rompedoras<br>
+        Tel: 811-998-80-53<br>
+        gap.ventas@email.com
+    </div>
+    <div class="social-icons">
+        <a href="#"> Facebook </a>
+        <a href="#"> Instagram </a>
+    </div>
+</footer>
+
 </body>
 </html>
