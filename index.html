@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G-A-P | Renta de Rompedoras</title>
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
         
         /* ENCABEZADO: G-A-P CON SUBTÍTULO RENTA DE ROMPEDORAS */
         header {
             background: #fff;
             text-align: center;
             padding: 30px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 2px solid #eee;
         }
         .logo-main {
             font-size: 60px;
@@ -34,48 +34,85 @@
 
         /* DESCRIPCIÓN DE LA EMPRESA */
         .nosotros { background: #000; color: #fff; padding: 50px 20px; text-align: center; }
-        .nosotros h2 { color: #ff0000; margin-bottom: 20px; text-transform: uppercase; }
+        .nosotros h2 { color: #ff0000; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
         .nosotros p { max-width: 800px; margin: 0 auto; line-height: 1.6; font-size: 18px; }
 
-        /* CATÁLOGO DE EQUIPOS */
-        .seccion-equipos { padding: 50px 20px; max-width: 1200px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { border: 2px solid #000; padding: 25px; position: relative; transition: 0.3s; display: flex; flex-direction: column; }
-        .card:hover { border-color: #ff0000; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        /* CATÁLOGO DE EQUIPOS - REDISEÑO LLAMATIVO */
+        .seccion-equipos { padding: 60px 20px; max-width: 1300px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         
-        /* ETIQUETA ACTUALIZADA: ROMPEDORA DE X KG */
-        .peso-tag { 
-            background: #ff0000; 
-            color: #fff; 
-            padding: 8px 15px; 
-            font-weight: bold; 
-            position: absolute; 
-            top: 0; 
-            right: 0;
-            font-size: 0.85em;
-            text-transform: uppercase;
+        .card { 
+            border: 2px solid #000; 
+            background: #fff;
+            position: relative; 
+            transition: 0.3s; 
+            display: flex; 
+            flex-direction: column; 
+            overflow: hidden; /* Para que el fondo negro no se salga */
         }
+        .card:hover { border-color: #ff0000; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transform: translateY(-5px); }
         
-        .card h3 { margin-top: 15px; border-bottom: 2px solid #ff0000; padding-bottom: 5px; font-size: 1.3em; }
-        .specs { font-weight: bold; color: #333; margin: 15px 0; font-size: 1.1em; }
-        .ideal { font-size: 0.95em; color: #555; flex-grow: 1; line-height: 1.4; }
+        /* encabezado de tarjeta con fondo negro */
+        .card-header-kg {
+            background: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #ff0000;
+        }
+        .card-header-kg .modelo-txt {
+            display: block;
+            font-size: 1.6em;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Franja roja de potencia */
+        .card-specs-bar {
+            background: #ff0000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+
+        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-body h3 { margin-top: 0; color: #000; font-size: 1.4em; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        
+        .ideal-list { 
+            list-style: none; 
+            padding: 0; 
+            margin: 15px 0 25px 0; 
+            font-size: 0.95em; 
+            color: #444; 
+            line-height: 1.5;
+            flex-grow: 1; /* Para empujar el botón al fondo */
+        }
+        .ideal-list li { margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; }
+        .icon-usage { color: #ff0000; font-weight: bold; }
 
         .btn-rentar {
             display: block;
             background: #000;
             color: #fff;
             text-align: center;
-            padding: 15px;
+            padding: 18px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: auto; /* Empuja el botón al fondo */
             text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.1em;
+            transition: 0.3s;
         }
         .btn-rentar:hover { background: #ff0000; }
 
         /* INFO DE HORARIOS Y ÁREAS */
-        .footer-info { background: #f4f4f4; padding: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: center; }
-        .info-box h4 { border-bottom: 2px solid #ff0000; display: inline-block; padding-bottom: 5px; text-transform: uppercase; }
+        .footer-info { background: #f4f4f4; padding: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: center; border-top: 1px solid #eee;}
+        .info-box h4 { border-bottom: 2px solid #ff0000; display: inline-block; padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;}
         
         /* BOTÓN FLOTANTE WHATSAPP */
         .ws-float {
@@ -113,43 +150,83 @@
     <div class="seccion-equipos">
         <div class="grid">
             <div class="card">
-                <div class="peso-tag">Rompedora de 8 KG</div>
-                <h3>Ligera Profesional</h3>
-                <p class="specs">720 Watts | 6 Joules de impacto</p>
-                <p class="ideal"><strong>Ideal para:</strong> Hacer orificios con broca de concreto y hacer ranuras en la pared. Trabajos ligeros.</p>
-                <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                <div class="card-header-kg">
+                    <span class="modelo-txt">Rompedora de 8 KG</span>
+                </div>
+                <div class="card-specs-bar">720 Watts | 6 Joules</div>
+                <div class="card-body">
+                    <h3>Ligera Profesional</h3>
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">⛏️</span> Hacer orificios con broca de concreto</li>
+                        <li><span class="icon-usage">⚡</span> Ranuras en la pared</li>
+                        <li><span class="icon-usage">✅</span> Trabajos ligeros y acabados</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
             </div>
 
             <div class="card">
-                <div class="peso-tag">Rompedora de 12 KG</div>
-                <h3>Remodelación Media</h3>
-                <p class="specs">960 Watts | 12 Joules de impacto</p>
-                <p class="ideal"><strong>Ideal para:</strong> Quitar vitropiso, azulejos y trabajos medianos de demolición.</p>
-                <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                <div class="card-header-kg">
+                    <span class="modelo-txt">Rompedora de 12 KG</span>
+                </div>
+                <div class="card-specs-bar">960 Watts | 12 Joules</div>
+                <div class="card-body">
+                    <h3>Remodelación Media</h3>
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">🧱</span> Quitar vitropiso y azulejos</li>
+                        <li><span class="icon-usage">🔨</span> Trabajos medianos de demolición</li>
+                        <li><span class="icon-usage">✅</span> Ideal para interiores</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
             </div>
 
             <div class="card">
-                <div class="peso-tag">Rompedora de 15 KG</div>
-                <h3>Estructural</h3>
-                <p class="specs">1200 Watts | 25 Joules de impacto</p>
-                <p class="ideal"><strong>Ideal para:</strong> Demoler paredes, muros, vigas y contra cimientos.</p>
-                <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                <div class="card-header-kg">
+                    <span class="modelo-txt">Rompedora de 15 KG</span>
+                </div>
+                <div class="card-specs-bar">1200 Watts | 25 Joules</div>
+                <div class="card-body">
+                    <h3>Estructural</h3>
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">🏗️</span> Demoler paredes, muros y vigas</li>
+                        <li><span class="icon-usage">🔨</span> Contra cimientos</li>
+                        <li><span class="icon-usage">✅</span> Uso vertical y horizontal</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
             </div>
 
             <div class="card">
-                <div class="peso-tag">Rompedora de 25 KG</div>
-                <h3>Industrial de Piso</h3>
-                <p class="specs">1800 Watts | 60 Joules de impacto</p>
-                <p class="ideal"><strong>Ideal para:</strong> Demoler pisos, banquetas, losas y escaleras de concreto.</p>
-                <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                <div class="card-header-kg">
+                    <span class="modelo-txt">Rompedora de 25 KG</span>
+                </div>
+                <div class="card-specs-bar">1800 Watts | 60 Joules</div>
+                <div class="card-body">
+                    <h3>Industrial de Piso</h3>
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">🚧</span> Demoler pisos y banquetas</li>
+                        <li><span class="icon-usage">🚜</span> Losas de concreto y firmes</li>
+                        <li><span class="icon-usage">✅</span> Escaleras de concreto</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
             </div>
 
-            <div class="card" style="border-width: 4px;">
-                <div class="peso-tag">Rompedora de 27 KG</div>
-                <h3>Máxima Potencia</h3>
-                <p class="specs">2100 Watts | 70 Joules de impacto</p>
-                <p class="ideal"><strong>Ideal para:</strong> Trabajo pesado como demoler asfalto, piedras, preparación para drenaje y zapatas.</p>
-                <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+            <div class="card">
+                <div class="card-header-kg">
+                    <span class="modelo-txt">Rompedora de 27 KG</span>
+                </div>
+                <div class="card-specs-bar">2100 Watts | 70 Joules</div>
+                <div class="card-body">
+                    <h3>Máxima Potencia</h3>
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">🛑</span> Trabajo pesado extrema dureza</li>
+                        <li><span class="icon-usage">🛣️</span> Asfalto y piedras grandes</li>
+                        <li><span class="icon-usage">✅</span> Zapatas y drenaje</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
             </div>
         </div>
     </div>
