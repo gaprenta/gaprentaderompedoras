@@ -28,14 +28,12 @@
         }
 
         .logo {
-            font-size: clamp(3rem, 10vw, 6rem); /* Tamaño dinámico según pantalla */
+            font-size: clamp(3rem, 10vw, 6rem);
             font-weight: 900;
             letter-spacing: 8px;
             text-transform: uppercase;
             line-height: 1;
         }
-
-        .logo span { color: var(--amarillo); }
 
         .header-subtext {
             font-size: 1.1rem;
@@ -63,18 +61,17 @@
         .hero h1 { font-size: clamp(1.5rem, 5vw, 2.8rem); margin-bottom: 10px; text-transform: uppercase; }
         .hero .ubi-text { font-size: 1.1rem; color: var(--amarillo); font-weight: bold; margin-bottom: 25px; }
 
-        /* --- AJUSTE DEL BOTÓN WHATSAPP --- */
         .btn-ws {
             background-color: var(--whatsapp);
             color: white;
-            padding: 18px 30px; /* Espaciado interno cómodo */
+            padding: 18px 30px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
-            font-size: clamp(0.9rem, 4vw, 1.2rem); /* El texto se ajusta al tamaño de la pantalla */
+            font-size: clamp(0.9rem, 4vw, 1.2rem);
             transition: 0.3s;
             display: inline-block;
-            max-width: 90%; /* Evita que se salga en pantallas muy chicas */
+            max-width: 95%;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             border: none;
         }
@@ -103,7 +100,7 @@
             transition: 0.3s;
         }
         .card:hover { border-color: var(--amarillo); transform: translateY(-5px); }
-        .card h3 { margin-bottom: 10px; }
+        .card h3 { margin-bottom: 10px; font-size: 1.5rem; }
 
         .marcas-container { text-align: center; margin-top: 40px; color: #777; font-weight: bold; font-size: 1.2rem; }
 
@@ -118,7 +115,6 @@
 
         footer { background: var(--negro); color: #888; text-align: center; padding: 20px; font-size: 0.8rem; }
 
-        /* Floating WhatsApp */
         .ws-float {
             position: fixed;
             bottom: 20px;
@@ -157,18 +153,18 @@
 
     <section class="about">
         <h2>Nuestra Empresa</h2>
-        <p>Somos una empresa local dedicada a la renta de rompedoras de concreto y vibradores. Nos enfocamos en dar solución y rapidez para su trabajo con equipos profesionales de las mejores marcas.</p>
+        <p>Somos una empresa local dedicada a la renta de rompedoras de concreto y vibradores de concreto. Nos enfocamos en dar solución y rapidez para su trabajo con equipos profesionales de las mejores marcas.</p>
     </section>
 
     <section id="equipos">
         <h2>Equipos Disponibles</h2>
         <div class="grid-equipos">
-            <div class="card"><h3>8 kg</h3><p>Quitar vitropiso y azulejo.</p></div>
-            <div class="card"><h3>12 kg</h3><p>Ranuras en pared.</p></div>
+            <div class="card"><h3>8 kg</h3><p>Hacer ranuras en la pared.</p></div>
+            <div class="card"><h3>12 kg</h3><p>Quitar vitro piso y azulejo.</p></div>
             <div class="card"><h3>15 kg</h3><p>Demoler paredes.</p></div>
             <div class="card"><h3>25 kg</h3><p>Demoler piso y banquetas.</p></div>
             <div class="card"><h3>27 kg</h3><p>Losas y escaleras.</p></div>
-            <div class="card"><h3>Vibradores</h3><p>Vaciados de concreto.</p></div>
+            <div class="card"><h3>Vibradores de concreto</h3><p>Ideales para vaciados y compactación.</p></div>
         </div>
         <div class="marcas-container">
             MAKITA • DEWALT • BOSCH • EDOEVOM
@@ -182,6 +178,7 @@
             <div class="tag">Zapatas</div>
             <div class="tag">Banquetas</div>
             <div class="tag">Pisos</div>
+            <div class="tag">Ranuras</div>
             <div class="tag">Azulejo</div>
         </div>
     </section>
@@ -189,19 +186,23 @@
     <section class="info-container">
         <div class="info-box">
             <h3>Horarios</h3>
-            <p>Lun - Vie: 8am a 8pm</p>
-            <p>Sáb: 9am a 5pm</p>
-            <p>Dom: Cerrado</p>
+            <p><strong>Lunes a Viernes:</strong> 8 am a 8 pm</p>
+            <p><strong>Sábado:</strong> 9 am a 5 pm</p>
+            <p><strong>Domingo:</strong> Cerrado</p>
         </div>
         <div class="info-box">
             <h3>Área de Servicio</h3>
             <p>Juárez, Guadalupe, Apodaca,</p>
             <p>San Nicolás, Monterrey.</p>
         </div>
+        <div class="info-box">
+            <h3>Contacto</h3>
+            <p>Tel: 811-998-80-53</p>
+        </div>
     </section>
 
     <footer>
-        &copy; 2024 G-A-P - Empresa Local Monterrey.
+        &copy; 2026 G-A-P - Empresa Local Monterrey.
     </footer>
 
     <a href="https://wa.me/528119988053" class="ws-float" target="_blank">
