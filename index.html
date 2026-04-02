@@ -7,218 +7,90 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primario: #e31e24; /* Rojo GAP */
+            --blanco: #ffffff;
             --oscuro: #1a1a1a;
-            --gris-claro: #f4f4f4;
+            --whatsapp-color: #25d366;
+            --whatsapp-hover-color: #128c7e;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             line-height: 1.6;
-            color: #333;
+            color: var(--oscuro);
+            background: var(--blanco);
         }
 
-        /* Header */
-        header {
-            background: #fff;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            max-width: 250px;
-            height: auto;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('fondo-construccion.jpg'); /* Puedes poner una foto de obra de fondo */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        /* Equipos */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            border-bottom: 3px solid var(--primario);
-            display: inline-block;
-            margin-bottom: 30px;
-            padding-bottom: 5px;
-        }
-
-        .grid-equipos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
-
-        .card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .card img {
+        /* Contenedor de la Imagen Principal */
+        .image-container {
             width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        .card h3 {
-            font-size: 1.1rem;
-            margin: 15px 0;
-            background: var(--oscuro);
-            color: white;
-            padding: 5px;
-        }
-
-        /* Área de Servicio */
-        .servicio-box {
-            background: var(--gris-claro);
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .zonas {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
+            align-items: center;
+            background: var(--blanco);
+            overflow: hidden;
+            position: relative;
         }
 
-        .zona-item {
-            background: #fff;
-            padding: 10px 25px;
-            border-radius: 50px;
-            border-left: 5px solid var(--primario);
-            font-weight: bold;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+        /* La imagen visual del diseño */
+        .design-image {
+            max-width: 100%; /* La imagen se ajusta al ancho del navegador */
+            height: auto;
+            display: block;
         }
 
-        /* WhatsApp Flotante */
-        .btn-whatsapp {
+        /* Botón de WhatsApp Flotante */
+        .btn-whatsapp-floating {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: #25d366;
+            background-color: var(--whatsapp-color);
             color: white;
             padding: 15px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1rem;
             display: flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            gap: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
             z-index: 1000;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .btn-whatsapp:hover {
-            background-color: #128c7e;
+        .btn-whatsapp-floating:hover {
+            background-color: var(--whatsapp-hover-color);
+            transform: translateY(-5px);
+            text-decoration: none;
         }
 
-        footer {
-            background: var(--oscuro);
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 40px;
-        }
-
+        /* Optimización para móviles */
         @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
+            .image-container {
+                overflow: visible; /* Asegura que la imagen no se recorte */
+            }
+            .design-image {
+                max-width: none;
+                width: 100%;
+                height: auto;
+            }
+            .btn-whatsapp-floating {
+                font-size: 0.9rem;
+                padding: 12px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="logo_gap.png" alt="GAP Renta de Rompedoras" class="logo">
-    </header>
-
-    <section class="hero">
-        <h1>Renta de Rompedoras Profesionales</h1>
-        <p>Potencia y eficiencia para tu construcción</p>
-    </section>
-
-    <div class="container">
-        <center><h2 class="section-title">Nuestros Equipos</h2></center>
-        <div class="grid-equipos">
-            <div class="card">
-                <img src="equipo_8kg.jpg" alt="Rompedora 8kg">
-                <h3>Equipo de 8 Kg</h3>
-            </div>
-            <div class="card">
-                <img src="equipo_12kg.jpg" alt="Rompedora 12kg">
-                <h3>Equipo de 12 Kg</h3>
-            </div>
-            <div class="card">
-                <img src="equipo_15kg.jpg" alt="Rompedora 15kg">
-                <h3>Equipo de 15 Kg</h3>
-            </div>
-            <div class="card">
-                <img src="equipo_25kg.jpg" alt="Rompedora 25kg">
-                <h3>Equipo de 25 Kg</h3>
-            </div>
-            <div class="card">
-                <img src="equipo_27kg.jpg" alt="Rompedora 27kg">
-                <h3>Equipo de 27 Kg</h3>
-            </div>
-        </div>
+    <div class="image-container">
+        <img src="diseno_web_gap.png" alt="Diseño Completo de GAP Renta de Rompedoras" class="design-image">
     </div>
 
-    <section class="servicio-box">
-        <div class="container">
-            <h2 class="section-title">Áreas de Servicio</h2>
-            <p>Brindamos atención inmediata en:</p>
-            <div class="zonas">
-                <div class="zona-item">JUÁREZ</div>
-                <div class="zona-item">GUADALUPE</div>
-                <div class="zona-item">APODACA</div>
-                <div class="zona-item">SAN NICOLÁS</div>
-                <div class="zona-item">MONTERREY</div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p><strong>GAP Renta de Rompedoras</strong></p>
-        <p><i class="fas fa-phone"></i> Tel: 811-998-80-53</p>
-        <p>&copy; 2024 Todos los derechos reservados.</p>
-    </footer>
-
-    <a href="https://wa.me/528119988053" class="btn-whatsapp" target="_blank">
+    <a href="https://wa.me/528119988053?text=Hola,%20quisiera%20rentar%20una%20rompedora." class="btn-whatsapp-floating" target="_blank">
         <i class="fab fa-whatsapp fa-2x"></i>
-        ¡Renta aquí por WhatsApp!
+        <span>¡Renta aquí por WhatsApp!</span>
     </a>
 
 </body>
