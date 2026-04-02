@@ -5,114 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G-A-P | Renta de Rompedoras</title>
     <style>
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
+        /* COLORES ESTILO CATERPILLAR: Amarillo (#FFCD00), Negro (#000000), Blanco (#FFFFFF) */
+        body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
         
-        /* ENCABEZADO: G-A-P CON SUBTÍTULO RENTA DE ROMPEDORAS */
+        /* ENCABEZADO ESTILO CAT: FONDO AMARILLO, LETRAS NEGRAS */
         header {
-            background: #fff;
+            background: #FFCD00;
             text-align: center;
-            padding: 30px 0;
-            border-bottom: 2px solid #eee;
+            padding: 40px 0;
+            border-bottom: 5px solid #000;
         }
         .logo-main {
-            font-size: 60px;
+            font-size: 65px;
             font-weight: 900;
             margin: 0;
             line-height: 1;
+            color: #000;
+            text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
         }
         .subtitulo-header {
             display: block;
-            font-size: 18px;
-            color: #ff0000;
+            font-size: 20px;
+            color: #000;
             font-weight: bold;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             margin-top: 10px;
             text-transform: uppercase;
         }
-        .letra { color: #000; }
-        .division { color: #ff0000; margin: 0 5px; }
+        .division { color: #000; margin: 0 5px; opacity: 0.7; }
 
-        /* DESCRIPCIÓN DE LA EMPRESA */
+        /* SECCIÓN SOBRE NOSOTROS */
         .nosotros { background: #000; color: #fff; padding: 50px 20px; text-align: center; }
-        .nosotros h2 { color: #ff0000; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-        .nosotros p { max-width: 800px; margin: 0 auto; line-height: 1.6; font-size: 18px; }
+        .nosotros h2 { color: #FFCD00; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .nosotros p { max-width: 800px; margin: 0 auto; line-height: 1.6; font-size: 18px; font-family: 'Arial', sans-serif; }
 
-        /* CATÁLOGO DE EQUIPOS - REDISEÑO LLAMATIVO */
+        /* CATÁLOGO DE EQUIPOS */
         .seccion-equipos { padding: 60px 20px; max-width: 1300px; margin: 0 auto; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         
         .card { 
-            border: 2px solid #000; 
+            border: 3px solid #000; 
             background: #fff;
             position: relative; 
             transition: 0.3s; 
             display: flex; 
             flex-direction: column; 
-            overflow: hidden; /* Para que el fondo negro no se salga */
+            overflow: hidden;
         }
-        .card:hover { border-color: #ff0000; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transform: translateY(-5px); }
+        .card:hover { border-color: #FFCD00; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transform: translateY(-5px); }
         
-        /* encabezado de tarjeta con fondo negro */
+        /* Encabezado de tarjeta NEGRO */
         .card-header-kg {
             background: #000;
-            color: #fff;
+            color: #FFCD00;
             padding: 20px;
             text-align: center;
-            border-bottom: 3px solid #ff0000;
+            border-bottom: 4px solid #FFCD00;
         }
         .card-header-kg .modelo-txt {
             display: block;
             font-size: 1.6em;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        /* Franja roja de potencia */
+        /* Franja AMARILLA de potencia */
         .card-specs-bar {
-            background: #ff0000;
-            color: #fff;
+            background: #FFCD00;
+            color: #000;
             padding: 10px;
             text-align: center;
             font-weight: bold;
             font-size: 1.1em;
-            letter-spacing: 1px;
+            border-bottom: 2px solid #000;
         }
 
-        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-body h3 { margin-top: 0; color: #000; font-size: 1.4em; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; font-family: 'Arial', sans-serif; }
+        .card-body h3 { margin-top: 0; color: #000; font-size: 1.4em; text-transform: uppercase; }
         
         .ideal-list { 
             list-style: none; 
             padding: 0; 
             margin: 15px 0 25px 0; 
             font-size: 0.95em; 
-            color: #444; 
-            line-height: 1.5;
-            flex-grow: 1; /* Para empujar el botón al fondo */
+            color: #333; 
+            flex-grow: 1;
         }
-        .ideal-list li { margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; }
-        .icon-usage { color: #ff0000; font-weight: bold; }
+        .ideal-list li { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
+        .icon-usage { color: #000; background: #FFCD00; padding: 2px 5px; border-radius: 3px; font-weight: bold; font-size: 0.8em; }
 
+        /* Botón de RENTAR estilo Maquinaria Pesada */
         .btn-rentar {
             display: block;
             background: #000;
-            color: #fff;
+            color: #FFCD00;
             text-align: center;
             padding: 18px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: auto; /* Empuja el botón al fondo */
             text-transform: uppercase;
-            letter-spacing: 1px;
             font-size: 1.1em;
             transition: 0.3s;
+            border: none;
         }
-        .btn-rentar:hover { background: #ff0000; }
+        .btn-rentar:hover { background: #FFCD00; color: #000; }
 
         /* INFO DE HORARIOS Y ÁREAS */
-        .footer-info { background: #f4f4f4; padding: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: center; border-top: 1px solid #eee;}
-        .info-box h4 { border-bottom: 2px solid #ff0000; display: inline-block; padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;}
+        .footer-info { background: #000; color: #fff; padding: 50px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: center; }
+        .info-box h4 { border-bottom: 3px solid #FFCD00; color: #FFCD00; display: inline-block; padding-bottom: 5px; text-transform: uppercase; }
+        .info-box p { font-family: 'Arial', sans-serif; }
         
         /* BOTÓN FLOTANTE WHATSAPP */
         .ws-float {
@@ -125,26 +126,25 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             z-index: 1000;
             display: flex;
             align-items: center;
             gap: 10px;
+            font-family: 'Arial', sans-serif;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-main">
-            <span class="letra">G</span><span class="division">-</span><span class="letra">A</span><span class="division">-</span><span class="letra">P</span>
-        </div>
+        <div class="logo-main">G-A-P</div>
         <span class="subtitulo-header">Renta de Rompedoras</span>
     </header>
 
     <section class="nosotros">
-        <h2>Sobre Nosotros</h2>
-        <p>Somos una empresa local dedicada a la renta de rompedoras profesionales en el área metropolitana de Monterrey. Nos enfocamos en brindar equipos de alta potencia y mantenimiento impecable para garantizar que tu obra nunca se detenga.</p>
+        <h2>Poder Local en Demolición</h2>
+        <p>Expertos en renta de equipo pesado para Juárez y Monterrey. Contamos con la potencia necesaria para que tu obra sea eficiente, rápida y profesional.</p>
     </section>
 
     <div class="seccion-equipos">
@@ -157,11 +157,11 @@
                 <div class="card-body">
                     <h3>Ligera Profesional</h3>
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">⛏️</span> Hacer orificios con broca de concreto</li>
-                        <li><span class="icon-usage">⚡</span> Ranuras en la pared</li>
-                        <li><span class="icon-usage">✅</span> Trabajos ligeros y acabados</li>
+                        <li><span class="icon-usage">CAT</span> Orificios con broca de concreto</li>
+                        <li><span class="icon-usage">CAT</span> Ranuras en la pared</li>
+                        <li><span class="icon-usage">CAT</span> Trabajos ligeros y acabados</li>
                     </ul>
-                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
                 </div>
             </div>
 
@@ -173,11 +173,11 @@
                 <div class="card-body">
                     <h3>Remodelación Media</h3>
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">🧱</span> Quitar vitropiso y azulejos</li>
-                        <li><span class="icon-usage">🔨</span> Trabajos medianos de demolición</li>
-                        <li><span class="icon-usage">✅</span> Ideal para interiores</li>
+                        <li><span class="icon-usage">CAT</span> Quitar vitropiso y azulejos</li>
+                        <li><span class="icon-usage">CAT</span> Trabajos medianos de demolición</li>
+                        <li><span class="icon-usage">CAT</span> Ideal para interiores</li>
                     </ul>
-                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
                 </div>
             </div>
 
@@ -189,11 +189,11 @@
                 <div class="card-body">
                     <h3>Estructural</h3>
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">🏗️</span> Demoler paredes, muros y vigas</li>
-                        <li><span class="icon-usage">🔨</span> Contra cimientos</li>
-                        <li><span class="icon-usage">✅</span> Uso vertical y horizontal</li>
+                        <li><span class="icon-usage">CAT</span> Demoler paredes, muros y vigas</li>
+                        <li><span class="icon-usage">CAT</span> Contra cimientos</li>
+                        <li><span class="icon-usage">CAT</span> Uso vertical y horizontal</li>
                     </ul>
-                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
                 </div>
             </div>
 
@@ -205,11 +205,11 @@
                 <div class="card-body">
                     <h3>Industrial de Piso</h3>
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">🚧</span> Demoler pisos y banquetas</li>
-                        <li><span class="icon-usage">🚜</span> Losas de concreto y firmes</li>
-                        <li><span class="icon-usage">✅</span> Escaleras de concreto</li>
+                        <li><span class="icon-usage">CAT</span> Demoler pisos y banquetas</li>
+                        <li><span class="icon-usage">CAT</span> Losas de concreto y firmes</li>
+                        <li><span class="icon-usage">CAT</span> Escaleras de concreto</li>
                     </ul>
-                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
                 </div>
             </div>
 
@@ -221,11 +221,11 @@
                 <div class="card-body">
                     <h3>Máxima Potencia</h3>
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">🛑</span> Trabajo pesado extrema dureza</li>
-                        <li><span class="icon-usage">🛣️</span> Asfalto y piedras grandes</li>
-                        <li><span class="icon-usage">✅</span> Zapatas y drenaje</li>
+                        <li><span class="icon-usage">CAT</span> Trabajo pesado extrema dureza</li>
+                        <li><span class="icon-usage">CAT</span> Asfalto y piedras grandes</li>
+                        <li><span class="icon-usage">CAT</span> Zapatas y drenaje</li>
                     </ul>
-                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
                 </div>
             </div>
         </div>
@@ -236,10 +236,10 @@
             <h4>Horarios de Atención</h4>
             <p>Lunes a Viernes: 8:00 am - 8:00 pm</p>
             <p>Sábado: 9:00 am - 5:00 pm</p>
-            <p style="color: #999;">Domingo: Cerrado</p>
+            <p style="color: #666;">Domingo: Cerrado</p>
         </div>
         <div class="info-box">
-            <h4>Áreas de Servicio</h4>
+            <h4>Zonas de Cobertura</h4>
             <p>Juárez | Guadalupe | Apodaca</p>
             <p>San Nicolás | Monterrey</p>
         </div>
