@@ -34,18 +34,6 @@
             border-top: 3px solid #000;
             padding-top: 5px;
         }
-        /* Estilo añadido para las marcas */
-        .marcas-header {
-            display: block;
-            font-size: 14px;
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            color: #000;
-            margin-top: 10px;
-            letter-spacing: 1px;
-            border-top: 1px solid rgba(0,0,0,0.2);
-            padding-top: 8px;
-        }
 
         /* SECCIÓN SOBRE NOSOTROS */
         .nosotros { background: #000; color: #fff; padding: 50px 20px; text-align: center; border-bottom: 5px solid #FFCD00; }
@@ -78,7 +66,6 @@
         .card { border: 4px solid #000; background: #fff; position: relative; transition: 0.3s; display: flex; flex-direction: column; overflow: hidden; }
         .card:hover { border-color: #FFCD00; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transform: translateY(-8px); }
         
-        /* Encabezado especial para Vibradores (Efecto Precaución) */
         .card-header-vibrador {
             background: repeating-linear-gradient(45deg, #FFCD00, #FFCD00 10px, #e6b800 10px, #e6b800 20px);
             color: #000; padding: 20px; text-align: center; border-bottom: 5px solid #000;
@@ -88,6 +75,10 @@
         .card-header-kg .modelo-txt { display: block; font-size: 1.5em; font-weight: 900; text-transform: uppercase; }
         
         .card-specs-bar { background: #FFCD00; color: #000; padding: 12px; text-align: center; font-weight: 900; font-size: 1.2em; border-bottom: 3px solid #000; }
+        
+        /* MARCAS BADGE */
+        .marcas-container { background: #eeeeee; padding: 5px; text-align: center; font-size: 0.85em; color: #333; border-bottom: 1px solid #ccc; font-family: sans-serif; letter-spacing: 1px; }
+
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; font-family: 'Arial', sans-serif; }
         
         .ideal-list { list-style: none; padding: 0; margin: 15px 0 25px 0; font-size: 1em; color: #000; flex-grow: 1; font-weight: bold; }
@@ -101,7 +92,7 @@
         .footer-info { background: #000; color: #fff; padding: 60px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; border-top: 8px solid #FFCD00; }
         .info-box h4 { border-bottom: 4px solid #FFCD00; color: #FFCD00; display: inline-block; padding-bottom: 8px; text-transform: uppercase; font-size: 22px; margin-bottom: 20px; }
         .info-box p { font-family: 'Arial', sans-serif; margin: 12px 0; font-size: 18px; font-weight: bold; }
-        .horario-domingo { color: #FFCD00; } /* Resaltado para indicar que sí abren */
+        .horario-domingo { color: #FFCD00; }
 
         .ws-flotante {
             position: fixed;
@@ -123,7 +114,6 @@
             font-size: 18px;
         }
         .ws-flotante:hover { transform: scale(1.1); background-color: #128C7E; }
-        .ws-flotante:active { transform: scale(0.9); }
     </style>
 </head>
 <body>
@@ -132,30 +122,12 @@
         <div class="logo-container">
             <h1 class="logo-main">G-A-P</h1>
             <span class="subtitulo-header">Renta de Rompedoras</span>
-            <span class="marcas-header">MAKITA • DEWALT • BOSCH • EDOEVOM</span>
         </div>
     </header>
 
     <section class="nosotros">
         <h2>Especialistas en Equipo Ligero</h2>
-        <p>Tu aliado estratégico en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey. Ofrecemos equipos de demolición y vibrado de alta eficiencia con mantenimiento garantizado para que tu obra nunca se detenga.</p>
-    </section>
-
-    <section class="distintivo-gap">
-        <div class="distintivo-grid">
-            <div class="valor-box">
-                <h3>Potencia Real</h3>
-                <p>Equipos de marcas líderes como Makita, Bosch y DeWalt que aseguran el mejor rendimiento por Joule de impacto.</p>
-            </div>
-            <div class="valor-box">
-                <h3>Cero Fallas</h3>
-                <p>Mantenimiento preventivo riguroso en cada entrega para evitar paros innecesarios en tu construcción.</p>
-            </div>
-            <div class="valor-box">
-                <h3>Logística Local</h3>
-                <p>Entregas puntuales en toda el área metropolitana, optimizadas para que el equipo llegue cuando lo necesitas.</p>
-            </div>
-        </div>
+        <p>Tu aliado estratégico en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey. Ofrecemos equipos de demolición y vibrado de alta eficiencia con mantenimiento garantizado.</p>
     </section>
 
     <main class="seccion-equipos">
@@ -164,6 +136,7 @@
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 8 KG</span></div>
                 <div class="card-specs-bar">720 Watts | 6 Joules</div>
+                <div class="marcas-container">DISPONIBLE EN: <strong>MAKITA | BOSCH</strong></div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Orificios con broca</li>
@@ -175,6 +148,7 @@
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG</span></div>
                 <div class="card-specs-bar">960 Watts | 12 Joules</div>
+                <div class="marcas-container">DISPONIBLE EN: <strong>DEWALT | MAKITA</strong></div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Quitar vitropiso</li>
@@ -186,6 +160,7 @@
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG</span></div>
                 <div class="card-specs-bar">1200 Watts | 25 Joules</div>
+                <div class="marcas-container">DISPONIBLE EN: <strong>EDOEVOM | BOSCH</strong></div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Muros y vigas</li>
@@ -197,6 +172,7 @@
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG</span></div>
                 <div class="card-specs-bar">1800 Watts | 60 Joules</div>
+                <div class="marcas-container">DISPONIBLE EN: <strong>MAKITA | DEWALT</strong></div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Pisos y banquetas</li>
@@ -208,6 +184,7 @@
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 27 KG</span></div>
                 <div class="card-specs-bar">2100 Watts | 70 Joules</div>
+                <div class="marcas-container">DISPONIBLE EN: <strong>BOSCH | MAKITA</strong></div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Asfalto y piedras</li>
@@ -223,6 +200,7 @@
             <div class="card">
                 <div class="card-header-vibrador"><span class="modelo-txt" style="font-weight: 900; font-size: 1.5em; text-transform: uppercase;">Vibrador Eléctrico</span></div>
                 <div class="card-specs-bar">Alta Frecuencia</div>
+                <div class="marcas-container">DISPONIBLE EN: <strong>MAKITA | EDOEVOM</strong></div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Compactación de colados</li>
