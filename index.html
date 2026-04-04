@@ -3,174 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Potencia Extrema en Rompedoras</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>G-A-P Renta de Rompedoras</title>
     <style>
-        :root { 
-            --cat-yellow: #FFCD00; 
-            --cat-black: #000000;
-            --gap-red: #e62117;
-            --steel: #333;
-            --white: #ffffff; 
+        :root {
+            --primary: #FFCC00; /* Amarillo CAT */
+            --dark: #000000;    /* Negro */
+            --white: #ffffff;
         }
-        
-        html { scroll-behavior: smooth; }
-        body { margin: 0; font-family: 'Roboto', sans-serif; background: #f4f4f4; color: #333; }
-
-        header { background: var(--cat-black); border-bottom: 8px solid var(--cat-yellow); text-align: center; padding: 50px 20px; }
-        .logo-text { font-family: 'Montserrat', sans-serif; font-size: clamp(3rem, 10vw, 5rem); color: var(--cat-yellow); font-weight: 900; margin: 0; letter-spacing: -2px; }
-        .logo-text span { color: var(--gap-red); }
-
-        /* --- SECCIÓN CATÁLOGO TÉCNICO --- */
-        .catalog { padding: 60px 5%; background: var(--white); }
-        .catalog h2 { text-align: center; font-family: 'Montserrat'; text-transform: uppercase; margin-bottom: 50px; font-size: 2.5rem; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        
-        .card { 
-            background: #fff; border: 1px solid #ddd; padding: 25px; 
-            border-top: 8px solid var(--cat-black); position: relative; transition: 0.3s;
-        }
-        .card:hover { border-top-color: var(--cat-yellow); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        
-        /* Insignia de Peso */
-        .weight-badge { background: var(--cat-yellow); color: #000; display: inline-block; padding: 5px 15px; font-family: 'Montserrat'; font-weight: 900; font-size: 1.5rem; margin-bottom: 15px; }
-
-        /* Stats Técnicos */
-        .stats { background: #f9f9f9; padding: 15px; margin: 15px 0; border-left: 4px solid var(--cat-yellow); }
-        .stats div { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px; font-weight: 700; text-transform: uppercase; }
-        .stats span { color: var(--gap-red); }
-
-        /* Torque / Capacidad de Rompimiento */
-        .torque-container { margin-top: 15px; }
-        .torque-label { font-size: 0.75rem; font-weight: 900; text-transform: uppercase; margin-bottom: 5px; display: block; color: #666; }
-        .torque-bar-bg { background: #eee; height: 10px; border-radius: 5px; overflow: hidden; }
-        .torque-bar-fill { background: linear-gradient(90deg, var(--cat-yellow), var(--gap-red)); height: 100%; border-radius: 5px; }
-
-        .btn-rentar { 
-            display: block; background: var(--cat-black); color: var(--cat-yellow); 
-            text-align: center; padding: 15px; text-decoration: none; font-weight: 900; 
-            text-transform: uppercase; margin-top: 20px; border-radius: 4px;
-        }
-        .btn-rentar:hover { background: var(--gap-red); color: white; }
-
-        /* --- FOOTER --- */
-        footer { background: var(--cat-black); color: var(--white); padding: 40px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; border-top: 10px solid var(--cat-yellow); }
-        .ws-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: 900; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; }
+        body { font-family: 'Arial', sans-serif; margin: 0; line-height: 1.6; color: var(--dark); }
+        header { background: var(--dark); color: var(--primary); padding: 2rem; text-align: center; }
+        .hero { background: var(--primary); padding: 3rem; text-align: center; }
+        .btn-wa { background: var(--dark); color: var(--primary); padding: 1rem 2rem; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; }
+        .container { padding: 2rem; max-width: 900px; margin: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .card { border: 2px solid var(--primary); padding: 1rem; text-align: center; border-radius: 5px; }
+        footer { background: var(--dark); color: var(--white); text-align: center; padding: 1rem; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1 class="logo-text">G<span>-</span>A<span>-</span>P</h1>
-        <p style="color:white; letter-spacing: 3px; font-weight:700;">ESPECIFICACIONES DE ALTO PODER</p>
-    </header>
+<header>
+    <h1>G-A-P Renta de Rompedoras</h1>
+</header>
 
-    <section class="catalog">
-        <h2>Catálogo de Demolición Profesional</h2>
-        <div class="grid">
-            
-            <div class="card">
-                <div class="weight-badge">8 KG</div>
-                <p><strong>Uso:</strong> Ranuras estéticas, muros de ladrillo y azulejo cerámico.</p>
-                <div class="stats">
-                    <div>Potencia: <span>1,100 W</span></div>
-                    <div>Energía: <span>7.6 Joules</span></div>
-                </div>
-                <div class="torque-container">
-                    <span class="torque-label">Capacidad de Rompimiento: Ligera</span>
-                    <div class="torque-bar-bg"><div class="torque-bar-fill" style="width: 20%;"></div></div>
-                </div>
-                <a href="https://wa.me/528119988053?text=Renta%208kg" class="btn-rentar">Rentar Equipo</a>
-            </div>
+<section class="hero">
+    <h2>Tu mejor aliado en demolición</h2>
+    <p>Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey</p>
+    <a href="https://wa.me/528119988053" class="btn-wa">Contactar por WhatsApp: 811-998-80-53</a>
+</section>
 
-            <div class="card">
-                <div class="weight-badge">12 KG</div>
-                <p><strong>Uso:</strong> Remoción de pisos de concreto delgado y recubrimientos adheridos.</p>
-                <div class="stats">
-                    <div>Potencia: <span>1,500 W</span></div>
-                    <div>Energía: <span>16.8 Joules</span></div>
-                </div>
-                <div class="torque-container">
-                    <span class="torque-label">Capacidad de Rompimiento: Media</span>
-                    <div class="torque-bar-bg"><div class="torque-bar-fill" style="width: 40%;"></div></div>
-                </div>
-                <a href="https://wa.me/528119988053?text=Renta%2012kg" class="btn-rentar">Rentar Equipo</a>
-            </div>
+<div class="container">
+    <h2>Nuestra Maquinaria</h2>
+    <div class="grid">
+        <div class="card"><h3>8 kg</h3><p>Ideal para ranuras en pared.</p></div>
+        <div class="card"><h3>12 kg</h3><p>Orificios en concreto.</p></div>
+        <div class="card"><h3>15 kg</h3><p>Muros y vigas.</p></div>
+        <div class="card"><h3>25 kg</h3><p>Pisos y losas.</p></div>
+        <div class="card"><h3>27 kg</h3><p>Zapatas y drenaje.</p></div>
+        <div class="card"><h3>Vibradores</h3><p>Compactación profesional.</p></div>
+    </div>
 
-            <div class="card">
-                <div class="weight-badge">15 KG</div>
-                <p><strong>Uso:</strong> Demolición de muros, castillos, vigas y losas de entrepiso.</p>
-                <div class="stats">
-                    <div>Potencia: <span>1,750 W</span></div>
-                    <div>Energía: <span>25 Joules</span></div>
-                </div>
-                <div class="torque-container">
-                    <span class="torque-label">Capacidad de Rompimiento: Estándar Obra</span>
-                    <div class="torque-bar-bg"><div class="torque-bar-fill" style="width: 60%;"></div></div>
-                </div>
-                <a href="https://wa.me/528119988053?text=Renta%2015kg" class="btn-rentar">Rentar Equipo</a>
-            </div>
+    <h2>Servicios</h2>
+    <p>Demolición de: Pisos, losas, banquetas, escaleras, muros y vigas. Preparación de zapatas y drenajes.</p>
 
-            <div class="card">
-                <div class="weight-badge">25 KG</div>
-                <p><strong>Uso:</strong> Banquetas reforzadas, zapatas y losas de piso industrial.</p>
-                <div class="stats">
-                    <div>Potencia: <span>2,000 W</span></div>
-                    <div>Energía: <span>45 Joules</span></div>
-                </div>
-                <div class="torque-container">
-                    <span class="torque-label">Capacidad de Rompimiento: Pesada</span>
-                    <div class="torque-bar-bg"><div class="torque-bar-fill" style="width: 80%;"></div></div>
-                </div>
-                <a href="https://wa.me/528119988053?text=Renta%2025kg" class="btn-rentar">Rentar Equipo</a>
-            </div>
+    <h2>Quiénes Somos</h2>
+    <p>Somos tu mejor aliado en demolición. Nos dedicamos a proporcionar equipo de alto rendimiento con logística puntual.</p>
+</div>
 
-            <div class="card" style="border-top-color: var(--gap-red);">
-                <div class="weight-badge" style="background: var(--gap-red); color: white;">27 KG</div>
-                <p><strong>Uso:</strong> Concreto armado de alta resistencia, asfalto y roca.</p>
-                <div class="stats">
-                    <div>Potencia: <span>2,200 W</span></div>
-                    <div>Energía: <span>62 Joules</span></div>
-                </div>
-                <div class="torque-container">
-                    <span class="torque-label" style="color: var(--gap-red);">CAPACIDAD MÁXIMA INDUSTRIAL</span>
-                    <div class="torque-bar-bg"><div class="torque-bar-fill" style="width: 100%;"></div></div>
-                </div>
-                <a href="https://wa.me/528119988053?text=Renta%2027kg" class="btn-rentar" style="background:var(--gap-red); color:white;">PODER TOTAL</a>
-            </div>
-
-            <div class="card">
-                <div class="weight-badge" style="background: #333; color: white;">VIBRADOR</div>
-                <p><strong>Uso:</strong> Consolidación de concreto en columnas y losas para evitar porosidad.</p>
-                <div class="stats">
-                    <div>Motor: <span>1.5 HP</span></div>
-                    <div>Frecuencia: <span>12,000 VPM</span></div>
-                </div>
-                <div class="torque-container">
-                    <span class="torque-label">Calidad Estructural: Máxima</span>
-                    <div class="torque-bar-bg"><div class="torque-bar-fill" style="width: 90%; background: #333;"></div></div>
-                </div>
-                <a href="https://wa.me/528119988053?text=Renta%20Vibrador" class="btn-rentar">Rentar Equipo</a>
-            </div>
-
-        </div>
-    </section>
-
-    <footer>
-        <div>
-            <h3>GAP Monterrey</h3>
-            <p>Servicio de logística a pie de obra.</p>
-            <p>Cobertura: Juárez, Gpe, Apodaca, San Nico y Mty.</p>
-        </div>
-        <div>
-            <h3>Contacto Directo</h3>
-            <p>WhatsApp: 811-998-80-53</p>
-            <p>Atención Personalizada 24/7</p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/528119988053" class="ws-float">💬 WhatsApp 811-998-80-53</a>
+<footer>
+    <p>Horario de atención: Lunes a Sábado. Servicio en toda el área metropolitana.</p>
+</footer>
 
 </body>
 </html>
