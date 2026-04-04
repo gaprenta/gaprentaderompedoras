@@ -19,20 +19,24 @@
         html { scroll-behavior: smooth; }
         body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--cat-black); color: var(--white); line-height: 1.6; }
         
-        /* --- HEADER INDUSTRIAL --- */
+        /* --- HEADER INDUSTRIAL CON NUEVO LOGO --- */
         header { 
             background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
             border-bottom: 6px solid var(--cat-yellow);
-            text-align: center; padding: 80px 20px; position: relative;
+            text-align: center; 
+            /* Padding ajustado para el logo SVG */
+            padding: 60px 20px 80px; 
+            position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
 
-        .logo-text {
-            font-family: 'Montserrat', sans-serif; font-size: clamp(4rem, 15vw, 8rem);
-            color: var(--cat-yellow); font-weight: 900; margin: 0; letter-spacing: -5px;
-            text-shadow: 4px 4px 0px #b38f00, 8px 8px 15px rgba(0,0,0,0.7);
+        /* Contenedor optimizado para el Logo SVG Geométrico */
+        .logo-container {
+            max-width: 600px; /* Ancho máximo del logo */
+            margin: 0 auto;
+            /* Resplandor sutil para despegarlo del fondo negro */
+            filter: drop-shadow(0px 4px 10px rgba(255, 205, 0, 0.3));
         }
-        .logo-text span { color: var(--gap-red); }
 
         .sub-header {
             color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 700;
@@ -62,7 +66,7 @@
         .phil-card:hover { transform: scale(1.02); background: #252525; }
         .phil-card h3 { color: var(--cat-yellow); text-transform: uppercase; margin-bottom: 15px; font-family: 'Montserrat'; font-size: 1.5rem;}
 
-        /* --- CATÁLOGO DE ROMPEDORAS (FONDO CLARO PARA CONTRASTE) --- */
+        /* --- CATÁLOGO DE ROMPEDORAS (FONDO CLARO) --- */
         .catalog { padding: 80px 5%; background: var(--light-gray); color: var(--cat-black); }
         .catalog h2 { text-align: center; font-family: 'Montserrat', sans-serif; text-transform: uppercase; margin-bottom: 50px; font-size: 3rem; font-weight: 900; color: var(--cat-black);}
         
@@ -133,7 +137,26 @@
 <body>
 
     <header>
-        <h1 class="logo-text">G<span>-</span>A<span>-</span>P</h1>
+        <div class="logo-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 120" width="100%" height="auto">
+              <defs>
+                <style>
+                  .cls-g { fill: #ffcd00; font-family: 'Arial-Black', 'Arial Black', sans-serif; font-weight: 800; font-size: 130px; text-transform: uppercase; letter-spacing: 0.05em; }
+                  .cls-dash { fill: #e62117; }
+                </style>
+              </defs>
+              
+              <path class="cls-g" d="M10,110 L10,20 L80,20 L80,45 L40,45 L40,85 L85,85 L85,60 L60,60 L60,45 L110,45 L110,110 Z"/>
+              
+              <rect class="cls-dash" x="125" y="55" width="55" height="20"/>
+              
+              <path class="cls-g" d="M195,110 L250,20 L305,110 L275,110 L250,65 L225,110 Z"/>
+              
+              <rect class="cls-dash" x="320" y="55" width="55" height="20"/>
+              
+              <path class="cls-g" d="M390,110 L390,20 L480,20 C510,20 535,40 535,65 C535,90 510,110 480,110 L425,110 L425,75 L480,75 C488,75 495,68 495,65 C495,62 488,55 480,55 L425,55 L425,110 Z"/>
+            </svg>
+        </div>
         <div class="sub-header">Aliado en Juárez y Monterrey</div>
     </header>
 
