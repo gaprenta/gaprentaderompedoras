@@ -3,107 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Renta de Rompedoras Profesionales</title>
+    <title>G-A-P | Renta de Rompedoras de Concreto</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --cat-yellow: #FFCD00; --cat-black: #000000; --white: #ffffff; --metal-bg: #E0E0E0; }
+        :root { --cat-yellow: #FFCD00; --cat-black: #000000; --white: #ffffff; --gray: #f4f4f4; }
         
-        body { margin: 0; font-family: 'Roboto', sans-serif; background: #fafafa; color: #333; line-height: 1.6; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--gray); color: #333; line-height: 1.6; }
         
-        /* --- CABECERA CON TU IMAGEN LOGO --- */
+        /* --- ENCABEZADO PRINCIPAL --- */
         header { 
-            background: #000; 
+            background: var(--cat-black); 
             text-align: center; 
-            padding: 30px 20px; 
+            padding: 40px 20px; 
             border-bottom: 8px solid var(--cat-yellow); 
         }
-        .header-logo { 
-            max-width: 250px; 
+        .logo-img { 
+            max-width: 280px; 
             width: 100%; 
-            height: auto; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5); 
-            border-radius: 4px; 
+            border-radius: 8px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
         }
+        h1 { color: var(--white); font-family: 'Archivo Black', sans-serif; margin: 0; font-size: 2rem; text-transform: uppercase; }
 
-        /* --- DIFERENCIADOR Y EMPRESA --- */
-        .section { padding: 60px 10%; text-align: center; }
-        .bg-white { background: var(--white); }
-        
-        h2 { font-family: 'Archivo Black', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 2.2rem; margin-bottom: 20px; }
-        
-        .brand-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
-        .brand-pill { background: #eee; color: #000; padding: 10px 20px; border-radius: 50px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; border: 1px solid #ddd; }
-        
-        /* --- CATÁLOGO DE POTENCIA CON BOTONES INDIVIDUALES --- */
+        /* --- QUIENES SOMOS --- */
+        .intro { padding: 60px 10%; text-align: center; background: var(--white); border-bottom: 1px solid #ddd; }
+        .intro h2 { font-family: 'Archivo Black', sans-serif; font-size: 2.2rem; color: var(--cat-black); margin-bottom: 20px; }
+        .intro p { max-width: 900px; margin: auto; font-size: 1.2rem; color: #555; }
+
+        /* --- SECCIÓN DE EQUIPOS --- */
         .catalog { padding: 60px 5%; background: var(--cat-black); color: var(--white); }
-        .catalog h2 { color: var(--cat-yellow); }
+        .catalog h2 { text-align: center; color: var(--cat-yellow); font-family: 'Archivo Black', sans-serif; margin-bottom: 40px; font-size: 2rem; }
         
-        .grid-catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         
-        .machine-card { background: #1a1a1a; border: 3px solid #333; padding: 30px; border-radius: 4px; transition: 0.3s; position: relative; }
-        .machine-card:hover { border-color: var(--cat-yellow); transform: translateY(-3px); }
+        .card { background: #1a1a1a; border: 2px solid #333; padding: 30px; border-radius: 4px; transition: 0.3s; display: flex; flex-direction: column; }
+        .card:hover { border-color: var(--cat-yellow); transform: translateY(-5px); }
         
-        /* Botón de Peso/Capacidad */
-        .btn-capacidad { 
-            display: inline-block; 
+        .weight-tag { 
             background: var(--cat-yellow); 
             color: #000; 
             font-family: 'Archivo Black', sans-serif; 
-            font-size: 2.2rem; 
-            padding: 10px 30px; 
-            margin-bottom: 20px; 
-            border: none;
-            text-transform: uppercase;
+            font-size: 2.5rem; 
+            padding: 10px; 
+            display: inline-block; 
+            margin-bottom: 15px; 
+            text-align: center;
         }
 
-        /* Especificaciones Técnicas a la vista */
-        .specs-info { margin-bottom: 25px; border-bottom: 1px solid #333; padding-bottom: 15px; text-align: left; }
-        .specs-info div { margin-bottom: 8px; font-size: 1rem; }
-        .specs-info strong { color: var(--cat-yellow); }
-        .marca-info { font-size: 0.8rem; color: #888; text-transform: uppercase; }
+        .use-case { font-size: 1.1rem; color: #ccc; margin-bottom: 20px; min-height: 80px; }
+        .use-case strong { color: var(--white); display: block; margin-bottom: 5px; }
+        
+        .brands-list { font-size: 0.85rem; color: var(--cat-yellow); text-transform: uppercase; font-weight: bold; margin-bottom: 20px; letter-spacing: 1px; }
 
         .btn-rentar { 
-            display: block; 
             background: #25d366; 
             color: #fff; 
+            text-align: center; 
             padding: 15px; 
             text-decoration: none; 
             font-weight: bold; 
             text-transform: uppercase; 
-            border-radius: 5px;
-            font-size: 1rem;
-            text-align: center;
+            border-radius: 4px;
+            margin-top: auto;
         }
 
-        /* --- VIBRADORES Y OTROS EQUIPOS --- */
-        .btn-vibradores { 
+        /* --- VIBRADORES Y EXTRAS --- */
+        .extra-action { background: var(--cat-yellow); padding: 40px; text-align: center; color: #000; }
+        .btn-vibrador { 
             display: inline-block; 
-            background: var(--cat-yellow); 
-            color: #000; 
+            background: #000; 
+            color: #fff; 
             padding: 20px 40px; 
             text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 5px; 
-            text-transform: uppercase; 
+            font-family: 'Archivo Black', sans-serif; 
             font-size: 1.2rem; 
-            margin-top: 30px; 
-            font-family: 'Archivo Black', sans-serif;
-            border: 3px solid #000;
+            text-transform: uppercase;
+            border-radius: 4px;
+            margin-top: 15px;
         }
 
-        /* --- HORARIOS Y SERVICIO --- */
-        .footer-info { background: var(--cat-black); color: var(--white); padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; border-top: 4px solid var(--cat-yellow); }
-        .info-box h3 { color: var(--cat-yellow); font-family: 'Archivo Black', sans-serif; text-transform: uppercase; margin-bottom: 15px; }
-        .info-box p { font-size: 1.1rem; margin: 5px 0; }
-        
-        /* --- BOTÓN FLOTANTE WHATSAPP --- */
-        .whatsapp-float { 
+        /* --- HORARIOS LARGOS --- */
+        footer { background: #000; color: #fff; padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; border-top: 5px solid var(--cat-yellow); }
+        .footer-box h3 { color: var(--cat-yellow); font-family: 'Archivo Black', sans-serif; text-transform: uppercase; margin-bottom: 15px; }
+        .footer-box p { font-size: 1.1rem; margin: 8px 0; }
+
+        /* --- BOTÓN FLOTANTE --- */
+        .ws-float { 
             position: fixed; 
-            bottom: 20px; 
-            right: 20px; 
+            bottom: 25px; 
+            right: 25px; 
             background: #25d366; 
             color: #fff; 
-            padding: 18px 25px; 
+            padding: 15px 25px; 
             border-radius: 50px; 
             font-weight: bold; 
             text-decoration: none; 
@@ -111,114 +103,101 @@
             z-index: 1000; 
             display: flex; 
             align-items: center; 
-            font-size: 1.1rem;
         }
-        .whatsapp-float img { width: 25px; margin-right: 10px; }
-
     </style>
 </head>
 <body>
 
     <header>
-        <img src="https://i.ibb.co/3WfT8Nq/GAP-Metal-Logo.png" alt="G-A-P Renta de Rompedoras Logo" class="header-logo">
+        <img src="https://i.ibb.co/3WfT8Nq/GAP-Metal-Logo.png" alt="G-A-P Renta de Rompedoras" class="logo-img">
+        <h1>G-A-P Renta de Rompedoras</h1>
     </header>
 
-    <section class="section bg-white">
-        <h2>Renta de Rompedoras Profesionales</h2>
-        <p>En G-A-P facilitamos el trabajo pesado de demolición. No solo rentamos máquinas; garantizamos que tu obra avance con equipo de marcas líderes, mantenimiento impecable y logística rápida en Juárez y zona metropolitana.</p>
-    </section>
-
-    <section class="section" style="background: #eee;">
-        <h2>Cobertura de Calidad</h2>
-        <p>Trabajamos exclusivamente con las marcas líderes del mercado para asegurar la máxima potencia y confiabilidad.</p>
-        <div class="brand-pills">
-            <span class="brand-pill" style="color: #d0002f;">MAKITA</span>
-            <span class="brand-pill" style="color: #febd17; background: #000;">DEWALT</span>
-            <span class="brand-pill" style="color: #005691;">BOSCH</span>
-            <span class="brand-pill">EDOEVOM</span>
-        </div>
+    <section class="intro">
+        <h2>¿Quiénes somos?</h2>
+        <p>Somos una <strong>empresa local</strong> dedicada a la renta de maquinaria ligera, comprometidos con el éxito de cada proyecto en nuestra comunidad. En <strong>G-A-P</strong>, nos dedicamos a apoyar a nuestros clientes ofreciendo las mejores rompedoras y marcas del mercado, asegurando potencia, eficiencia y puntualidad en cada entrega.</p>
     </section>
 
     <section class="catalog">
-        <h2>Equipos Disponibles</h2>
-        
-        <div class="grid-catalog">
+        <h2>Nuestros Equipos</h2>
+        <div class="grid">
             
-            <div class="machine-card">
-                <div class="btn-capacidad">8 KG</div>
-                <div class="specs-info">
-                    <div>⚡ <strong>Potencia:</strong> 900 Watts</div>
-                    <div>🔨 <strong>Energía Impacto:</strong> 12 Joules</div>
+            <div class="card">
+                <div class="weight-tag">8 KG</div>
+                <div class="use-case">
+                    <strong>Uso Ideal:</strong>
+                    Ideal para hacer perforaciones en concreto y realizar ranuras precisas en pared.
                 </div>
-                <div class="marca-info">Marcas: Makita / Bosch</div>
-                <a href="https://wa.me/528119988053?text=Deseo%20rentar%20la%20rompedora%20de%208kg" class="btn-rentar">Rentar / Disponibilidad</a>
+                <div class="brands-list">Makita | Bosch | DeWalt</div>
+                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20rompedora%20de%208kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
-            <div class="machine-card">
-                <div class="btn-capacidad">12 KG</div>
-                <div class="specs-info">
-                    <div>⚡ <strong>Potencia:</strong> 1500 Watts</div>
-                    <div>🔨 <strong>Energía Impacto:</strong> 25 Joules</div>
+            <div class="card">
+                <div class="weight-tag">12 KG</div>
+                <div class="use-case">
+                    <strong>Uso Ideal:</strong>
+                    Ideal para quitar vitro piso, azulejos y trabajos de remodelación ligera.
                 </div>
-                <div class="marca-info">Marcas: DeWalt / Makita</div>
-                <a href="https://wa.me/528119988053?text=Deseo%20rentar%20la%20rompedora%20de%2012kg" class="btn-rentar">Rentar / Disponibilidad</a>
+                <div class="brands-list">DeWalt | Makita | Edoevom</div>
+                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20rompedora%20de%2012kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
-            <div class="machine-card" style="border-color: var(--cat-yellow);">
-                <div class="btn-capacidad">15 KG</div>
-                <div class="specs-info">
-                    <div>⚡ <strong>Potencia:</strong> 1750 Watts</div>
-                    <div>🔨 <strong>Energía Impacto:</strong> 45 Joules</div>
+            <div class="card">
+                <div class="weight-tag">15 KG</div>
+                <div class="use-case">
+                    <strong>Uso Ideal:</strong>
+                    Ideal para demoler pared, muros, vigas y trabajos en contra cimiento.
                 </div>
-                <div class="marca-info">Marcas: Makita / Bosch / DeWalt</div>
-                <a href="https://wa.me/528119988053?text=Deseo%20rentar%20la%20rompedora%20de%2015kg" class="btn-rentar">Rentar / Disponibilidad</a>
+                <div class="brands-list">Makita | Bosch | DeWalt</div>
+                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20rompedora%20de%2015kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
-            <div class="machine-card">
-                <div class="btn-capacidad">25 KG</div>
-                <div class="specs-info">
-                    <div>⚡ <strong>Potencia:</strong> 2100 Watts</div>
-                    <div>🔨 <strong>Energía Impacto:</strong> 62 Joules</div>
+            <div class="card">
+                <div class="weight-tag">25 KG</div>
+                <div class="use-case">
+                    <strong>Uso Ideal:</strong>
+                    Ideal para demoler piso, banquetas, losas y preparaciones para drenaje o zapatas.
                 </div>
-                <div class="marca-info">Marcas: Edoevom / DeWalt</div>
-                <a href="https://wa.me/528119988053?text=Deseo%20rentar%20la%20rompedora%20de%2025kg" class="btn-rentar">Rentar / Disponibilidad</a>
+                <div class="brands-list">Edoevom | DeWalt | Makita</div>
+                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20rompedora%20de%2025kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
-            <div class="machine-card">
-                <div class="btn-capacidad">27 KG</div>
-                <div class="specs-info">
-                    <div>⚡ <strong>Potencia:</strong> 2200 Watts</div>
-                    <div>🔨 <strong>Energía Impacto:</strong> 75 Joules</div>
+            <div class="card">
+                <div class="weight-tag">27 KG</div>
+                <div class="use-case">
+                    <strong>Uso Ideal:</strong>
+                    Potencia máxima para demoler asfalto, piedras y preparación profunda para zapatas.
                 </div>
-                <div class="marca-info">Marcas: Bosch / Makita / DeWalt</div>
-                <a href="https://wa.me/528119988053?text=Deseo%20rentar%20la%20rompedora%20de%2027kg" class="btn-rentar">Rentar / Disponibilidad</a>
+                <div class="brands-list">Bosch | Makita | DeWalt</div>
+                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20rompedora%20de%2027kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
-        </div>
-
-        <div style="text-align: center;">
-            <a href="https://wa.me/528119988053?text=Deseo%20rentar%20un%20vibrador%20de%20concreto" class="btn-vibradores">Vibradores de Concreto</a>
         </div>
     </section>
 
-    <section class="footer-info">
-        <div class="info-box">
-            <h3>HORARIOS</h3>
+    <section class="extra-action">
+        <h2>¿Necesitas vibrar concreto?</h2>
+        <p>Contamos con equipo profesional para garantizar la calidad de tu vaciado.</p>
+        <a href="https://wa.me/528119988053?text=Me%20interesa%20rentar%20un%20vibrador%20de%20concreto" class="btn-vibrador">Rentar Vibrador Aquí</a>
+    </section>
+
+    <footer>
+        <div class="footer-box">
+            <h3>Nuestros Horarios</h3>
             <p><strong>Lunes a Viernes:</strong> 8:00 AM - 8:00 PM</p>
             <p><strong>Sábado:</strong> 9:00 AM - 5:00 PM</p>
             <p><strong>Domingo:</strong> 9:00 AM - 2:00 PM</p>
         </div>
-        <div class="info-box">
-            <h3>LOGÍSTICA Y CONTACTO</h3>
-            <p>📞 WhatsApp: 811-998-80-53</p>
-            <p>🚚 Flete disponible en Juárez y Área Metropolitana.</p>
-            <p>Ubicación Central: Juárez, N.L.</p>
+        <div class="footer-box">
+            <h3>Atención Directa</h3>
+            <p><strong>WhatsApp:</strong> 811-998-80-53</p>
+            <p><strong>Ubicación:</strong> Juárez, Nuevo León</p>
+            <p>Servicio de flete en Juárez y Área Metropolitana.</p>
         </div>
-    </section>
+    </footer>
 
-    <a href="https://wa.me/528119988053?text=Hola%20G-A-P,%20necesito%20cotizar%20maquinaria" class="whatsapp-float">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon">
-        Cotizar Aquí
+    <a href="https://wa.me/528119988053" class="ws-float">
+        💬 Cotizar por WhatsApp
     </a>
 
 </body>
