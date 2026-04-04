@@ -3,110 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAP Renta de Rompedoras | Juárez NL</title>
+    <title>G-A-P | Renta de Rompedoras de Concreto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Paleta de colores GAP / Caterpillar */
+        /* Paleta de Colores Caterpillar */
         :root {
             --cat-yellow: #FFCD00;
-            --gap-black: #000000;
-            --gap-red: #FF0000;
-            --bg-gray: #f8f9fa;
+            --cat-black: #191919;
+            --cat-red: #E31212;
+            --white: #FFFFFF;
         }
 
         body {
-            font-family: 'Arial Black', Gadget, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            background-color: var(--bg-gray);
-            color: var(--gap-black);
+            padding: 0;
+            line-height: 1.6;
+            color: var(--cat-black);
+            background-color: #f4f4f4;
         }
 
-        /* Logotipo Original solicitado */
+        /* LOGOTIPO G-A-P */
         header {
-            background-color: #ffffff;
-            padding: 25px 15px;
+            background-color: var(--cat-yellow);
             text-align: center;
-            border-bottom: 8px solid var(--cat-yellow);
+            padding: 20px 0;
+            border-bottom: 5px solid var(--cat-black);
         }
 
-        .logo-container {
-            font-size: 2.2rem;
-            display: inline-block;
+        .logo-container h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--cat-black);
+            letter-spacing: 5px;
         }
 
-        .gap-text { color: var(--gap-black); }
-        .separator { color: var(--gap-red); margin: 0 10px; }
-        .renta-text { color: var(--gap-black); font-size: 1.5rem; text-transform: uppercase; }
-
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
+        .logo-container h1 span {
+            color: var(--cat-red);
         }
 
-        /* Tarjeta de Equipo */
-        .card-maquinaria {
-            background: white;
-            border: 2px solid #ddd;
-            border-left: 12px solid var(--cat-yellow);
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .card-maquinaria h2 {
-            margin-top: 0;
-            color: var(--gap-black);
-            border-bottom: 2px solid var(--cat-yellow);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .descripcion {
-            font-family: Arial, sans-serif;
-            font-size: 1.1rem;
-            margin: 15px 0;
-        }
-
-        /* Sección de Marcas Específicas */
-        .marcas-seccion {
-            background-color: #eeeeee;
-            padding: 12px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 0.95rem;
-            color: #444;
-            margin: 15px 0;
-            text-align: center;
-        }
-
-        .marcas-resaltadas {
-            color: var(--gap-red);
-            letter-spacing: 1px;
-        }
-
-        /* Botón WhatsApp */
-        .btn-contacto {
-            display: block;
-            background-color: #25D366;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            text-decoration: none;
+        .sub-logo {
             font-size: 1.2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: -10px;
+            display: block;
+        }
+
+        /* SECCIONES */
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .brands-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            background: #fff;
+            padding: 20px;
             border-radius: 8px;
+        }
+
+        .brand { font-weight: bold; font-size: 1.2rem; color: #555; }
+
+        /* TABLA TÉCNICA */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .specs-table th {
+            background-color: var(--cat-black);
+            color: var(--cat-yellow);
+            padding: 15px;
+        }
+
+        .specs-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+
+        .specs-table tr:nth-child(even) { background-color: #f9f9f9; }
+
+        /* BANNER DE VALOR */
+        .value-banner {
+            background-color: var(--cat-black);
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .value-banner h2 { color: var(--cat-yellow); }
+
+        /* BOTONES */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
             transition: 0.3s;
         }
 
-        .btn-contacto:hover {
-            background-color: #128C7E;
-            transform: scale(1.02);
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
         }
 
+        .btn-google {
+            background-color: white;
+            color: #4285F4;
+            border: 2px solid #4285F4;
+        }
+
+        .btn:hover { transform: scale(1.05); }
+
         footer {
-            text-align: center;
+            background: var(--cat-black);
+            color: #777;
             padding: 20px;
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 0.8rem;
         }
     </style>
 </head>
@@ -114,30 +139,60 @@
 
 <header>
     <div class="logo-container">
-        <span class="gap-text">GAP</span>
-        <span class="separator">|</span>
-        <span class="renta-text">Renta de Rompedoras</span>
+        <h1>G<span>-</span>A<span>-</span>P</h1>
+        <span class="sub-logo">renta de rompedoras</span>
     </div>
 </header>
 
-<div class="container">
-    <div class="card-maquinaria">
-        <h2>Rompedora de Concreto</h2>
-        <p class="descripcion">Contamos con equipo profesional de alta potencia para demolición en obras de construcción y remodelación. Listas para trabajar en Juárez y todo Nuevo León.</p>
-        
-        <div class="marcas-seccion">
-            MARCAS DISPONIBLES: <span class="marcas-resaltadas">MAKITA | DEWALT | BOSCH | EDOEVOM</span>
-        </div>
-
-        <a href="https://wa.me/521XXXXXXXXXX" class="btn-contacto">
-            SOLICITAR RENTA POR WHATSAPP
-        </a>
+<section>
+    <h2>Manejamos las mejores marcas</h2>
+    <div class="brands-container">
+        <div class="brand">MAKITA</div>
+        <div class="brand">DEWALT</div>
+        <div class="brand">BOSCH</div>
+        <div class="brand">EDOEVOM</div>
     </div>
+    <p><strong>Manejamos las mejores marcas directamente a tu obra.</strong></p>
+</section>
 
-    </div>
+<section class="value-banner">
+    <h2>Tu mejor aliado en demolición</h2>
+    <p>Servicio profesional en: <strong>Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey.</strong></p>
+</section>
+
+<section>
+    <h3>Especificaciones de Nuestros Equipos</h3>
+    <table class="specs-table">
+        <thead>
+            <tr>
+                <th>Peso</th>
+                <th>Potencia</th>
+                <th>Impacto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>8 kg</td><td>720 Watts</td><td>6 Joules</td></tr>
+            <tr><td>12 kg</td><td>960 Watts</td><td>12 Joules</td></tr>
+            <tr><td>15 kg</td><td>1200 Watts</td><td>25 Joules</td></tr>
+            <tr><td>25 kg</td><td>1800 Watts</td><td>60 Joules</td></tr>
+            <tr><td>27 kg</td><td>2200 Watts</td><td>70 Joules</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h3>¡Cotiza ahora mismo!</h3>
+    <a href="https://wa.me/528119988053" class="btn btn-whatsapp">
+        <i class="fab fa-whatsapp"></i> 811-998-80-53
+    </a>
+    <br>
+    <a href="#" class="btn btn-google">
+        <i class="fab fa-google"></i> ¡Califica nuestro servicio en Google!
+    </a>
+</section>
 
 <footer>
-    &copy; 2026 GAP Renta de Rompedoras - Juárez, N.L.
+    &copy; 2026 GAP Renta de Rompedoras - Juárez, Nuevo León.
 </footer>
 
 </body>
