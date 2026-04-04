@@ -3,205 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAP - Renta de Rompedoras de Concreto</title>
+    <title>GAP | Renta de Rompedoras de Concreto en Monterrey</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --amarillo-cat: #FFCC00;
-            --negro-industrial: #1a1a1a;
-            --gris-oscuro: #333;
-            --blanco: #ffffff;
+            --cat-yellow: #FDB913;
+            --industrial-black: #1A1A1A;
+            --steel-gray: #333333;
+            --construction-white: #FFFFFF;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial Black', Gadget, sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--negro-industrial);
-            line-height: 1.6;
+            background-color: var(--construction-white);
+            color: var(--industrial-black);
         }
 
-        /* Header y Logotipo */
+        /* Header & Logo */
         header {
-            background-color: var(--negro-industrial);
-            color: var(--amarillo-cat);
-            padding: 1rem 0;
+            background-color: var(--industrial-black);
+            color: var(--cat-yellow);
+            padding: 25px 0;
             text-align: center;
-            border-bottom: 5px solid var(--amarillo-cat);
+            border-bottom: 10px solid var(--cat-yellow);
         }
 
-        .logo h1 {
+        .logo-container h1 {
             margin: 0;
-            font-size: 3rem;
-            letter-spacing: 5px;
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: -2px;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        /* Servicios y Cobertura */
-        .cobertura {
-            background: var(--amarillo-cat);
-            padding: 10px;
+        .tagline {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
             font-weight: bold;
-            text-align: center;
         }
 
-        /* Botones de Maquinaria */
-        .maquinaria-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px;
-            max-width: 1200px;
+        /* Cobertura Strip */
+        .cobertura {
+            background: var(--cat-yellow);
+            color: var(--industrial-black);
+            padding: 15px;
+            text-align: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #000;
+        }
+
+        /* Secciones */
+        section {
+            padding: 50px 20px;
+            max-width: 1100px;
             margin: auto;
         }
 
+        h2 {
+            background: var(--industrial-black);
+            color: var(--cat-yellow);
+            display: inline-block;
+            padding: 10px 25px;
+            text-transform: uppercase;
+            transform: skew(-10deg);
+            margin-bottom: 30px;
+        }
+
+        /* Grid de Maquinaria */
+        .maquinaria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
         .card {
-            border: 2px solid var(--negro-industrial);
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
+            border: 4px solid var(--industrial-black);
+            padding: 0;
+            position: relative;
             transition: 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-color: var(--cat-yellow);
+            transform: scale(1.02);
         }
 
-        .btn-renta {
-            background: var(--negro-industrial);
-            color: var(--amarillo-cat);
-            padding: 10px 20px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        /* Secciones de Texto */
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .marcas {
-            background: #f4f4f4;
+        .card-header {
+            background: var(--industrial-black);
+            color: var(--cat-yellow);
+            padding: 15px;
+            font-size: 1.5rem;
             text-align: center;
+        }
+
+        .card-body {
             padding: 20px;
-            font-weight: bold;
+            background: #f9f9f9;
         }
 
-        /* Botón WhatsApp Flotante */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        .specs {
+            list-style: none;
+            padding: 0;
+            font-size: 0.9rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .specs li {
+            margin-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Botones de Renta */
+        .btn-renta {
+            display: block;
+            background: var(--cat-yellow);
+            color: var(--industrial-black);
             text-align: center;
-            font-size: 35px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-top: 15px;
+        }
+
+        /* Marcas */
+        .marcas-container {
+            background: #eee;
+            padding: 30px;
+            text-align: center;
+            border-top: 5px solid var(--cat-yellow);
+        }
+
+        .brand-list {
+            font-size: 2rem;
+            color: #555;
+            word-spacing: 30px;
+        }
+
+        /* Misión y Valores */
+        .info-empresa {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* WhatsApp Flotante */
+        .float-ws {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            z-index: 1000;
             text-decoration: none;
         }
 
-        h2 { border-left: 5px solid var(--amarillo-cat); padding-left: 15px; }
+        footer {
+            background: var(--industrial-black);
+            color: #777;
+            text-align: center;
+            padding: 40px;
+            font-family: 'Segoe UI', sans-serif;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">
+        <div class="logo-container">
             <h1>G-A-P</h1>
-            <p>RENTA DE ROMPEDORAS</p>
+            <div class="tagline">EQUIPO PROFESIONAL DE DEMOLICIÓN</div>
         </div>
     </header>
 
     <div class="cobertura">
-        SERVICIO EN: JUÁREZ | GUADALUPE | APODACA | SAN NICOLÁS | MONTERREY
-    </div>
-
-    <section class="hero">
-        <h1>Tu mejor aliado en demolición</h1>
-        <p>Equipos profesionales para trabajos pesados y precisos.</p>
-    </section>
-
-    <section>
-        <h2>¿Quiénes Somos?</h2>
-        <p>En <strong>GAP</strong> nos dedicamos a facilitar soluciones de demolición mediante la renta de maquinaria de alto rendimiento. Somos especialistas en brindar el equipo adecuado para que tus proyectos no se detengan.</p>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 20px;">
-            <div>
-                <h3>Misión</h3>
-                <p>Proveer herramientas de demolición eficientes que garanticen el éxito de nuestros clientes.</p>
-            </div>
-            <div>
-                <h3>Visión</h3>
-                <p>Ser el referente número uno en renta de rompedoras en todo el estado de Nuevo León.</p>
-            </div>
-            <div>
-                <h3>Valores</h3>
-                <p>Puntualidad, Calidad, Honestidad y Compromiso en cada entrega.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="marcas">
-        TRABAJAMOS CON LAS MEJORES MARCAS: MAKITA • DEWALT • BOSCH • EDOEVOM
+        <i class="fas fa-truck"></i> SERVICIO EN: JUÁREZ | GUADALUPE | APODACA | SAN NICOLÁS | MONTERREY
     </div>
 
     <section>
         <h2>Nuestros Equipos</h2>
         <div class="maquinaria-grid">
             <div class="card">
-                <h3>Rompedora 8kg - 12kg</h3>
-                <p>Ideal para: Ranuras en pared, demolición de muros y vigas.</p>
-                <a href="https://wa.me/528119988053" class="btn-renta">Cotizar Ahora</a>
+                <div class="card-header">8kg a 12kg</div>
+                <div class="card-body">
+                    <ul class="specs">
+                        <li><strong>Uso:</strong> Ranuras en pared, demolición de muros.</li>
+                        <li><strong>Ideal para:</strong> Vigas y orificios en concreto.</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053?text=Cotizar%208-12kg" class="btn-renta">Cotizar Renta</a>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Rompedora 15kg</h3>
-                <p>Ideal para: Pisos, banquetas y preparación para drenaje.</p>
-                <a href="https://wa.me/528119988053" class="btn-renta">Cotizar Ahora</a>
+                <div class="card-header">15kg Profesional</div>
+                <div class="card-body">
+                    <ul class="specs">
+                        <li><strong>Uso:</strong> Pisos, banquetas y losas delgadas.</li>
+                        <li><strong>Ideal para:</strong> Preparación de drenaje.</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053?text=Cotizar%2015kg" class="btn-renta">Cotizar Renta</a>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Rompedora 25kg - 27kg</h3>
-                <p>Uso rudo: Losas gruesas, contra cimientos y zapatas.</p>
-                <a href="https://wa.me/528119988053" class="btn-renta">Cotizar Ahora</a>
+                <div class="card-header">25kg a 27kg</div>
+                <div class="card-body">
+                    <ul class="specs">
+                        <li><strong>Uso:</strong> Contra cimientos, zapatas y escaleras.</li>
+                        <li><strong>Ideal para:</strong> Demolición pesada de concreto.</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053?text=Cotizar%2025-27kg" class="btn-renta">Cotizar Renta</a>
+                </div>
             </div>
         </div>
     </section>
 
+    <div class="marcas-container">
+        <p style="font-weight: bold; text-transform: uppercase; color: #333;">Equipos de Alto Rendimiento:</p>
+        <div class="brand-list">
+            MAKITA • DEWALT • BOSCH • EDOEVOM
+        </div>
+    </div>
+
     <section>
-        <h2>¿Por qué contratarnos?</h2>
-        <ul>
-            <li><strong>Versatilidad:</strong> Equipos ideales para orificios en concreto, escaleras y preparación de zapatas.</li>
-            <li><strong>Marcas Líderes:</strong> Solo usamos equipos que no te fallan.</li>
-            <li><strong>Atención Local:</strong> Conocemos Juárez y el área metropolitana, garantizando entregas rápidas.</li>
-        </ul>
+        <h2>¿Quiénes Somos?</h2>
+        <div class="info-empresa">
+            <div>
+                <p><strong>GAP</strong> es tu mejor aliado para la demolición. Nos dedicamos a la renta de maquinaria de alta calidad para proyectos de construcción y remodelación en todo el área metropolitana de Monterrey.</p>
+                <p><strong>Misión:</strong> Facilitar el trabajo de demolición con equipos potentes y confiables.</p>
+                <p><strong>Visión:</strong> Ser el servicio de renta más rápido y eficiente de Nuevo León.</p>
+            </div>
+            <div>
+                <h3>¿Por qué contratarnos?</h3>
+                <ul class="specs">
+                    <li>Entrega inmediata y puntual.</li>
+                    <li>Marcas líderes (Makita, DeWalt, Bosch).</li>
+                    <li>Asesoría técnica para tu proyecto.</li>
+                    <li>Mantenimiento garantizado en cada equipo.</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
-    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20una%20rompedora" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20necesito%20información%20sobre%20la%20renta%20de%20rompedoras" class="float-ws" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <footer style="background: #111; color: white; text-align: center; padding: 20px;">
-        <p>&copy; 2026 GAP Renta de Rompedoras | WhatsApp: 811-998-80-53</p>
+    <footer>
+        <p>GAP Renta de Rompedoras de Concreto - Monterrey, Nuevo León</p>
+        <p>WhatsApp: 811-998-80-53 | Expertos en Demolición</p>
     </footer>
 
 </body>
