@@ -3,231 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAP | Renta de Rompedoras de Concreto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>G-A-P | Renta de Rompedoras de Concreto</title>
     <style>
         :root {
-            --gap-yellow: #FFD700;
-            --gap-black: #000000;
-            --gap-gray: #121212;
-            --gap-white: #FFFFFF;
+            --primary-yellow: #FFD200; /* Estilo DeWalt/CAT */
+            --makita-teal: #0093A2;
+            --bosch-red: #E20015;
+            --dark-grey: #333;
+            --light-grey: #f4f4f4;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--gap-black); color: var(--gap-white); line-height: 1.5; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: #333;
+        }
 
-        /* --- ENCABEZADO CENTRADO --- */
+        /* --- ENCABEZADO Y LOGOTIPO --- */
         header {
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--gap-yellow);
-            background: linear-gradient(to bottom, #1a1a1a, #000);
-        }
-
-        .brand-logo {
-            font-family: 'Archivo', sans-serif;
-            font-size: 5rem;
-            color: var(--gap-yellow);
-            letter-spacing: -2px;
-            margin-bottom: 5px;
-        }
-
-        .brand-tagline {
-            font-size: 1.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            color: var(--gap-white);
-            margin-bottom: 30px;
-        }
-
-        .btn-whatsapp {
-            background-color: #25D366;
+            background-color: var(--dark-grey);
             color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 1.2rem;
-            display: inline-flex;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+            border-bottom: 5px solid var(--primary-yellow);
         }
 
-        .btn-whatsapp:hover { transform: scale(1.05); background-color: #1eb954; }
+        .logo h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+        }
 
-        /* --- HORARIOS --- */
-        .horarios-bar {
-            background: var(--gap-yellow);
-            color: var(--gap-black);
-            padding: 15px;
+        .logo span {
+            color: var(--primary-yellow);
+        }
+
+        .header-contact {
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x400') center/cover;
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; color: var(--primary-yellow); font-weight: bold; }
+
+        /* --- MARCAS --- */
+        .brands {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            font-weight: 900;
-            font-size: 0.85rem;
-            flex-wrap: wrap;
-            text-transform: uppercase;
-        }
-
-        /* --- SERVICIOS Y EQUIPOS --- */
-        section { padding: 80px 10%; }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-            color: var(--gap-yellow);
-        }
-
-        .grid-servicios {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
+            padding: 20px;
+            background: #fff;
+            flex-wrap: wrap;
         }
 
-        .card-service {
-            background: var(--gap-gray);
-            border: 1px solid #222;
-            padding: 30px;
-            transition: 0.3s;
+        .brand-box {
+            padding: 10px 20px;
+            font-weight: bold;
+            color: white;
+            border-radius: 4px;
         }
 
-        .card-service:hover { border-color: var(--gap-yellow); background: #1a1a1a; }
+        .makita { background-color: var(--makita-teal); }
+        .dewalt { background-color: var(--primary-yellow); color: black; }
+        .bosch { background-color: var(--bosch-red); }
+        .edoevom { background-color: #000; }
 
-        .card-service h3 { color: var(--gap-yellow); margin-bottom: 15px; font-size: 1.3rem; text-transform: uppercase; }
-        
-        .list-items { list-style: none; color: #bbb; font-size: 0.95rem; }
-        .list-items li { margin-bottom: 8px; position: relative; padding-left: 20px; }
-        .list-items li::before { content: '•'; position: absolute; left: 0; color: var(--gap-yellow); }
+        /* --- EQUIPOS Y SERVICIOS --- */
+        .inventory {
+            padding: 3rem 5%;
+            background-color: var(--light-grey);
+        }
 
-        /* --- CORPORATIVO --- */
-        .corp-section { background: var(--gap-white); color: var(--gap-black); }
-        
-        .corp-grid {
+        .grid-equipos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-left: 5px solid var(--primary-yellow);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* --- INFO CORPORATIVA --- */
+        .about {
+            padding: 3rem 5%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
+            gap: 40px;
         }
 
-        .corp-text h2 { font-size: 2.5rem; margin-bottom: 20px; font-family: 'Archivo'; text-transform: uppercase; }
-        .corp-text p { margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; }
+        /* --- HORARIOS Y PIE --- */
+        footer {
+            background: var(--dark-grey);
+            color: white;
+            padding: 2rem 5%;
+        }
 
-        .mvv-item { margin-bottom: 25px; border-left: 4px solid var(--gap-yellow); padding-left: 20px; }
-        .mvv-item h4 { font-weight: 900; text-transform: uppercase; margin-bottom: 5px; }
-
-        /* --- COBERTURA --- */
-        .cobertura {
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             text-align: center;
-            padding: 60px 20px;
-            background: var(--gap-yellow);
-            color: var(--gap-black);
+            border-top: 1px solid #555;
+            padding-top: 20px;
         }
 
-        .cobertura h3 { font-size: 2rem; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; }
-        .cobertura p { font-size: 1.2rem; font-weight: 700; letter-spacing: 1px; }
-
-        /* --- FOOTER --- */
-        footer { padding: 40px; text-align: center; font-size: 0.8rem; color: #555; }
-
-        @media (max-width: 768px) {
-            .brand-logo { font-size: 3.5rem; }
-            .corp-grid { grid-template-columns: 1fr; }
-            .horarios-bar { flex-direction: column; gap: 5px; text-align: center; }
-        }
+        h3 { color: var(--dark-grey); border-bottom: 2px solid var(--primary-yellow); display: inline-block; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="brand-logo">GAP</div>
-        <div class="brand-tagline">RENTA DE ROMPEDORAS DE CONCRETO</div>
-        <a href="https://wa.me/528119988053" class="btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> 811-998-80-53
-        </a>
+        <div class="logo">
+            <h1>G-<span>A</span>-P</h1>
+        </div>
+        <div class="header-contact">
+            <strong>Especialistas en renta de rompedoras de concreto</strong>
+        </div>
     </header>
 
-    <div class="horarios-bar">
-        <span><i class="far fa-clock"></i> LUN - VIE: 8 AM - 8 PM</span>
-        <span><i class="far fa-clock"></i> SÁB: 9 AM - 5 PM</span>
-        <span><i class="far fa-clock"></i> DOM: 9 AM - 2 PM</span>
-    </div>
+    <section class="hero">
+        <h2>Renta de Rompedoras</h2>
+        <p>Potencia y eficiencia para tu obra</p>
+        <div class="brands">
+            <div class="brand-box makita">MAKITA</div>
+            <div class="brand-box dewalt">DEWALT</div>
+            <div class="brand-box bosch">BOSCH</div>
+            <div class="brand-box edoevom">EDOEVOM</div>
+        </div>
+    </section>
 
-    <section>
-        <h2 class="section-title">Especialistas en Demolición</h2>
-        <div class="grid-servicios">
+    <section class="inventory">
+        <h3>Nuestros Equipos</h3>
+        <p>Contamos con rompedoras de: <strong>8kg, 12kg, 15kg, 25kg y 27kg</strong></p>
+        
+        <div class="grid-equipos">
+            <div class="card">
+                <h4>Instalaciones</h4>
+                <p>Ideales para hacer orificios en concreto y ranuras en pared.</p>
+            </div>
+            <div class="card">
+                <h4>Demolición Estructural</h4>
+                <p>Muros, paredes, vigas y contra cimientos.</p>
+            </div>
+            <div class="card">
+                <h4>Obra Civil</h4>
+                <p>Demolición de escaleras, pisos, banquetas y losas.</p>
+            </div>
+            <div class="card">
+                <h4>Cimentación</h4>
+                <p>Preparación para drenaje y zapatas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div>
+            <h3>¿Quiénes somos?</h3>
+            <p>En <strong>G-A-P</strong> nos dedicamos a facilitar el trabajo de construcción y demolición mediante la renta de equipos de alta calidad. Somos especialistas enfocados en brindar soluciones rápidas para contratistas y particulares.</p>
             
-            <div class="card-service">
-                <h3>Residencial y Muro</h3>
-                <ul class="list-items">
-                    <li>Retiro de Vitropiso y Azulejo</li>
-                    <li>Ranuras en Pared</li>
-                    <li>Demolición de Muros y Paredes</li>
-                    <li>Trabajos en Vigas</li>
-                </ul>
-            </div>
-
-            <div class="card-service">
-                <h3>Infraestructura</h3>
-                <ul class="list-items">
-                    <li>Demolición de Asfalto</li>
-                    <li>Ruptura de Piedras</li>
-                    <li>Preparación para Drenaje</li>
-                    <li>Demolición de Banquetas</li>
-                </ul>
-            </div>
-
-            <div class="card-service">
-                <h3>Cimentación Pesada</h3>
-                <ul class="list-items">
-                    <li>Contra Cimientos</li>
-                    <li>Preparación para Zapatas</li>
-                    <li>Demolición de Pisos y Losas</li>
-                    <li>Vibrado Profesional de Concreto</li>
-                </ul>
-            </div>
-
+            <h3>Misión</h3>
+            <p>Proporcionar las herramientas más confiables del mercado para asegurar que cada proyecto de nuestros clientes se realice con la mayor eficiencia posible.</p>
+        </div>
+        <div>
+            <h3>Visión</h3>
+            <p>Ser el referente número uno en renta de equipo ligero para demolición, destacados por nuestro servicio y mantenimiento preventivo.</p>
+            
+            <h3>Valores</h3>
+            <ul>
+                <li><strong>Responsabilidad:</strong> Entrega puntual de equipos.</li>
+                <li><strong>Calidad:</strong> Solo las mejores marcas (Makita, DeWalt, Bosch).</li>
+                <li><strong>Servicio:</strong> Asesoría técnica para tu proyecto.</li>
+            </ul>
         </div>
     </section>
-
-    <section class="corp-section">
-        <div class="corp-grid">
-            <div class="corp-text">
-                <h2>Quiénes Somos</h2>
-                <p>En <strong>GAP</strong>, representamos la fuerza y la puntualidad que tu obra necesita. Somos una <strong>empresa local</strong> de Juárez, N.L., comprometida con ser tus aliados estratégicos en cada proyecto de demolición.</p>
-                <p>Nuestra identidad se basa en la confianza y el respaldo técnico. Rentamos equipos de alto rendimiento (8kg a 27kg) de marcas líderes como Makita, DeWalt, Bosch y Edoevom.</p>
-            </div>
-
-            <div class="corp-text">
-                <div class="mvv-item">
-                    <h4>Misión</h4>
-                    <p>Facilitar el trabajo de demolición y construcción mediante equipo de vanguardia y un servicio de entrega excepcional.</p>
-                </div>
-                <div class="mvv-item">
-                    <h4>Visión</h4>
-                    <p>Ser el referente número uno en renta de maquinaria ligera en Nuevo León, reconocidos por nuestra eficiencia y trato humano.</p>
-                </div>
-                <div class="mvv-item">
-                    <h4>Valores</h4>
-                    <p>Honestidad, Puntualidad, Calidad y Compromiso con el éxito de tu obra.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="cobertura">
-        <h3>Área de Servicio</h3>
-        <p>JUÁREZ • GUADALUPE • APODACA • SAN NICOLÁS • MONTERREY</p>
-    </div>
 
     <footer>
-        GAP RENTA DE ROMPEDORAS | TUS ALIADOS EN DEMOLICIÓN | MONTERREY, N.L. &copy; 2026
+        <div style="text-align: center; margin-bottom: 20px;">
+            <h3>Horario de Atención</h3>
+        </div>
+        <div class="schedule-grid">
+            <div>
+                <strong>Lunes a Viernes</strong><br>
+                8:00 AM - 8:00 PM
+            </div>
+            <div>
+                <strong>Sábado</strong><br>
+                9:00 AM - 5:00 PM
+            </div>
+            <div>
+                <strong>Domingo</strong><br>
+                9:00 AM - 2:00 PM
+            </div>
+        </div>
     </footer>
 
 </body>
