@@ -3,150 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAP - Renta de Rompedoras</title>
+    <title>GAP - Renta de Rompedoras de Concreto</title>
     <style>
+        /* Paleta de Colores: Caterpillar Yellow (#FFCD00), Negro (#101010) y Rojo (#D32F2F) */
         :root {
             --cat-yellow: #FFCD00;
-            --black: #000000;
-            --red: #FF0000;
+            --dark-bg: #101010;
+            --accent-red: #D32F2F;
+            --white: #ffffff;
         }
 
         body {
-            background-color: var(--cat-yellow);
-            color: var(--black);
-            font-family: 'Arial Black', Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.4;
+            background-color: var(--white);
+            color: var(--dark-bg);
         }
 
-        .contenedor {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-
+        /* Encabezado Principal */
         header {
-            text-align: center;
-            padding: 40px 0;
-            font-size: 4em;
-            letter-spacing: 5px;
-        }
-
-        .guion { color: var(--red); }
-
-        .seccion {
-            background: rgba(0, 0, 0, 0.05);
-            border: 2px solid var(--black);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            background: var(--black);
+            background-color: var(--dark-bg);
             color: var(--cat-yellow);
-            padding: 10px;
-            margin-top: 0;
-            text-transform: uppercase;
-            font-size: 1.2em;
-            display: inline-block;
-        }
-
-        .equipo-grid {
-            display: grid;
-            gap: 15px;
-        }
-
-        .equipo-card {
-            border-left: 8px solid var(--black);
-            background: rgba(255, 255, 255, 0.3);
-            padding: 15px;
-        }
-
-        .equipo-card h3 { margin-top: 0; color: var(--black); }
-
-        .btn-whatsapp {
-            display: block;
-            background: #25D366;
-            color: white;
+            padding: 40px 20px;
             text-align: center;
+            border-bottom: 8px solid var(--cat-yellow);
+        }
+
+        .brand {
+            font-size: 4rem;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: -2px;
+        }
+
+        .brand span { color: var(--accent-red); }
+
+        /* Sección Hero */
+        .hero {
+            background-color: var(--cat-yellow);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Marcas */
+        .marcas-bar {
+            background: var(--dark-bg);
+            color: white;
             padding: 15px;
-            text-decoration: none;
-            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            text-transform: uppercase;
+        }
+
+        /* Catálogo de Equipos */
+        .catalogo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            border: 2px solid var(--dark-bg);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .card-header {
+            background: var(--dark-bg);
+            color: var(--cat-yellow);
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .card-body {
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        .specs {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+
+        .specs li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Botón WhatsApp Flotante */
+        .btn-ws {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
             border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             margin: 20px 0;
-            border: 2px solid var(--black);
+        }
+
+        /* Horarios y Ubicación */
+        .footer-info {
+            background: #eee;
+            padding: 40px 20px;
+            text-align: center;
         }
 
         footer {
-            text-align: center;
-            font-size: 0.9em;
+            background: var(--dark-bg);
+            color: #777;
             padding: 20px;
-            border-top: 2px solid var(--black);
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            .brand { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="contenedor">
-        <header>
-            G<span class="guion">-</span>A<span class="guion">-</span>P GAP
-        </header>
+    <header>
+        <div class="brand">G<span>-</span>A<span>-</span>P GAP</div>
+    </header>
 
-        <section class="seccion">
-            <h2>Marcas que manejamos</h2>
-            <p><strong>MAKITA • DEWALT • BOSCH • EDOEVOM</strong></p>
-            <p>Somos tu mejor aliado en demolición en <strong>Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey</strong>.</p>
-        </section>
-
-        <a href="https://wa.me/528119988053" class="btn-whatsapp">
-            📲 WhatsApp: 811-998-80-53
-        </a>
-
-        <section class="seccion">
-            <h2>Catálogo de Equipos</h2>
-            <div class="equipo-grid">
-                
-                <div class="equipo-card">
-                    <h3>Rotomartillo 8 kg</h3>
-                    <p>720W | 6 Joules. Ideal para orificios en concreto con brocas.</p>
-                </div>
-
-                <div class="equipo-card">
-                    <h3>Rompedora 12 kg</h3>
-                    <p>960W | 12 Joules. Ideal para quitar vitro y azulejos.</p>
-                </div>
-
-                <div class="equipo-card">
-                    <h3>Rompedora 15 kg</h3>
-                    <p>1100W | 25 Joules. Ideal para demoler pared, muros, vigas o contra cimiento.</p>
-                </div>
-
-                <div class="equipo-card">
-                    <h3>Rompedora 25 kg</h3>
-                    <p>1800W | 60 Joules. Ideal para romper banquetas, pisos, losas y escaleras.</p>
-                </div>
-
-                <div class="equipo-card" style="background: rgba(255, 255, 255, 0.6);">
-                    <h3>Rompedora 27 kg (NUEVA)</h3>
-                    <p><strong>2100W | 70 Joules.</strong> Ideal para preparar zapatas y preparación para drenaje.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="seccion">
-            <h2>Horarios de Atención</h2>
-            <p><strong>Lunes a Viernes:</strong> 8:00 AM - 8:00 PM</p>
-            <p><strong>Sábados:</strong> 9:00 AM - 5:00 PM</p>
-            <p><strong>Domingos:</strong> 9:00 AM - 2:00 PM</p>
-        </section>
-
-        <footer>
-            &copy; 2024 GAP Renta de Rompedoras - Monterrey y Área Metropólitana
-        </footer>
+    <div class="marcas-bar">
+        <span>MAKITA</span> | <span>DEWALT</span> | <span>BOSCH</span> | <span>EDOEVOM</span>
     </div>
+
+    <section class="hero">
+        <h1>Tu mejor aliado en demolición</h1>
+        <p>Servicio profesional en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey. Contamos con rompedoras y vibradores de concreto listos para trabajar.</p>
+        <a href="https://wa.me/528119988053" class="btn-ws">¡Renta ahora por WhatsApp!</a>
+    </section>
+
+    <section class="catalogo">
+        <div class="card">
+            <div class="card-header">Rotomartillo 8 kg</div>
+            <div class="card-body">
+                <ul class="specs">
+                    <li><strong>720 Watts</strong> de potencia</li>
+                    <li><strong>6 Joules</strong> de impacto</li>
+                    <li>Ideal para orificios en concreto</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Rompedora 12 kg</div>
+            <div class="card-body">
+                <ul class="specs">
+                    <li><strong>960 Watts</strong> de potencia</li>
+                    <li><strong>12 Joules</strong> de impacto</li>
+                    <li>Ideal para quitar vitro y azulejos</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Rompedora 15 kg</div>
+            <div class="card-body">
+                <ul class="specs">
+                    <li><strong>1100 Watts</strong> de potencia</li>
+                    <li><strong>25 Joules</strong> de impacto</li>
+                    <li>Ideal para muros, vigas y contracimientos</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Rompedora 25 kg</div>
+            <div class="card-body">
+                <ul class="specs">
+                    <li><strong>1800 Watts</strong> de potencia</li>
+                    <li><strong>60 Joules</strong> de impacto</li>
+                    <li>Ideal para banquetas, pisos y losas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" style="border-color: var(--accent-red);">
+            <div class="card-header" style="background: var(--accent-red);">Rompedora 27 kg ★</div>
+            <div class="card-body">
+                <ul class="specs">
+                    <li><strong>2100 Watts</strong> de potencia</li>
+                    <li><strong>70 Joules</strong> de impacto</li>
+                    <li>Zapatas y preparación para drenaje</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-info">
+        <h3>Horarios de Atención</h3>
+        <p><strong>Lunes a Viernes:</strong> 8:00 AM - 8:00 PM</p>
+        <p><strong>Sábados:</strong> 9:00 AM - 5:00 PM</p>
+        <p><strong>Domingos:</strong> 9:00 AM - 2:00 PM</p>
+        <p>📍 Área de servicio: Monterrey y Zona Metropolitana</p>
+    </div>
+
+    <footer>
+        &copy; 2026 GAP Renta de Rompedoras de Concreto. Todos los derechos reservados.
+    </footer>
 
 </body>
 </html>
