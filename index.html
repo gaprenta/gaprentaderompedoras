@@ -3,372 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAP - Soluciones Profesionales en Demolición | Monterrey</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>G-A-P | Expertos en Rompedoras y Vibradores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-blue: #0A2540; /* Azul Corporativo Profundo */
-            --accent-gold: #C8A064;  /* Dorado Mate Premium */
-            --text-dark: #1F2937;
-            --text-light: #6B7280;
-            --bg-light: #F9FAFB;
-            --white: #FFFFFF;
+            --gap-yellow: #FFD700; /* Amarillo Oro Industrial */
+            --gap-black: #0D0D0D;
+            --gap-dark-gray: #1A1A1A;
+            --gap-white: #F2F2F2;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto Condensed', sans-serif;
             margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            background-color: var(--white);
-            scroll-behavior: smooth;
+            background-color: var(--gap-black);
+            color: var(--gap-white);
+            overflow-x: hidden;
         }
 
-        /* --- Navegación --- */
-        nav {
-            background-color: var(--white);
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-sizing: border-box;
-        }
-
-        .logo-gap {
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--primary-blue);
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 400;
-            font-size: 0.95rem;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-gold);
-        }
-
-        .btn-contact-nav {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .btn-contact-nav:hover {
-            background-color: var(--accent-gold);
-        }
-
-        /* --- Hero Section (Inicio) --- */
-        .hero {
-            background: linear-gradient(135deg, rgba(10,37,64,0.95) 0%, rgba(10,37,64,0.8) 100%), 
-                        url('https://images.unsplash.com/photo-1504307656817-dbbd48d0859a?q=80&w=2000') no-repeat center center;
-            background-size: cover;
-            height: 80vh;
-            color: var(--white);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            margin-top: 70px; /* Espacio para el nav fijo */
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            max-width: 800px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            margin-bottom: 30px;
-            max-width: 600px;
-            opacity: 0.9;
-        }
-
-        /* --- Cobertura Bar --- */
-        .cobertura-bar {
-            background-color: var(--accent-gold);
-            color: var(--primary-blue);
-            padding: 15px;
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 1px;
+        /* --- Logo & Brand Identity --- */
+        h1, h2, .logo-text {
+            font-family: 'Archivo Black', sans-serif;
             text-transform: uppercase;
         }
 
-        /* --- Secciones Generales --- */
-        section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: auto;
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(13,13,13,0.95);
+            border-bottom: 3px solid var(--gap-yellow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: 10px;
+        .logo-text { font-size: 2.5rem; color: var(--gap-yellow); margin: 0; line-height: 1; }
+        .logo-sub { font-size: 0.7rem; letter-spacing: 4px; color: white; display: block; }
+
+        /* --- Hero: El Poder de G-A-P --- */
+        .hero {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            background: linear-gradient(90deg, var(--gap-black) 30%, rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1517089535811-de53325608e6?q=80&w=2000'); /* Imagen industrial de fondo */
+            background-size: cover;
+            background-position: center;
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            font-weight: 300;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero h2 { font-size: 4rem; margin: 0; color: var(--gap-yellow); }
+        .hero p { font-size: 1.5rem; max-width: 600px; margin: 10px 0; font-weight: bold; }
+
+        /* --- Sección de Marcas (Confianza Directa) --- */
+        .brand-bar {
+            background: var(--gap-yellow);
+            color: var(--gap-black);
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-around;
+            font-weight: 900;
+            font-size: 1.2rem;
+            text-transform: uppercase;
         }
 
-        /* --- Equipos (Cards Modernas) --- */
-        .equipos-grid {
+        /* --- Catálogo de Equipos (Protagonistas) --- */
+        .catalog-container {
+            padding: 80px 5%;
+        }
+
+        .section-header {
+            border-left: 8px solid var(--gap-yellow);
+            padding-left: 20px;
+            margin-bottom: 50px;
+        }
+
+        .grid-equipos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 20px;
         }
 
-        .equipo-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            border: 1px solid #eee;
+        .equipment-card {
+            background: var(--gap-dark-gray);
+            border: 1px solid #333;
+            transition: 0.4s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .equipo-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-gold);
+        .equipment-card:hover {
+            border-color: var(--gap-yellow);
+            transform: translateY(-10px);
         }
 
-        .equipo-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
+        .equipment-card img {
             width: 100%;
-            height: 4px;
-            background-color: var(--accent-gold);
-            transform: scaleX(0);
-            transition: 0.3s;
-        }
-
-        .equipo-card:hover::after {
-            transform: scaleX(1);
-        }
-
-        .equipo-icon {
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            margin-bottom: 20px;
-        }
-
-        .equipo-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--primary-blue);
-        }
-
-        .equipo-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            height: 60px; /* Altura fija para alineación */
-        }
-
-        .btn-card {
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-        }
-
-        .btn-card:hover {
-            gap: 12px;
-        }
-
-        /* --- Marcas (Premium) --- */
-        .marcas-section {
-            background-color: var(--bg-light);
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .marcas-logo-grid {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            align-items: center;
+            height: 250px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: 0.5s;
             opacity: 0.6;
-            flex-wrap: wrap;
         }
 
-        .marcas-logo-grid span {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-dark);
+        .equipment-card:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
         }
 
-        /* --- WhatsApp Flotante Moderno --- */
-        .float-ws {
+        .equipment-info {
+            padding: 25px;
+        }
+
+        .weight-tag {
+            background: var(--gap-yellow);
+            color: var(--gap-black);
+            padding: 5px 15px;
+            font-weight: 900;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .equipment-info h3 { margin: 10px 0; font-size: 1.8rem; }
+        .equipment-info p { color: #bbb; font-size: 0.9rem; line-height: 1.4; margin-bottom: 20px; }
+
+        .btn-rentar {
+            display: block;
+            background: transparent;
+            color: var(--gap-yellow);
+            border: 2px solid var(--gap-yellow);
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-rentar:hover {
+            background: var(--gap-yellow);
+            color: var(--gap-black);
+        }
+
+        /* --- Especialización --- */
+        .special-section {
+            background: #000;
+            padding: 60px 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* --- Botón WhatsApp Flotante --- */
+        .ws-link {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: #25d366;
+            background: #25D366;
             color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            border-radius: 12px; /* Estilo más cuadrado/moderno */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            z-index: 2000;
             text-decoration: none;
-            transition: 0.3s;
         }
 
-        .float-ws:hover {
-            transform: scale(1.1);
-        }
-
-        footer {
-            background-color: var(--primary-blue);
-            color: rgba(255,255,255,0.7);
-            padding: 50px 20px;
+        .footer {
+            padding: 50px;
             text-align: center;
-            font-size: 0.9rem;
+            border-top: 1px solid #222;
+            font-size: 0.8rem;
+            color: #555;
         }
 
-        /* Responsive */
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links, .btn-contact-nav { display: none; } /* Simplificación móvil */
-            nav { padding: 15px 20px; }
+            .special-section { grid-template-columns: 1fr; }
+            .hero h2 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo-gap">GAP</a>
-        <div class="nav-links">
-            <a href="#equipos">Equipos</a>
-            <a href="#nosotros">Nosotros</a>
+        <div>
+            <span class="logo-text">G-A-P</span>
+            <span class="logo-sub">RENTA DE MAQUINARIA</span>
         </div>
-        <a href="https://wa.me/528119988053" class="btn-contact-nav">Cotizar Ahora</a>
+        <a href="https://wa.me/528119988053" class="btn-rentar" style="padding: 10px 20px;">WHATSAPP: 811-998-80-53</a>
     </nav>
 
-    <header class="hero">
-        <h1>Renta de Rompedoras Profesionales</h1>
-        <p>Potencia, fiabilidad y entrega inmediata para tus proyectos de construcción en Monterrey.</p>
-        <a href="#equipos" class="btn-contact-nav" style="padding: 15px 30px; font-size: 1rem;">Ver Catálogo</a>
-    </header>
-
-    <div class="cobertura-bar">
-        Servicio Premium en: Juárez | Guadalupe | Apodaca | San Nicolás | Monterrey
+    <div class="brand-bar">
+        <span>MAKITA</span> <span>DEWALT</span> <span>BOSCH</span> <span>EDOEVOM</span>
     </div>
 
-    <div class="marcas-section">
-        <p style="color: var(--text-light); margin-bottom: 20px; font-size: 0.9rem;">Equipos Respaldados por Marcas Líderes</p>
-        <div class="marcas-logo-grid">
-            <span>MAKITA</span>
-            <span>DEWALT</span>
-            <span>BOSCH</span>
-            <span>EDOEVOM</span>
-        </div>
-    </div>
-
-    <section id="equipos">
-        <h2 class="section-title">Nuestro Catálogo</h2>
-        <p class="section-subtitle">Selecciona la potencia adecuada para tu obra. Equipos mantenidos bajo estándares estrictos.</p>
-        
-        <div class="equipos-grid">
-            <div class="equipo-card">
-                <i class="fas fa-hammer equipo-icon"></i>
-                <h3>Serie Ligera (8-12kg)</h3>
-                <p>Precisión para ranuras en pared, demolición de muros y vigas.</p>
-                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20Serie%20Ligera" class="btn-card">Cotizar Renta <i class="fas fa-arrow-right"></i></a>
-            </div>
-
-            <div class="equipo-card">
-                <i class="fas fa-hard-hat equipo-icon"></i>
-                <h3>Serie Media (15kg)</h3>
-                <p>Rendimiento óptimo para pisos, banquetas y preparación de drenaje.</p>
-                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20Serie%20Media" class="btn-card">Cotizar Renta <i class="fas fa-arrow-right"></i></a>
-            </div>
-
-            <div class="equipo-card">
-                <i class="fas fa-vector-square equipo-icon"></i>
-                <h3>Serie Pesada (25-27kg)</h3>
-                <p>Máxima potencia para contra cimientos, losas y zapatas.</p>
-                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20Serie%20Pesada" class="btn-card">Cotizar Renta <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
+    <section class="hero">
+        <h2>POTENCIA PARA TU OBRA</h2>
+        <p>Expertos en Rompedoras de Concreto y Equipo de Demolición en Monterrey y Área Metropolitana.</p>
     </section>
 
-    <section id="nosotros" style="background-color: var(--bg-light); border-radius: 30px; padding: 60px;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
-            <div>
-                <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Tu Aliado Estratégico</h2>
-                <p style="color: var(--text-light); line-height: 1.8;">En GAP, entendemos que el tiempo es dinero en la construcción. No solo rentamos máquinas; ofrecemos fiabilidad garantizada. Nuestro compromiso es entregar equipo de marcas líderes en perfectas condiciones, directo en tu obra en Monterrey y área metropolitana.</p>
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div style="background: var(--white); padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03);">
-                    <i class="fas fa-check-circle" style="color: var(--accent-gold); font-size: 2rem; margin-bottom: 10px;"></i>
-                    <p style="font-weight: 600; margin: 0; color: var(--primary-blue);">Calidad</p>
+    <section class="catalog-container" id="equipos">
+        <div class="section-header">
+            <h1>ROMPE-CONCRETO PROFESIONAL</h1>
+            <p>Selecciona el peso exacto para la eficiencia de tu proyecto.</p>
+        </div>
+
+        <div class="grid-equipos">
+            <div class="equipment-card">
+                <div class="equipment-info">
+                    <span class="weight-tag">8KG - 12KG</span>
+                    <h3>SERIE LIGERA</h3>
+                    <p>Ideal para orificios precisos, ranuras en pared y demolición de muros delgados o vigas.</p>
+                    <a href="https://wa.me/528119988053?text=Cotizar%208-12kg" class="btn-rentar">RESERVAR AHORA</a>
                 </div>
-                <div style="background: var(--white); padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03);">
-                    <i class="fas fa-clock" style="color: var(--accent-gold); font-size: 2rem; margin-bottom: 10px;"></i>
-                    <p style="font-weight: 600; margin: 0; color: var(--primary-blue);">Puntualidad</p>
+            </div>
+
+            <div class="equipment-card">
+                <div class="equipment-info">
+                    <span class="weight-tag">15KG</span>
+                    <h3>SERIE MEDIA</h3>
+                    <p>La favorita para demoler banquetas, pisos de concreto y preparación de tuberías de drenaje.</p>
+                    <a href="https://wa.me/528119988053?text=Cotizar%2015kg" class="btn-rentar">RESERVAR AHORA</a>
+                </div>
+            </div>
+
+            <div class="equipment-card">
+                <div class="equipment-info">
+                    <span class="weight-tag">25KG - 27KG</span>
+                    <h3>SERIE PESADA</h3>
+                    <p>Potencia máxima para demolición de losas gruesas, contra cimientos, zapatas y escaleras reforzadas.</p>
+                    <a href="https://wa.me/528119988053?text=Cotizar%2025-27kg" class="btn-rentar">RESERVAR AHORA</a>
+                </div>
+            </div>
+
+            <div class="equipment-card">
+                <div class="equipment-info" style="border-top: 4px solid var(--gap-yellow);">
+                    <span class="weight-tag">COMPLEMENTO</span>
+                    <h3>VIBRADOR DE CONCRETO</h3>
+                    <p>Asegura la calidad y resistencia de tu colado eliminando burbujas de aire en columnas y losas.</p>
+                    <a href="https://wa.me/528119988053?text=Cotizar%20Vibrador" class="btn-rentar">RESERVAR AHORA</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/528119988053" class="float-ws" target="_blank">
+    <section class="special-section">
+        <div>
+            <h2>¿POR QUÉ G-A-P?</h2>
+            <p>No solo rentamos máquinas, garantizamos que tu obra no se detenga. Ofrecemos equipos de marcas líderes (Makita, Bosch, DeWalt) con mantenimiento preventivo riguroso.</p>
+        </div>
+        <div style="background: var(--gap-dark-gray); padding: 30px; border: 1px solid var(--gap-yellow);">
+            <h3 style="color: var(--gap-yellow);">COBERTURA INMEDIATA</h3>
+            <p>Juárez | Guadalupe | Apodaca | San Nicolás | Monterrey</p>
+            <p><strong>MISIÓN:</strong> Ser tu mejor aliado tecnológico y operativo en demolición.</p>
+        </div>
+    </section>
+
+    <a href="https://wa.me/528119988053" class="ws-link" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <footer>
-        <p style="font-weight: 600; color: var(--white); margin-bottom: 10px;">GAP Soluciones de Demolición</p>
-        <p>Monterrey, Nuevo León | WhatsApp: 811-998-80-53</p>
-        <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.5;">&copy; 2026 GAP. Todos los derechos reservados.</p>
-    </footer>
+    <div class="footer">
+        G-A-P RENTA DE ROMPEDORAS | MONTERREY, N.L. | WHATSAPP 811-998-80-53 <br>
+        EQUIPOS ORIGINALES MAKITA • DEWALT • BOSCH • EDOEVOM
+    </div>
 
 </body>
 </html>
