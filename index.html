@@ -3,154 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Renta de Rompedoras y Vibradores de Concreto</title>
+    <title>GAP Renta de Rompedoras - Juárez, NL</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; background-color: #f9f9f9; }
-        header { background-color: #000; color: #ffcc00; padding: 2.5rem 1rem; text-align: center; border-bottom: 8px solid #ffcc00; }
-        header h1 { margin: 0; font-size: 3rem; letter-spacing: 2px; }
-        
-        .container { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
-        
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-        .feature { background: #fff; padding: 1.5rem; border-left: 5px solid #ffcc00; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .feature h3 { margin-top: 0; color: #000; }
+        /* Paleta de colores oficial */
+        :root {
+            --cat-yellow: #FFCD00; 
+            --gap-black: #1a1a1a;
+            --gap-red: #d32f2f;
+            --light-gray: #f4f4f4;
+        }
 
-        .product-card { border: 1px solid #ddd; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 12px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-        .product-card:hover { transform: translateY(-5px); }
-        .product-card h3 { color: #000; border-bottom: 2px solid #ffcc00; display: inline-block; padding-bottom: 5px; }
-        
-        .specs { display: flex; gap: 15px; font-weight: bold; color: #555; margin: 10px 0; font-size: 0.9rem; }
-        .specs span { background: #eee; padding: 4px 10px; border-radius: 4px; }
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--light-gray);
+            color: #333;
+        }
 
-        .btn { display: inline-block; background: #000; color: #ffcc00; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: all 0.3s; border: 2px solid #000; }
-        .btn:hover { background: #ffcc00; color: #000; }
+        /* Header y Logotipo solicitado */
+        header {
+            background-color: #ffffff;
+            padding: 30px 10px;
+            text-align: center;
+            border-bottom: 6px solid var(--cat-yellow);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-        ul { list-style-type: none; padding: 0; margin-top: 15px; }
-        li { margin-bottom: 0.6rem; position: relative; padding-left: 1.8rem; font-size: 0.95rem; }
-        li::before { content: '⚡'; position: absolute; left: 0; color: #ffcc00; }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
 
-        .requisitos { background: #000; color: #fff; padding: 2rem; border-radius: 12px; margin-top: 3rem; }
-        .requisitos h2 { color: #ffcc00; margin-top: 0; }
+        .logo .gap { color: var(--gap-black); }
+        .logo .separator { color: var(--gap-red); margin: 0 10px; }
+        .logo .renta { color: var(--gap-black); text-transform: uppercase; font-size: 1.8rem; }
 
-        .whatsapp-float { position: fixed; width: 65px; height: 65px; bottom: 25px; right: 25px; background-color: #25d366; border-radius: 50px; text-align: center; z-index: 1000; display: flex; align-items: center; justify-content: center; box-shadow: 2px 4px 15px rgba(0,0,0,0.4); transition: scale 0.3s; }
-        .whatsapp-float:hover { scale: 1.1; }
-        .whatsapp-icon { width: 40px; height: 40px; }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
 
-        footer { background: #222; color: #ccc; padding: 3rem 1rem; text-align: center; margin-top: 3rem; }
-        .cobertura { font-weight: bold; color: #ffcc00; }
+        /* Formato de tarjetas de maquinaria */
+        .maquina-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-left: 8px solid var(--cat-yellow);
+        }
+
+        .maquina-info {
+            padding: 30px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .maquina-info h2 {
+            margin-top: 0;
+            color: var(--gap-black);
+            text-transform: uppercase;
+        }
+
+        /* Sección de marcas solicitadas */
+        .marcas-container {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .marcas-label {
+            font-weight: bold;
+            color: var(--gap-red);
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .marcas-list {
+            font-weight: 700;
+            color: #444;
+            letter-spacing: 1px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--gap-black);
+            color: white;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>G-A-P</h1>
-    <p>⚡ SOLUCIONES EN DEMOLICIÓN Y EQUIPO LIGERO ⚡</p>
+    <div class="logo">
+        <span class="gap">GAP</span>
+        <span class="separator">|</span>
+        <span class="renta">Renta de Rompedoras</span>
+    </div>
 </header>
 
 <div class="container">
-    <div class="feature-grid">
-        <div class="feature">
-            <h3>Mantenimiento Premium</h3>
-            <p>Equipos revisados antes de cada entrega. Sin sorpresas en la obra.</p>
+    <div class="maquina-card">
+        <div class="maquina-info">
+            <h2>Rompedora de Concreto Eléctrica</h2>
+            <p>Equipo de alto rendimiento ideal para demolición de pisos, banquetas y estructuras de concreto. Mantenimiento preventivo garantizado para evitar paros en tu obra.</p>
+            
+            <div class="marcas-container">
+                <span class="marcas-label">Marcas disponibles en catálogo:</span>
+                <span class="marcas-list">MAKITA | DEWALT | BOSCH | EDOEVOM</span>
+            </div>
+
+            <a href="https://wa.me/521XXXXXXXXXX" class="btn-whatsapp">WhatsApp - Cotizar Renta</a>
         </div>
-        <div class="feature">
-            <h3>Marcas Líderes</h3>
-            <p>Solo trabajamos con Makita, Bosch y DeWalt. Potencia garantizada.</p>
-        </div>
-        <div class="feature">
-            <h3>Logística Veloz</h3>
-            <p>Entregas en Monterrey y área metropolitana el mismo día.</p>
-        </div>
     </div>
 
-    <h2>Catálogo de Rompedoras</h2>
-
-    <div class="product-card">
-        <h3>Rompedora de 8 KG</h3>
-        <div class="specs"><span>720 Watts</span><span>6 Joules</span></div>
-        <p>Ideal para trabajos ligeros y precisos en vertical.</p>
-        <ul>
-            <li>Perforaciones con broca de alta precisión.</li>
-            <li>Ranuras para instalaciones eléctricas o plomería.</li>
-        </ul>
-        <a href="https://wa.me/528119988053?text=Hola,%20me%20interesa%20rentar%20la%20rompedora%20de%208kg" class="btn">Cotizar Envío</a>
     </div>
-
-    <div class="product-card">
-        <h3>Rompedora de 12 KG</h3>
-        <div class="specs"><span>960 Watts</span><span>12 Joules</span></div>
-        <p>El equilibrio perfecto entre peso y potencia.</p>
-        <ul>
-            <li>Remoción de vitropiso y azulejo.</li>
-            <li>Demolición media en muros de ladrillo.</li>
-        </ul>
-        <a href="https://wa.me/528119988053?text=Hola,%20me%20interesa%20rentar%20la%20rompedora%20de%2012kg" class="btn">Cotizar Envío</a>
-    </div>
-
-    <div class="product-card">
-        <h3>Rompedora de 15 KG</h3>
-        <div class="specs"><span>1200 Watts</span><span>25 Joules</span></div>
-        <p>Para concreto armado y estructuras densas.</p>
-        <ul>
-            <li>Demolición de vigas y castillos.</li>
-            <li>Trabajos intensos en muros de carga.</li>
-        </ul>
-        <a href="https://wa.me/528119988053?text=Hola,%20me%20interesa%20rentar%20la%20rompedora%20de%2015kg" class="btn">Rentar Ahora</a>
-    </div>
-
-    <div class="product-card">
-        <h3>Rompedora de 25 KG (Heavy Duty)</h3>
-        <div class="specs"><span>1800 Watts</span><span>60 Joules</span></div>
-        <p>Poder puro para demolición en piso.</p>
-        <ul>
-            <li>Ruptura de banquetas y losas de cochera.</li>
-            <li>Concreto de alta resistencia.</li>
-        </ul>
-        <a href="https://wa.me/528119988053?text=Hola,%20me%20interesa%20rentar%20la%20rompedora%20de%2025kg" class="btn">Rentar Ahora</a>
-    </div>
-
-    <div class="product-card">
-        <h3>Rompedora de 27 KG (Industrial)</h3>
-        <div class="specs"><span>2100 Watts</span><span>70 Joules</span></div>
-        <p>Nuestra unidad con mayor capacidad de impacto.</p>
-        <ul>
-            <li>Corte de asfalto y piedras grandes.</li>
-            <li>Zapatas profundas y drenajes industriales.</li>
-        </ul>
-        <a href="https://wa.me/528119988053?text=Hola,%20me%20interesa%20rentar%20la%20rompedora%20de%2027kg" class="btn">Solicitar Equipo</a>
-    </div>
-
-    <h2>Vibradores de Concreto</h2>
-    <div class="product-card">
-        <h3>Vibrador Eléctrico Profesional</h3>
-        <p>Asegura la calidad estructural de tus colados.</p>
-        <ul>
-            <li>Compactación profunda para evitar grietas.</li>
-            <li>Acabado espejo sin burbujas de aire.</li>
-        </ul>
-        <a href="https://wa.me/528119988053?text=Hola,%20necesito%20un%20vibrador%20de%20concreto" class="btn">Consultar Disponibilidad</a>
-    </div>
-
-    <section class="requisitos">
-        <h2>Requisitos de Renta</h2>
-        <p>Rentar con G-A-P es sencillo. Solo necesitas:</p>
-        <ul style="color: #fff;">
-            <li>Copia de Identificación Oficial (INE).</li>
-            <li>Comprobante de domicilio (Reciente).</li>
-            <li>Pago de renta por adelantado + Depósito de garantía.</li>
-        </ul>
-    </section>
-</div>
 
 <footer>
-    <h4>Horarios de Operación</h4>
-    <p>Lunes a Viernes: 8:00 am - 8:00 pm<br>Sábado: 9:00 am - 5:00 pm | Domingo: 9:00 am - 2:00 pm</p>
-    <p>Cobertura: <span class="cobertura">Juárez | Guadalupe | Apodaca | San Nicolás | Monterrey</span></p>
+    <p>&copy; 2026 GAP Renta de Rompedoras - Juárez, Nuevo León</p>
 </footer>
-
-<a href="https://wa.me/528119988053" class="whatsapp-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon" alt="WhatsApp">
-</a>
 
 </body>
 </html>
