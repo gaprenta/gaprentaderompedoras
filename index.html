@@ -3,173 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAP | Renta de Rompedoras Profesionales</title>
+    <title>GAP | Renta de Rompedoras y Vibradores</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --cat-yellow: #FFCD00;
-            --cat-black: #000000;
-            --cat-gray: #1a1a1a;
-            --white: #ffffff;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--cat-black);
-            color: var(--white);
-            overflow-x: hidden;
-        }
-
-        /* --- NAVEGACIÓN --- */
-        nav {
-            background: var(--cat-black);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 4px solid var(--cat-yellow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo { font-family: 'Archivo Black', sans-serif; font-size: 1.8rem; color: var(--cat-yellow); }
-
-        /* --- HERO SECTION (IMPACTO) --- */
-        .hero {
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1504307651254-35680f3366d4?auto=format&fit=crop&w=1350&q=80'); /* Imagen de construcción */
-            background-size: cover;
-            background-position: center;
-            padding: 0 5%;
-        }
-
-        .hero-content { max-width: 700px; }
-        .hero h1 { 
-            font-family: 'Archivo Black', sans-serif; 
-            font-size: clamp(2.5rem, 8vw, 4.5rem); 
-            line-height: 1; 
-            margin: 0; 
-            color: var(--cat-yellow);
-            text-transform: uppercase;
-        }
-        .hero p { font-size: 1.2rem; margin: 20px 0; color: #ccc; border-left: 4px solid var(--cat-yellow); padding-left: 15px; }
-
-        /* --- BOTÓN WHATSAPP FLOTANTE Y PRINCIPAL --- */
-        .btn-main {
-            display: inline-block;
-            background: var(--cat-yellow);
-            color: var(--cat-black);
-            padding: 18px 35px;
-            font-weight: bold;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 1.1rem;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
-        .btn-main:hover { background: var(--white); transform: scale(1.05); }
-
-        /* --- GRID ASIMÉTRICO DE MARCAS Y CAPACIDAD --- */
-        .features {
-            padding: 80px 5%;
-            background: var(--white);
-            color: var(--cat-black);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--cat-gray);
-            color: var(--cat-yellow);
-            padding: 40px;
-            position: relative;
-            transition: 0.3s;
-            border-bottom: 8px solid var(--cat-yellow);
-        }
-        .card:nth-child(even) { background: var(--cat-yellow); color: var(--cat-black); border-bottom-color: var(--cat-black); }
-        .card h3 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; margin-top: 0; }
+        :root { --cat-yellow: #FFCD00; --cat-black: #000000; --dark-grey: #1a1a1a; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--cat-black); color: #fff; line-height: 1.6; }
         
-        /* --- INFO TÉCNICA --- */
-        .specs { list-style: none; padding: 0; font-weight: bold; }
-        .specs li { margin-bottom: 10px; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; justify-content: space-between; }
+        /* --- LOGO SECCIÓN --- */
+        .hero-logo { text-align: center; padding: 60px 20px; background: linear-gradient(0deg, #000 0%, #1a1a1a 100%); border-bottom: 8px solid var(--cat-yellow); }
+        .logo-text { font-family: 'Archivo Black', sans-serif; font-size: clamp(4rem, 15vw, 8rem); color: var(--cat-yellow); line-height: 0.8; margin: 0; }
+        .logo-sub { font-size: 1.5rem; letter-spacing: 5px; font-weight: bold; }
 
-        /* --- ÁREA DE SERVICIO --- */
-        .service-area {
-            padding: 60px 5%;
-            text-align: center;
-            background: var(--cat-black);
-            border-top: 2px solid #333;
-        }
-        .service-area h2 { color: var(--cat-yellow); font-family: 'Archivo Black', sans-serif; font-size: 2rem; }
+        /* --- DESCRIPCIÓN EMPRESA --- */
+        .about { padding: 60px 10%; text-align: center; background: #fff; color: #000; }
+        .about h2 { font-family: 'Archivo Black', sans-serif; font-size: 2.5rem; text-transform: uppercase; }
+        .about p { max-width: 800px; margin: auto; font-size: 1.2rem; }
 
-        footer { background: #000; text-align: center; padding: 30px; font-size: 0.8rem; color: #555; }
+        /* --- SECCIÓN DE MAQUINARIA --- */
+        .catalog { padding: 60px 5%; }
+        .catalog h2 { text-align: center; color: var(--cat-yellow); font-family: 'Archivo Black', sans-serif; font-size: 2rem; margin-bottom: 40px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        
+        .machine-card { background: var(--dark-grey); border: 2px solid #333; padding: 30px; text-align: center; transition: 0.3s; position: relative; overflow: hidden; }
+        .machine-card:hover { border-color: var(--cat-yellow); transform: translateY(-5px); }
+        .machine-card h3 { font-family: 'Archivo Black', sans-serif; font-size: 2.5rem; margin: 10px 0; color: var(--cat-yellow); }
+        .machine-card span { font-size: 1.2rem; color: #aaa; text-transform: uppercase; }
+        
+        .btn-rentar { display: block; background: var(--cat-yellow); color: #000; padding: 15px; margin-top: 20px; text-decoration: none; font-weight: bold; border-radius: 4px; text-transform: uppercase; transition: 0.3s; }
+        .btn-rentar:hover { background: #fff; }
 
-        @media (max-width: 768px) {
-            .hero { text-align: center; justify-content: center; }
-            .hero p { border: none; padding: 0; }
-        }
+        /* --- VIBRADORES Y OTROS --- */
+        .extra-equip { background: var(--cat-yellow); color: #000; padding: 40px; text-align: center; margin: 40px 0; }
+        .extra-equip h2 { font-family: 'Archivo Black', sans-serif; margin: 0; }
+
+        /* --- INFO FINAL --- */
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); padding: 60px 10%; background: #000; border-top: 2px solid #222; }
+        .info-box h4 { color: var(--cat-yellow); font-family: 'Archivo Black', sans-serif; text-transform: uppercase; }
+        
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; padding: 20px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.5); z-index: 100; }
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="logo">GAP RENTA</div>
-    <div style="color: var(--cat-yellow); font-weight: bold;">☏ 81-XXXX-XXXX</div>
-</nav>
+    <section class="hero-logo">
+        <h1 class="logo-text">GAP</h1>
+        <div class="logo-sub">RENTA DE ROMPEDORAS</div>
+    </section>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Poder Real en Demolición.</h1>
-        <p>Renta de rompedoras profesionales en <strong>Juárez y Monterrey</strong>. Equipos de alta capacidad listos para entrega inmediata en tu obra.</p>
-        <a href="https://wa.me/52181XXXXXXXX" class="btn-main">Cotizar por WhatsApp Ahora</a>
-    </div>
-</section>
+    <section class="about">
+        <h2>POTENCIA PARA TU OBRA</h2>
+        <p>En <strong>GAP</strong> somos especialistas en la renta de rompedoras y vibradores de concreto de alto rendimiento. Nos dedicamos a facilitar el trabajo pesado de constructores y contratistas con equipo profesional, mantenimiento impecable y entrega puntual en sitio.</p>
+    </section>
 
-<section class="features">
-    <div class="card">
-        <h3>Nuestra Flota</h3>
-        <p>Equipos eléctricos de alto impacto para concreto armado y asfalto.</p>
-        <ul class="specs">
-            <li><span>Capacidad:</span> <span>15kg | 20kg | 30kg</span></li>
-            <li><span>Marcas:</span> <span>Makita • Bosch • DeWalt</span></li>
-            <li><span>Especial:</span> <span>Edoevom High Power</span></li>
-        </ul>
-    </div>
-    <div class="card">
-        <h3>Logística GAP</h3>
-        <p>No pierdas tiempo. Nosotros llevamos la potencia a donde la necesites.</p>
-        <ul class="specs">
-            <li><span>Cobertura:</span> <span>Juárez & Mty</span></li>
-            <li><span>Flete:</span> <span>Calculado por KM</span></li>
-            <li><span>Disponibilidad:</span> <span>Inmediata</span></li>
-        </ul>
-    </div>
-    <div class="card">
-        <h3>Horarios</h3>
-        <p>Atención profesional y soporte técnico en sitio.</p>
-        <ul class="specs" style="border-top: 1px solid rgba(255,255,255,0.2);">
-            <li><span>Lun - Vie:</span> <span>8:00 - 18:00</span></li>
-            <li><span>Sábados:</span> <span>8:00 - 14:00</span></li>
-            <li><span>Emergencias:</span> <span>Vía WhatsApp</span></li>
-        </ul>
-    </div>
-</section>
+    <section class="catalog">
+        <h2>NUESTRA FLOTA</h2>
+        <div class="grid">
+            <div class="machine-card">
+                <span>Rompedora</span>
+                <h3>8 KG</h3>
+                <p>Ligera y versátil para acabados.</p>
+                <a href="https://wa.me/TU_NUMERO?text=Deseo%20rentar%20la%20rompedora%20de%208kg" class="btn-rentar">Rentar / Disponibilidad</a>
+            </div>
+            <div class="machine-card">
+                <span>Rompedora</span>
+                <h3>12 KG</h3>
+                <p>Potencia intermedia para muros.</p>
+                <a href="https://wa.me/TU_NUMERO?text=Deseo%20rentar%20la%20rompedora%20de%2012kg" class="btn-rentar">Rentar / Disponibilidad</a>
+            </div>
+            <div class="machine-card" style="border-color: var(--cat-yellow);">
+                <span>Rompedora</span>
+                <h3>15 KG</h3>
+                <p>La favorita para pisos de concreto.</p>
+                <a href="https://wa.me/TU_NUMERO?text=Deseo%20rentar%20la%20rompedora%20de%2015kg" class="btn-rentar">Rentar / Disponibilidad</a>
+            </div>
+            <div class="machine-card">
+                <span>Rompedora</span>
+                <h3>25 KG</h3>
+                <p>Demolición pesada y asfalto.</p>
+                <a href="https://wa.me/TU_NUMERO?text=Deseo%20rentar%20la%20rompedora%20de%2025kg" class="btn-rentar">Rentar / Disponibilidad</a>
+            </div>
+            <div class="machine-card">
+                <span>Rompedora</span>
+                <h3>27 KG</h3>
+                <p>Máximo impacto industrial.</p>
+                <a href="https://wa.me/TU_NUMERO?text=Deseo%20rentar%20la%20rompedora%20de%2027kg" class="btn-rentar">Rentar / Disponibilidad</a>
+            </div>
+        </div>
+    </section>
 
-<section class="service-area">
-    <h2>SERVICIO EN TODO NUEVO LEÓN</h2>
-    <p>Ubicados estratégicamente en Juárez para cubrir toda el área metropolitana rápidamente.</p>
-    <br>
-    <a href="https://wa.me/52181XXXXXXXX" style="color: var(--cat-yellow); text-decoration: none; font-weight: bold; font-size: 1.5rem;">Haz clic aquí para hablar con un experto</a>
-</section>
+    <section class="extra-equip">
+        <h2>TAMBIÉN CONTAMOS CON VIBRADORES DE CONCRETO</h2>
+        <p>Asegura la calidad y resistencia de tu vaciado con nuestro equipo profesional.</p>
+    </section>
 
-<footer>
-    &copy; 2026 GAP Renta de Rompedoras de Concreto | Juárez, N.L.
-</footer>
+    <div class="footer-grid">
+        <div class="info-box">
+            <h4>Horarios de Servicio</h4>
+            <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+            <p>Sábados: 8:00 AM - 2:00 PM</p>
+        </div>
+        <div class="info-box">
+            <h4>Área de Servicio</h4>
+            <p>Ubicados en <strong>Juárez, Nuevo León</strong>.</p>
+            <p>Cobertura en todo el Área Metropolitana de Monterrey con servicio de flete.</p>
+        </div>
+        <div class="info-box">
+            <h4>Marcas</h4>
+            <p>Makita | DeWalt | Bosch | Edoevom</p>
+        </div>
+    </div>
+
+    <a href="https://wa.me/TU_NUMERO" class="whatsapp-float">🟢 WHATSAPP DIRECTO</a>
 
 </body>
 </html>
