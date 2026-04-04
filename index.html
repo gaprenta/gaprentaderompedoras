@@ -3,179 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Renta de Rompedoras Profesionales</title>
+    <title>G-A-P | Renta de Rompedoras Profesional</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --cat-yellow: #FFCD00; 
+            --cat-yellow: #FFCD00; /* Amarillo Caterpillar Oficial */
             --gap-black: #111111; 
             --gap-red: #e62117;
-            --metal-bg: #E0E0E0;
+            --light-bg: #f4f4f4;
             --white: #ffffff; 
         }
         
-        body { margin: 0; font-family: 'Roboto', sans-serif; background: #fafafa; color: #333; line-height: 1.6; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--light-bg); color: #333; line-height: 1.6; }
         
-        /* --- CABECERA DE IMPACTO CON TU IMAGEN --- */
+        /* --- HEADER REVOLUCIONARIO: PLACA ACERO INOXIDABLE --- */
         header { 
-            background: #000; 
+            /* Fondo con textura de acero cepillado (radial-gradient simula el reflejo metálico) */
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%),
+                linear-gradient(135deg, #bbb 0%, #ddd 20%, #eee 40%, #bbb 60%, #ddd 80%, #eee 100%);
+            background-size: cover;
+            border: 2px solid #aaa;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
             text-align: center; 
-            padding: 30px 20px; 
-            border-bottom: 8px solid var(--cat-yellow); 
-        }
-        .logo-placa { 
-            max-width: 280px; 
-            width: 100%; 
-            height: auto; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5); 
-            border-radius: 4px; 
+            padding: 70px 20px; 
+            position: relative; /* Para los remaches flotantes */
+            margin-bottom: 30px;
         }
 
-        /* --- DIFERENCIADOR Y EMPRESA --- */
-        .section { padding: 60px 10%; text-align: center; }
-        .bg-white { background: var(--white); }
-        
-        h2 { font-family: 'Montserrat', sans-serif; font-weight: 900; text-transform: uppercase; font-size: 2.2rem; margin-bottom: 20px; }
-        h2 span { color: var(--gap-red); }
+        /* Estilo para los Remaches Realistas */
+        .rivet {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: radial-gradient(circle at 30% 30%, #fff 0%, #aaa 60%, #666 100%);
+            border-radius: 50%;
+            border: 1px solid #777;
+            box-shadow: inset 0 2px 5px rgba(255,255,255,0.5), 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .rivet-tl { top: 15px; left: 15px; }
+        .rivet-tr { top: 15px; right: 15px; }
+        .rivet-bl { bottom: 15px; left: 15px; }
+        .rivet-br { bottom: 15px; right: 15px; }
 
-        .brand-zone { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
-        .brand-item { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; padding: 5px 15px; border-radius: 4px; }
-        
-        /* --- ¿POR QUÉ ELEGIRNOS? --- */
-        .grid-razones { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
-        .razon-card { padding: 30px; background: #fafafa; border-top: 4px solid var(--cat-yellow); text-align: left; }
-        .razon-card h4 { color: #000; text-transform: uppercase; margin-top: 0; }
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(3.5rem, 12vw, 6.5rem);
+            color: var(--gap-black); /* Letras Negras según instrucción */
+            font-weight: 900;
+            margin: 0;
+            line-height: 0.9;
+            letter-spacing: -3px;
+            /* Sombra sutil para simular profundidad/relieve sobre el metal */
+            text-shadow: 2px 2px 1px rgba(255,255,255,0.3), -1px -1px 1px rgba(0,0,0,0.2);
+        }
+        .logo-text span { color: var(--gap-red); text-shadow: none; } /* Guiones en rojo */
 
-        /* --- CATÁLOGO LIGERO --- */
-        .catalog { padding: 60px 5%; background: var(--gap-black); color: var(--white); }
-        .catalog h2 { color: var(--cat-yellow); }
+        .sub-header {
+            color: var(--gap-black);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            border-top: 1px solid #aaa;
+            padding-top: 10px;
+            display: inline-block;
+        }
+
+        /* --- SECCIÓN QUIENES SOMOS (FONDO BLANCO) --- */
+        .intro { 
+            padding: 60px 10%; 
+            text-align: center; 
+            background: var(--white); 
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin: 0 5% 40px;
+        }
+        .intro h2 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 2.2rem; 
+            margin-bottom: 25px;
+            color: var(--gap-black);
+            text-transform: uppercase;
+        }
+        .intro p { 
+            max-width: 800px; 
+            margin: auto; 
+            font-size: 1.1rem; 
+            color: #555;
+            font-weight: 300;
+        }
+
+        /* --- MARCAS (COLORES CAT) --- */
+        .brand-zone {
+            margin-top: 35px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .brand-item {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            padding: 8px 18px;
+            border-radius: 4px;
+        }
+        /* Marcas manteniendo sus colores originales */
+        .makita { color: #d0002f; }
+        .dewalt { color: #000; background: var(--cat-yellow); padding: 4px 12px; } /* Usando amarillo CAT */
+        .bosch { color: #005691; }
+        .edoevom { color: #333; border: 2px solid #333; }
+
+        /* --- CATÁLOGO INDUSTRIAL CATERPILLAR --- */
+        .catalog { padding: 40px 5%; }
+        .catalog h2 { 
+            text-align: center; 
+            color: var(--gap-black); 
+            font-family: 'Montserrat', sans-serif; 
+            margin-bottom: 50px; 
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
         
-        .grid-catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
-        .machine-card { background: #1a1a1a; border: 3px solid #333; padding: 30px; border-radius: 10px; transition: 0.3s ease; display: flex; flex-direction: column; }
-        .machine-card:hover { border-color: var(--cat-yellow); transform: translateY(-5px); }
+        .card { 
+            background: var(--white); 
+            padding: 30px; 
+            border-radius: 4px; /* Industrial, menos redondeado */
+            transition: all 0.3s ease; 
+            display: flex; 
+            flex-direction: column;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-top: 6px solid var(--cat-yellow); /* Resaltando CAT */
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(255, 205, 0, 0.3); }
         
         .weight-tag { 
-            background: var(--cat-yellow); 
-            color: #000; 
+            color: var(--gap-black); 
             font-family: 'Montserrat', sans-serif; 
-            font-size: 2.5rem; 
-            font-weight: 900; 
-            padding: 10px; 
-            margin-bottom: 20px; 
+            font-size: 2.8rem; 
+            font-weight: 900;
+            margin-bottom: 10px; 
             text-align: center;
         }
 
-        .use-case { font-size: 1rem; color: #bbb; margin-bottom: 25px; text-align: center; min-height: 80px; }
-        .use-case strong { color: var(--white); display: block; margin-bottom: 8px; text-transform: uppercase; }
+        .use-case { font-size: 1.1rem; color: #666; margin-bottom: 25px; text-align: center; min-height: 95px; }
+        .use-case strong { color: var(--gap-black); display: block; margin-bottom: 8px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;}
         
+        /* BOTÓN LIGERO Y ATRACTIVO */
         .btn-rentar { 
-            display: block; 
-            background: #25d366; 
-            color: #fff; 
+            background: var(--gap-black); 
+            color: var(--white); 
             text-align: center; 
-            padding: 15px; 
+            padding: 18px; 
             text-decoration: none; 
-            font-weight: bold; 
+            font-weight: 700; 
             text-transform: uppercase; 
             border-radius: 50px;
             font-size: 0.95rem;
+            transition: background 0.3s, transform 0.2s;
+            letter-spacing: 1.5px;
             margin-top: auto;
         }
+        .btn-rentar:hover { background: var(--gap-red); transform: scale(1.03); }
 
-        /* VIBRADORES */
-        .vibradores { background: var(--cat-yellow); text-align: center; padding: 30px; font-weight: bold; font-size: 1.5rem; color: #000; text-transform: uppercase; }
+        /* --- SECCIÓN VIBRADORES (ATRACTIVA) --- */
+        .vibradores-section {
+            background: linear-gradient(135deg, var(--gap-black) 0%, #333 100%);
+            padding: 80px 10%;
+            text-align: center;
+            color: var(--white);
+            margin: 50px 5%;
+            border-radius: 4px; /* Industrial */
+            border: 3px solid var(--cat-yellow); /* Borde Caterpillar */
+        }
+        .vibradores-section h2 { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; margin-bottom: 15px; color: var(--cat-yellow); text-transform: uppercase;}
+        .vibradores-section p { font-weight: 300; opacity: 0.9; margin-bottom: 30px; font-size: 1.2rem; }
+        
+        .btn-vibrador { 
+            display: inline-block; 
+            background: var(--cat-yellow); 
+            color: var(--gap-black); 
+            padding: 20px 50px; 
+            text-decoration: none; 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 900; 
+            text-transform: uppercase;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+        .btn-vibrador:hover { transform: scale(1.05); background: var(--white); }
 
-        /* FOOTER */
-        footer { background: var(--gap-black); color: var(--white); padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; text-align: center; border-top: 4px solid var(--cat-yellow); }
-        .info-box h3 { color: var(--cat-yellow); font-family: 'Montserrat', sans-serif; text-transform: uppercase; margin-bottom: 15px; }
+        /* --- FOOTER CATERPILLAR --- */
+        footer { 
+            background: var(--cat-black); 
+            color: var(--cat-yellow); /* Letras amarillas CAT */
+            padding: 60px 10%; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 40px; 
+            border-top: 8px solid var(--cat-yellow); 
+            text-align: center;
+        }
+        .footer-box h3 { font-family: 'Montserrat', sans-serif; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; color: var(--white); }
+        .footer-box p { font-size: 1.1rem; margin: 10px 0; color: var(--white); opacity: 0.8; }
 
-        /* WHATSAPP FLOTANTE */
-        .ws-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff; padding: 12px 25px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; }
-
+        /* --- WHATSAPP FLOTANTE --- */
+        .ws-float { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            background: #25d366; 
+            color: #fff; 
+            padding: 15px 30px; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            z-index: 1000; 
+            display: flex; 
+            align-items: center; 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="https://i.ibb.co/3WfT8Nq/GAP-Metal-Logo.png" alt="G-A-P Logo Placa" class="logo-placa">
+        <div class="rivet rivet-tl"></div>
+        <div class="rivet rivet-tr"></div>
+        <div class="rivet rivet-bl"></div>
+        <div class="rivet rivet-br"></div>
+
+        <h1 class="logo-text">G<span>-</span>A<span>-</span>P</h1>
+        <div class="sub-header">Renta de Rompedoras</div>
     </header>
 
-    <section class="section bg-white">
-        <h2>Renta de Rompedoras Profesionales</h2>
-        <p>En G-A-P facilitamos el trabajo pesado de demolición. No solo rentamos máquinas; garantizamos que tu obra avance con equipo de marcas líderes, mantenimiento impecable y logística rápida en Juárez y zona metropolitana.</p>
-        <div class="brand-zone">
-            <span class="brand-item" style="color: #d0002f;">MAKITA</span>
-            <span class="brand-item" style="color: #febd17; background: #000;">DEWALT</span>
-            <span class="brand-item" style="color: #005691;">BOSCH</span>
-            <span class="brand-item" style="color: #333;">EDOEVOM</span>
-        </div>
-    </section>
-
-    <section class="section" style="background: #eee; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;">
-        <h2>¿Por qué elegirnos?</h2>
-        <p>Somos la empresa consolidada en Nuevo León que tú necesitas para tu proyecto. Garantizamos la diferencia.</p>
+    <section class="intro">
+        <h2>Poder Local para tu Obra</h2>
+        <p>Somos la empresa consolidada en Nuevo León que tú necesitas para tu proyecto. Como tu aliado local más fuerte, te apoyamos con equipos de alta potencia y las marcas líderes de la industria.</p>
         
-        <div class="grid-razones">
-            <div class="razon-card">
-                <h4>Poder Real</h4>
-                <p>Nuestros equipos de 15, 25 y 27 kg ofrecen Joules de impacto reales, probados y mantenidos para demoler concreto armado al instante.</p>
-            </div>
-            <div class="razon-card">
-                <h4>Cero Retrasos</h4>
-                <p>Tu obra no se detiene. Contamos con logística inmediata y equipos de respaldo en caso de emergencia. Nuestra puntualidad es ley.</p>
-            </div>
-            <div class="razon-card">
-                <h4>Marcas Líderes</h4>
-                <p>Sólo rentamos equipos Makita, Bosch y DeWalt de alta gama. No arriesgues tu dinero con maquinaria genérica que se sobrecalienta.</p>
-            </div>
+        <div class="brand-zone">
+            <span class="brand-item makita">Makita</span>
+            <span class="brand-item dewalt">DeWalt</span>
+            <span class="brand-item bosch">Bosch</span>
+            <span class="brand-item edoevom">Edoevom</span>
         </div>
     </section>
 
     <section class="catalog">
         <h2>Equipos Disponibles</h2>
-        <div class="grid-catalog">
+        <div class="grid">
             
-            <div class="machine-card">
+            <div class="card">
                 <div class="weight-tag">8 KG</div>
                 <div class="use-case">
-                    <strong>Uso Recomendado:</strong>
+                    <strong>Especialidad Industrial:</strong>
                     Perforaciones precisas en concreto y ranuras estéticas en pared. Ligera y versátil.
                 </div>
                 <a href="https://wa.me/528119988053?text=Renta%208kg" class="btn-rentar">Consultar Equipo</a>
             </div>
 
-            <div class="machine-card">
+            <div class="card">
                 <div class="weight-tag">12 KG</div>
                 <div class="use-case">
-                    <strong>Uso Recomendado:</strong>
-                    Remoción rápida de vitro piso, azulejos, mosaicos y remodelaciones.
+                    <strong>Especialidad Industrial:</strong>
+                    Remoción rápida de vitro piso, azulejos y acabados cerámicos.
                 </div>
                 <a href="https://wa.me/528119988053?text=Renta%2012kg" class="btn-rentar">Consultar Equipo</a>
             </div>
 
-            <div class="machine-card" style="border-color: var(--cat-yellow);">
-                <div class="weight-tag">15 KG</div>
+            <div class="card" style="border-color: #222;"> <div class="weight-tag">15 KG</div>
                 <div class="use-case">
-                    <strong>Uso Recomendado:</strong>
-                    Ideal para demoler pared, muros, vigas y contra cimientos profundos.
+                    <strong>Especialidad Industrial:</strong>
+                    Demolición de muros, vigas y refuerzos en contra cimientos profundos.
                 </div>
                 <a href="https://wa.me/528119988053?text=Renta%2015kg" class="btn-rentar">Consultar Equipo</a>
             </div>
 
-            <div class="machine-card">
+            <div class="card">
                 <div class="weight-tag">25 KG</div>
                 <div class="use-case">
-                    <strong>Uso Recomendado:</strong>
+                    <strong>Especialidad Industrial:</strong>
                     Demolición de banquetas, losas y preparaciones para drenaje o zapatas.
                 </div>
                 <a href="https://wa.me/528119988053?text=Renta%2025kg" class="btn-rentar">Consultar Equipo</a>
             </div>
 
-            <div class="machine-card">
+            <div class="card">
                 <div class="weight-tag">27 KG</div>
                 <div class="use-case">
-                    <strong>Uso Recomendado:</strong>
+                    <strong>Especialidad Industrial:</strong>
                     Máximo poder industrial para asfalto, piedras y cimentaciones de alta resistencia.
                 </div>
                 <a href="https://wa.me/528119988053?text=Renta%2027kg" class="btn-rentar">Consultar Equipo</a>
@@ -184,25 +309,29 @@
         </div>
     </section>
 
-    <div class="vibradores">Vibradores de Concreto Profesionales</div>
+    <section class="vibradores-section">
+        <h2>Vibradores de Concreto</h2>
+        <p>Asegura un vaciado perfecto, denso y sin burbujas con nuestra tecnología de vibrado profesional.</p>
+        <a href="https://wa.me/528119988053?text=Renta%20Vibrador" class="btn-vibrador">Solicitar Cotización</a>
+    </section>
 
     <footer>
-        <div class="info-box">
-            <h3>HORARIOS</h3>
-            <p>Lunes a Viernes: 8:00 AM - 8:00 PM</p>
-            <p>Sábado: 9:00 AM - 5:00 PM</p>
-            <p>Domingo: 9:00 AM - 2:00 PM</p>
+        <div class="footer-box">
+            <h3>Nuestros Horarios</h3>
+            <p><strong>Lunes a Viernes:</strong> 8:00 AM - 8:00 PM</p>
+            <p><strong>Sábado:</strong> 9:00 AM - 5:00 PM</p>
+            <p><strong>Domingo:</strong> 9:00 AM - 2:00 PM</p>
         </div>
-        <div class="info-box">
-            <h3>LOGÍSTICA Y CONTACTO</h3>
-            <p>📍 Juárez, Nuevo León</p>
-            <p>🚚 Cobertura en toda el Área Metropolitana de Monterrey</p>
-            <p>📞 WhatsApp: 811-998-80-53</p>
+        <div class="footer-box">
+            <h3>Contacto Directo</h3>
+            <p><strong>WhatsApp:</strong> 811-998-80-53</p>
+            <p><strong>Ubicación Central:</strong> Juárez, Nuevo León</p>
+            <p>Servicio de flete disponible en toda el área metropolitana.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/528119988053?text=Hola%20G-A-P,%20necesito%20cotizar%20maquinaria" class="ws-float">
-        💬 Chatear Aquí
+    <a href="https://wa.me/528119988053" class="ws-float">
+        💬 Chatear 811-998-80-53
     </a>
 
 </body>
