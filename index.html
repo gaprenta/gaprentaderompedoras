@@ -3,278 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Tu Aliado de Confianza en Nuevo León</title>
+    <title>G-A-P | Renta de Rompedoras Profesional</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --cat-yellow: #FFCD00; /* Amarillo Caterpillar Oficial */
-            --cat-black: #000000;  /* Negro Caterpillar */
+            --cat-yellow: #FFCD00; 
+            --cat-black: #000000;
             --gap-black: #111111; 
             --gap-red: #e62117;
             --light-bg: #f4f4f4;
             --white: #ffffff; 
-            --steel-gray: #e0e0e0;
         }
         
         html { scroll-behavior: smooth; }
         body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--light-bg); color: #333; line-height: 1.6; }
         
-        /* --- HEADER ACTUALIZADO: ESTÉTICA CATERPILLAR --- */
+        /* --- HEADER CATERPILLAR --- */
         header { 
-            /* Fondo Negro Industrial con textura sutil de panel */
             background-color: var(--cat-black);
-            background-image: 
-                linear-gradient(45deg, #1a1a1a 25%, transparent 25%), 
-                linear-gradient(-45deg, #1a1a1a 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, #1a1a1a 75%),
-                linear-gradient(-45deg, transparent 75%, #1a1a1a 75%);
+            background-image: linear-gradient(45deg, #1a1a1a 25%, transparent 25%), linear-gradient(-45deg, #1a1a1a 25%, transparent 25%);
             background-size: 20px 20px;
-            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-            
             border-bottom: 5px solid var(--cat-yellow);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            text-align: center; 
-            padding: 60px 20px; 
-            position: relative;
-            margin-bottom: 0;
+            text-align: center; padding: 60px 20px; position: relative;
         }
-
-        /* Remaches Amarillos CAT */
-        .rivet {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background: radial-gradient(circle at 30% 30%, var(--white) 0%, var(--cat-yellow) 60%, #b38f00 100%);
-            border-radius: 50%;
-            border: 1px solid #b38f00;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.8);
-        }
-        .rivet-tl { top: 15px; left: 15px; }
-        .rivet-tr { top: 15px; right: 15px; }
-        .rivet-bl { bottom: 15px; left: 15px; }
-        .rivet-br { bottom: 15px; right: 15px; }
 
         .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(3.5rem, 12vw, 6.5rem);
-            color: var(--cat-yellow); /* Letras Amarillas CAT */
-            font-weight: 900;
-            margin: 0;
-            line-height: 0.9;
-            letter-spacing: -3px;
-            /* Efecto de bisel/relieve metálico */
-            text-shadow: 
-                -1px -1px 0 #b38f00,  
-                 1px -1px 0 #b38f00,
-                -1px  1px 0 #b38f00,
-                 1px  1px 0 #b38f00,
-                 3px 3px 5px rgba(0,0,0,0.8);
+            font-family: 'Montserrat', sans-serif; font-size: clamp(3.5rem, 12vw, 6.5rem);
+            color: var(--cat-yellow); font-weight: 900; margin: 0; letter-spacing: -3px;
+            text-shadow: 3px 3px 0px #b38f00, 6px 6px 0px rgba(0,0,0,0.5);
         }
-        /* Guiones en Rojo GAP para contraste de identidad */
-        .logo-text span { color: var(--gap-red); text-shadow: 2px 2px 3px rgba(0,0,0,0.5); }
+        .logo-text span { color: var(--gap-red); }
 
         .sub-header {
-            color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-top: 15px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            border-top: 2px solid var(--cat-yellow);
-            padding-top: 10px;
-            display: inline-block;
+            color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 5px; border-top: 2px solid var(--cat-yellow);
+            padding-top: 10px; display: inline-block; margin-top: 15px;
         }
 
-        /* --- SECCIÓN INTRO (AMARILLO CAT) --- */
-        .intro { 
-            padding: 60px 10%; 
-            text-align: center; 
-            background: var(--cat-yellow); 
-            color: var(--cat-black);
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.1);
-        }
-        .intro h2 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; }
-        .intro p { font-size: 1.3rem; font-weight: 700; max-width: 900px; margin: auto; }
+        /* --- SECCIÓN INTRO --- */
+        .intro { padding: 60px 10%; text-align: center; background: var(--cat-yellow); color: var(--cat-black); }
+        .intro h2 { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 900; text-transform: uppercase; }
+
+        /* --- CATÁLOGO REFORZADO --- */
+        .catalog { padding: 60px 5%; background: #fff; }
+        .catalog h2 { text-align: center; font-family: 'Montserrat', sans-serif; text-transform: uppercase; margin-bottom: 50px; font-weight: 900; }
         
-        /* ZONA DE MARCAS ACTUALIZADA */
-        .brand-zone { margin-top: 35px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .brand-item { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; padding: 8px 18px; background: white; border-radius: 4px; box-shadow: 2px 2px 0px #000;}
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        
+        /* Tarjeta Estilo Maquinaria */
+        .card { 
+            background: #f9f9f9; 
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+            display: flex; flex-direction: column;
+            box-shadow: 5px 5px 0px #eee;
+        }
 
-        /* --- FILOSOFÍA (INTERCALADO NEGRO) --- */
-        .philosophy {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 60px 5%;
-            background: var(--cat-black);
-            color: white;
+        .card:hover { 
+            border-color: var(--cat-yellow);
+            transform: translateY(-10px);
+            box-shadow: 10px 10px 0px var(--cat-yellow);
         }
-        .phil-card {
-            background: #1a1a1a;
-            padding: 30px;
-            border-top: 5px solid var(--cat-yellow);
-            transition: 0.3s;
-        }
-        .phil-card h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; color: var(--cat-yellow); margin-bottom: 15px; }
-        .phil-card p { opacity: 0.9; font-weight: 300;}
 
-        /* --- ÁREAS DE SERVICIO (INTERCALADO GRIS ACERO) --- */
-        .service-areas {
-            background: var(--steel-gray);
-            padding: 50px 10%;
-            text-align: center;
-        }
-        .area-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
-        .area-tag {
+        /* El Círculo del Peso */
+        .weight-circle {
+            width: 90px; height: 90px;
             background: var(--cat-black);
             color: var(--cat-yellow);
-            padding: 12px 25px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            border-radius: 2px;
-            box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
-            letter-spacing: 1px;
-        }
-
-        /* --- CATÁLOGO --- */
-        .catalog { padding: 60px 5%; background: white; }
-        .catalog h2 { text-align: center; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 2.2rem; margin-bottom: 40px;}
-        /* Grid ajustado para 5 elementos */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        
-        .card { 
-            background: var(--white); 
-            padding: 25px; 
-            border: 2px solid #ddd;
-            border-bottom: 8px solid var(--cat-black);
-            display: flex; 
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
             flex-direction: column;
-            transition: 0.3s;
+            margin: 0 auto 20px;
+            border: 4px solid var(--cat-yellow);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-        .card:hover { border-color: var(--cat-yellow); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        
-        .weight-tag { color: var(--gap-red); font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 900; text-align: center; margin-bottom: 10px;}
-        .use-case { font-size: 0.95rem; color: #444; margin-bottom: 20px; text-align: center; min-height: 70px; display: flex; align-items: center; justify-content: center;}
-        
+        .weight-circle span { font-size: 1.8rem; font-weight: 900; font-family: 'Montserrat'; line-height: 1; }
+        .weight-circle small { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+
+        /* Barras de Potencia */
+        .power-bar-container { background: #ddd; height: 10px; border-radius: 5px; margin: 15px 0; overflow: hidden; position: relative;}
+        .power-bar { background: var(--cat-yellow); height: 100%; border-radius: 5px; box-shadow: inset 0 0 5px rgba(0,0,0,0.2); }
+        .power-label { font-size: 0.75rem; font-weight: 900; text-transform: uppercase; color: #777; display: flex; justify-content: space-between; }
+
+        .use-case { font-size: 0.95rem; color: #444; text-align: center; min-height: 80px; margin-bottom: 20px; font-weight: 400; line-height: 1.4; }
+
         .btn-rentar { 
-            background: var(--cat-black); 
-            color: var(--cat-yellow); 
-            text-align: center; 
-            padding: 15px; 
-            text-decoration: none; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            transition: 0.3s;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            background: var(--cat-black); color: var(--cat-yellow); text-align: center; 
+            padding: 15px; text-decoration: none; font-weight: 900; text-transform: uppercase; 
+            border-radius: 4px; transition: 0.3s; letter-spacing: 1px;
         }
-        .btn-rentar:hover { background: var(--cat-yellow); color: var(--cat-black); }
+        .btn-rentar:hover { background: var(--gap-red); color: white; }
 
-        /* --- FOOTER --- */
-        footer { 
-            background: var(--cat-black); 
-            color: var(--white); 
-            padding: 60px 10%; 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 40px; 
-            border-top: 10px solid var(--cat-yellow); 
-        }
-        .footer-box h3 { color: var(--cat-yellow); text-transform: uppercase; font-family: 'Montserrat', sans-serif; margin-bottom: 20px;}
-        .footer-box p { color: #bbb; margin: 8px 0; }
+        /* --- FILOSOFÍA Y SERVICIOS --- */
+        .philosophy { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 60px 5%; background: var(--cat-black); color: white; }
+        .phil-card { background: #1a1a1a; padding: 30px; border-top: 5px solid var(--cat-yellow); }
+        .phil-card h3 { color: var(--cat-yellow); text-transform: uppercase; margin-bottom: 15px; font-family: 'Montserrat'; }
 
-        /* BOTÓN WHATSAPP */
-        .ws-float { 
-            position: fixed; bottom: 30px; right: 30px; 
-            background: #25d366; color: #fff; padding: 15px 25px; 
-            border-radius: 4px; font-weight: bold; text-decoration: none; 
-            z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            font-family: 'Montserrat', sans-serif;
-            display: flex; align-items: center; gap: 10px;
-        }
+        .service-areas { background: #e0e0e0; padding: 50px 10%; text-align: center; }
+        .area-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
+        .area-tag { background: var(--cat-black); color: var(--cat-yellow); padding: 12px 25px; font-weight: 900; border-radius: 2px; }
+
+        footer { background: var(--cat-black); color: var(--white); padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; border-top: 10px solid var(--cat-yellow); }
+        .footer-box h3 { color: var(--cat-yellow); text-transform: uppercase; font-family: 'Montserrat'; }
+
+        .ws-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff; padding: 15px 25px; border-radius: 4px; font-weight: bold; text-decoration: none; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.3); font-family: 'Montserrat'; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="rivet rivet-tl"></div><div class="rivet rivet-tr"></div>
-        <div class="rivet rivet-bl"></div><div class="rivet rivet-br"></div>
         <h1 class="logo-text">G<span>-</span>A<span>-</span>P</h1>
-        <div class="sub-header">Renta de Rompedoras</div>
+        <div class="sub-header">Tu Aliado de Confianza</div>
     </header>
 
     <section class="intro">
-        <h2>Tu Aliado de Confianza</h2>
-        <p>Servicio profesional en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey. Llevamos el poder que tu obra necesita con puntualidad y equipos de alta gama.</p>
-        <div class="brand-zone">
-            <span class="brand-item" style="color: #d0002f;">Makita</span>
-            <span class="brand-item" style="color: #000;">DeWalt</span>
-            <span class="brand-item" style="color: #005691;">Bosch</span>
-            <span class="brand-item" style="color: #333; border: 2px solid #333;">Edoevom</span>
-        </div>
+        <h2>Renta de Rompedoras Profesional</h2>
+        <p>Cobertura en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey.</p>
+        <div style="margin-top:20px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;">Makita | DeWalt | Bosch | Edoevom</div>
     </section>
 
     <section class="philosophy">
-        <div class="phil-card">
-            <h3>Misión</h3>
-            <p>Proveer soluciones de demolición de alta potencia mediante la renta de maquinaria confiable, impulsando tus proyectos con eficiencia.</p>
-        </div>
-        <div class="phil-card">
-            <h3>Visión</h3>
-            <p>Ser el referente número uno en Nuevo León, reconocidos por nuestra logística impecable y la calidad de nuestras rompedoras.</p>
-        </div>
-        <div class="phil-card">
-            <h3>Valores</h3>
-            <p>Fuerza, honestidad, puntualidad y un compromiso total con la seguridad en cada una de tus obras.</p>
-        </div>
+        <div class="phil-card"><h3>Misión</h3><p>Soluciones de demolición de alta potencia con maquinaria confiable para tus proyectos.</p></div>
+        <div class="phil-card"><h3>Visión</h3><p>Líderes en Nuevo León, reconocidos por logística puntual y equipos industriales.</p></div>
+        <div class="phil-card"><h3>Valores</h3><p>Fuerza, Honestidad, Puntualidad y Compromiso con tu Seguridad.</p></div>
     </section>
 
     <section class="service-areas">
         <h2 style="font-family: 'Montserrat'; text-transform: uppercase; font-weight: 900;">Zonas de Entrega Inmediata</h2>
         <div class="area-grid">
-            <span class="area-tag">JUÁREZ</span>
-            <span class="area-tag">GUADALUPE</span>
-            <span class="area-tag">APODACA</span>
-            <span class="area-tag">SAN NICOLÁS</span>
-            <span class="area-tag">MONTERREY</span>
+            <span class="area-tag">JUÁREZ</span><span class="area-tag">GUADALUPE</span><span class="area-tag">APODACA</span><span class="area-tag">SAN NICOLÁS</span><span class="area-tag">MONTERREY</span>
         </div>
     </section>
 
     <section class="catalog">
-        <h2>Catálogo de Equipos</h2>
+        <h2>Equipos Disponibles</h2>
         <div class="grid">
+            
             <div class="card">
-                <div class="weight-tag">8 KG</div>
-                <div class="use-case">Perforaciones precisas en concreto y ranuras estéticas en pared.</div>
-                <a href="https://wa.me/528119988053?text=Renta%208kg" class="btn-rentar">Rentar Ahora</a>
+                <div class="weight-circle"><span>8</span><small>KG</small></div>
+                <div class="power-label"><span>Potencia de Impacto</span><span>30%</span></div>
+                <div class="power-bar-container"><div class="power-bar" style="width: 30%;"></div></div>
+                <div class="use-case">Ideal para perforaciones precisas en concreto y ranuras estéticas en pared. Ligera y manejable.</div>
+                <a href="https://wa.me/528119988053?text=Renta%208kg" class="btn-rentar">Consultar Disponibilidad</a>
             </div>
+
             <div class="card">
-                <div class="weight-tag">12 KG</div>
-                <div class="use-case">Remoción rápida de vitro piso, azulejos y acabados cerámicos.</div>
-                <a href="https://wa.me/528119988053?text=Renta%2012kg" class="btn-rentar">Rentar Ahora</a>
+                <div class="weight-circle"><span>12</span><small>KG</small></div>
+                <div class="power-label"><span>Potencia de Impacto</span><span>45%</span></div>
+                <div class="power-bar-container"><div class="power-bar" style="width: 45%;"></div></div>
+                <div class="use-case">Remoción rápida de vitro piso, azulejos y acabados cerámicos de alta adherencia.</div>
+                <a href="https://wa.me/528119988053?text=Renta%2012kg" class="btn-rentar">Consultar Disponibilidad</a>
             </div>
+
+            <div class="card" style="border-color: var(--cat-black);">
+                <div class="weight-circle"><span>15</span><small>KG</small></div>
+                <div class="power-label"><span>Potencia de Impacto</span><span>65%</span></div>
+                <div class="power-bar-container"><div class="power-bar" style="width: 65%;"></div></div>
+                <div class="use-case">Perfecta para demolición de muros, vigas y contra cimientos de profundidad media.</div>
+                <a href="https://wa.me/528119988053?text=Renta%2015kg" class="btn-rentar">Consultar Disponibilidad</a>
+            </div>
+
             <div class="card">
-                <div class="weight-tag">15 KG</div>
-                <div class="use-case">Demolición de muros, vigas y contra cimientos profundos.</div>
-                <a href="https://wa.me/528119988053?text=Renta%2015kg" class="btn-rentar">Rentar Ahora</a>
+                <div class="weight-circle"><span>25</span><small>KG</small></div>
+                <div class="power-label"><span>Potencia de Impacto</span><span>85%</span></div>
+                <div class="power-bar-container"><div class="power-bar" style="width: 85%;"></div></div>
+                <div class="use-case">Demolición pesada de banquetas, losas de piso y zapatas reforzadas.</div>
+                <a href="https://wa.me/528119988053?text=Renta%2025kg" class="btn-rentar">Consultar Disponibilidad</a>
             </div>
-            <div class="card">
-                <div class="weight-tag">25 KG</div>
-                <div class="use-case">Demolición de banquetas, losas y zapatas reforzadas.</div>
-                <a href="https://wa.me/528119988053?text=Renta%2025kg" class="btn-rentar">Rentar Ahora</a>
+
+            <div class="card" style="background: #fff8e1; border-color: var(--cat-yellow);">
+                <div class="weight-circle" style="background: var(--gap-red); border-color: var(--cat-black);"><span>27</span><small>KG</small></div>
+                <div class="power-label" style="color: var(--gap-red);"><span>POTENCIA MÁXIMA</span><span>100%</span></div>
+                <div class="power-bar-container"><div class="power-bar" style="width: 100%; background: var(--gap-red);"></div></div>
+                <div class="use-case">Máximo poder industrial para asfalto, piedras y cimentaciones de alta resistencia.</div>
+                <a href="https://wa.me/528119988053?text=Renta%2027kg" class="btn-rentar" style="background: var(--gap-red);">¡Poder Total!</a>
             </div>
-            <div class="card">
-                <div class="weight-tag">27 KG</div>
-                <div class="use-case">Máximo poder industrial para asfalto y cimentaciones de alta resistencia.</div>
-                <a href="https://wa.me/528119988053?text=Renta%2027kg" class="btn-rentar">Rentar Ahora</a>
-            </div>
+
         </div>
     </section>
 
     <footer>
         <div class="footer-box">
-            <h3>Horarios</h3>
+            <h3>Horarios de Atención</h3>
             <p><strong>Lun - Vie:</strong> 8:00 AM - 8:00 PM</p>
             <p><strong>Sáb:</strong> 9:00 AM - 5:00 PM</p>
             <p><strong>Dom:</strong> 9:00 AM - 2:00 PM</p>
@@ -283,14 +196,11 @@
             <h3>Ubicación y Contacto</h3>
             <p><strong>WhatsApp:</strong> 811-998-80-53</p>
             <p><strong>Base Central:</strong> Juárez, Nuevo León</p>
-            <p>Cobertura en toda el área metropolitana.</p>
+            <p>Servicio de flete a toda el área metropolitana.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/528119988053" class="ws-float">
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 0 3.627 0 8c0 1.385.355 2.711.982 3.813l-.147.516L.068 14.902a.728.728 0 0 0 .912.912l3.06-.822c1.036.54 2.196.82 3.376.82h.001c4.368 0 7.926-3.512 7.926-7.868a7.832 7.832 0 0 0-2.326-5.723zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-1.895.508.514-1.846-.157-.288a6.558 6.558 0 0 1-1.058-3.483c0-3.611 2.933-6.57 6.553-6.57a6.573 6.573 0 0 1 4.645 1.932c1.233 1.243 1.912 2.895 1.912 4.646 0 3.612-2.932 6.579-6.551 6.579zM11.508 8.972c-.183-.094-1.08-.536-1.248-.595s-.291-.093-.41.093c-.12.183-.459.595-.563.708-.104.113-.21.127-.393.035-.183-.094-.773-.283-1.472-.905-.544-.485-.91-.1.91-1.085-1.183-.1-.113-.177-.09-.322.044-.144-.01-.459-.113-.563-.127-.104.113-.104-.21.113-.21.322 0 .163-.163.163-.359-.015-.177-.104-.291-.104-.41-.093-.119.016-.39.093-.393.183-.004.09 0 .17.034.332a.566.566 0 0 0 .1.463c.123.082.203.111.336.19.13.078.22.13.355.201.07.037.143.076.222.114.305.147.56.262.83.41.07.037.143.076.222.114-.012.315-.1.593-.114.717-.037-.113-.127-.21-.035-.183.094.09.2.03.492.38.163.11.232.183.425.291.193.108.31.114.41.094.099.1.183-.31.332.183-.01.459.1.593.12.183.01.41.09.39.183.016-.09.39.09.41.11.12.016.39-.183.332-.36-.01-.01-.094-.108-.536-.332-.717s-.01-.336-.01-.459c0-.113.113-.21.035-.183.094z"/></svg>
-        811-998-80-53
-    </a>
+    <a href="https://wa.me/528119988053" class="ws-float">💬 WhatsApp 811-998-80-53</a>
 
 </body>
 </html>
