@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Renta de Rompedoras de Concreto</title>
+    <title>G-A-P | Renta de Rompedoras</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { 
@@ -15,33 +15,31 @@
         
         body { margin: 0; font-family: 'Roboto', sans-serif; background: #000; color: var(--white); line-height: 1.6; }
         
-        /* --- ENCABEZADO CATERPILLAR --- */
+        /* --- ENCABEZADO MEJORADO (SIN CUADRO AZUL) --- */
         header { 
             background: var(--cat-black); 
             text-align: center; 
-            padding: 40px 20px; 
+            padding: 60px 20px; 
             border-bottom: 10px solid var(--cat-yellow); 
         }
 
-        /* Espacio para tu Logotipo de G-A-P */
-        .logo-container {
-            max-width: 300px;
-            margin: 0 auto 15px;
+        .logo-text {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(3rem, 10vw, 5rem);
+            color: var(--white);
+            margin: 0;
+            line-height: 1;
+            text-shadow: 4px 4px var(--cat-yellow);
         }
-        .logo-img { 
-            width: 100%; 
-            height: auto;
-            border-radius: 4px;
-            box-shadow: 0 0 20px rgba(255, 205, 0, 0.2);
-        }
-        
-        h1 { 
-            color: var(--cat-yellow); 
-            font-family: 'Archivo Black', sans-serif; 
-            margin: 10px 0 0; 
-            font-size: 1.8rem; 
+        .logo-text span { color: #d0002f; text-shadow: none; } /* Guiones en rojo */
+
+        .sub-header {
+            color: var(--cat-yellow);
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.5rem;
+            margin-top: 15px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         /* --- SECCIÓN QUIENES SOMOS --- */
@@ -63,8 +61,15 @@
             font-size: 1.2rem; 
             font-weight: 500;
         }
+        .cobertura-tags {
+            margin-top: 20px;
+            color: #d0002f;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
 
-        /* --- CATÁLOGO INDUSTRIAL --- */
+        /* --- CATÁLOGO --- */
         .catalog { padding: 60px 5%; background: var(--cat-black); }
         .catalog h2 { 
             text-align: center; 
@@ -85,7 +90,7 @@
             transition: 0.3s; 
             display: flex; 
             flex-direction: column;
-            border-left: 5px solid var(--cat-yellow);
+            border-left: 6px solid var(--cat-yellow);
         }
         .card:hover { border-color: var(--cat-yellow); transform: scale(1.02); }
         
@@ -99,19 +104,9 @@
             text-align: center;
         }
 
-        .use-case { font-size: 1.1rem; color: #ddd; margin-bottom: 20px; min-height: 90px; }
+        .use-case { font-size: 1.1rem; color: #ddd; margin-bottom: 20px; min-height: 95px; }
         .use-case strong { color: var(--cat-yellow); display: block; margin-bottom: 8px; text-transform: uppercase; }
         
-        .brands-list { 
-            font-size: 0.85rem; 
-            color: #888; 
-            text-transform: uppercase; 
-            font-weight: bold; 
-            margin-bottom: 20px; 
-            border-top: 1px solid #333;
-            padding-top: 10px;
-        }
-
         .btn-rentar { 
             background: #25d366; 
             color: #fff; 
@@ -122,17 +117,9 @@
             text-transform: uppercase; 
             border-radius: 4px;
             margin-top: auto;
-            font-size: 1.1rem;
         }
 
-        /* --- SECCIÓN VIBRADORES --- */
-        .extra-action { 
-            background: var(--cat-yellow); 
-            padding: 50px 10%; 
-            text-align: center; 
-            color: var(--cat-black); 
-        }
-        .extra-action h2 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; margin: 0; }
+        .extra-action { background: var(--cat-yellow); padding: 50px 10%; text-align: center; color: var(--cat-black); }
         .btn-vibrador { 
             display: inline-block; 
             background: var(--cat-black); 
@@ -142,12 +129,9 @@
             font-family: 'Archivo Black', sans-serif; 
             font-size: 1.2rem; 
             text-transform: uppercase;
-            border-radius: 0;
             margin-top: 20px;
-            border: 2px solid var(--cat-black);
         }
 
-        /* --- FOOTER / HORARIOS --- */
         footer { 
             background: var(--cat-black); 
             color: var(--white); 
@@ -158,9 +142,7 @@
             border-top: 5px solid var(--cat-yellow); 
         }
         .footer-box h3 { color: var(--cat-yellow); font-family: 'Archivo Black', sans-serif; text-transform: uppercase; margin-bottom: 20px; }
-        .footer-box p { font-size: 1.1rem; margin: 10px 0; }
 
-        /* --- BOTÓN FLOTANTE WHATSAPP --- */
         .ws-float { 
             position: fixed; 
             bottom: 30px; 
@@ -175,22 +157,22 @@
             z-index: 1000; 
             display: flex; 
             align-items: center; 
-            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="https://i.ibb.co/3WfT8Nq/GAP-Metal-Logo.png" alt="G-A-P Renta de Rompedoras" class="logo-img">
-        </div>
-        <h1>G-A-P RENTA DE ROMPEDORAS</h1>
+        <h1 class="logo-text">G<span>-</span>A<span>-</span>P</h1>
+        <div class="sub-header">Renta de Rompedoras</div>
     </header>
 
     <section class="intro">
         <h2>¿Quiénes Somos?</h2>
-        <p>Somos una <strong>empresa local</strong> de Juárez, N.L., dedicada a la renta de maquinaria ligera. Estamos dispuestos a apoyar a nuestros clientes ofreciendo las mejores rompedoras del mercado con marcas líderes, garantizando que su obra nunca se detenga.</p>
+        <p>Somos <strong>la empresa que tú necesitas</strong>. Como especialistas locales, somos tu mejor aliado en <strong>Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey</strong>. Estamos dispuestos a apoyar a nuestros clientes ofreciendo las mejores rompedoras del mercado con marcas líderes, garantizando que su obra nunca se detenga.</p>
+        <div class="cobertura-tags">
+            JUÁREZ • GUADALUPE • APODACA • SAN NICOLÁS • MONTERREY
+        </div>
     </section>
 
     <section class="catalog">
@@ -203,7 +185,6 @@
                     <strong>Uso Recomendado:</strong>
                     Ideal para hacer perforaciones precisas en concreto y realizar ranuras en pared.
                 </div>
-                <div class="brands-list">Makita | Bosch | DeWalt</div>
                 <a href="https://wa.me/528119988053?text=Renta%208kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
@@ -213,7 +194,6 @@
                     <strong>Uso Recomendado:</strong>
                     Equipo ideal para quitar vitro piso, azulejos y acabados.
                 </div>
-                <div class="brands-list">DeWalt | Makita | Edoevom</div>
                 <a href="https://wa.me/528119988053?text=Renta%2012kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
@@ -223,7 +203,6 @@
                     <strong>Uso Recomendado:</strong>
                     Ideal para demoler pared, muros, vigas y contra cimientos.
                 </div>
-                <div class="brands-list">Makita | Bosch | DeWalt</div>
                 <a href="https://wa.me/528119988053?text=Renta%2015kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
@@ -233,7 +212,6 @@
                     <strong>Uso Recomendado:</strong>
                     Ideal para demoler piso, banquetas, losas y preparación para drenaje o zapatas.
                 </div>
-                <div class="brands-list">Edoevom | DeWalt | Makita</div>
                 <a href="https://wa.me/528119988053?text=Renta%2025kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
@@ -243,7 +221,6 @@
                     <strong>Uso Recomendado:</strong>
                     Máxima potencia para demoler asfalto, piedras y preparación para zapatas.
                 </div>
-                <div class="brands-list">Bosch | Makita | DeWalt</div>
                 <a href="https://wa.me/528119988053?text=Renta%2027kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
@@ -267,7 +244,6 @@
             <h3>Contacto Directo</h3>
             <p><strong>WhatsApp:</strong> 811-998-80-53</p>
             <p><strong>Ubicación:</strong> Juárez, Nuevo León</p>
-            <p>Servicio de flete disponible en toda el área metropolitana.</p>
         </div>
     </footer>
 
