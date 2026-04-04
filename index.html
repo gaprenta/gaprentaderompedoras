@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --cat-yellow: #FFCD00; 
-            --cat-black: #000000;
+            --cat-yellow: #FFCD00; /* Amarillo Caterpillar Oficial */
+            --cat-black: #000000;  /* Negro Caterpillar */
             --gap-black: #111111; 
             --gap-red: #e62117;
             --light-bg: #f4f4f4;
@@ -19,28 +19,35 @@
         html { scroll-behavior: smooth; }
         body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--light-bg); color: #333; line-height: 1.6; }
         
-        /* --- HEADER: PLACA ACERO INOXIDABLE --- */
+        /* --- HEADER ACTUALIZADO: ESTÉTICA CATERPILLAR --- */
         header { 
+            /* Fondo Negro Industrial con textura sutil de panel */
+            background-color: var(--cat-black);
             background-image: 
-                radial-gradient(circle at 50% 10%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%),
-                linear-gradient(135deg, #bbb 0%, #ddd 20%, #eee 40%, #bbb 60%, #ddd 80%, #eee 100%);
-            background-size: cover;
-            border: 2px solid #aaa;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+                linear-gradient(45deg, #1a1a1a 25%, transparent 25%), 
+                linear-gradient(-45deg, #1a1a1a 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #1a1a1a 75%),
+                linear-gradient(-45deg, transparent 75%, #1a1a1a 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            
+            border-bottom: 5px solid var(--cat-yellow);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
             text-align: center; 
-            padding: 70px 20px; 
+            padding: 60px 20px; 
             position: relative;
             margin-bottom: 0;
         }
 
+        /* Remaches Amarillos CAT */
         .rivet {
             position: absolute;
-            width: 15px;
-            height: 15px;
-            background: radial-gradient(circle at 30% 30%, #fff 0%, #aaa 60%, #666 100%);
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle at 30% 30%, var(--white) 0%, var(--cat-yellow) 60%, #b38f00 100%);
             border-radius: 50%;
-            border: 1px solid #777;
-            box-shadow: inset 0 2px 5px rgba(255,255,255,0.5), 2px 2px 5px rgba(0,0,0,0.5);
+            border: 1px solid #b38f00;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.8);
         }
         .rivet-tl { top: 15px; left: 15px; }
         .rivet-tr { top: 15px; right: 15px; }
@@ -50,24 +57,31 @@
         .logo-text {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(3.5rem, 12vw, 6.5rem);
-            color: var(--gap-black);
+            color: var(--cat-yellow); /* Letras Amarillas CAT */
             font-weight: 900;
             margin: 0;
             line-height: 0.9;
             letter-spacing: -3px;
-            text-shadow: 2px 2px 1px rgba(255,255,255,0.3), -1px -1px 1px rgba(0,0,0,0.2);
+            /* Efecto de bisel/relieve metálico */
+            text-shadow: 
+                -1px -1px 0 #b38f00,  
+                 1px -1px 0 #b38f00,
+                -1px  1px 0 #b38f00,
+                 1px  1px 0 #b38f00,
+                 3px 3px 5px rgba(0,0,0,0.8);
         }
-        .logo-text span { color: var(--gap-red); text-shadow: none; }
+        /* Guiones en Rojo GAP para contraste de identidad */
+        .logo-text span { color: var(--gap-red); text-shadow: 2px 2px 3px rgba(0,0,0,0.5); }
 
         .sub-header {
-            color: var(--gap-black);
+            color: var(--white);
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-top: 15px;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            border-top: 1px solid #aaa;
+            letter-spacing: 5px;
+            border-top: 2px solid var(--cat-yellow);
             padding-top: 10px;
             display: inline-block;
         }
@@ -83,8 +97,9 @@
         .intro h2 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; }
         .intro p { font-size: 1.3rem; font-weight: 700; max-width: 900px; margin: auto; }
         
-        .brand-zone { margin-top: 35px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .brand-item { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.2rem; text-transform: uppercase; padding: 8px 18px; background: white; border-radius: 4px; box-shadow: 2px 2px 0px #000;}
+        /* ZONA DE MARCAS ACTUALIZADA */
+        .brand-zone { margin-top: 35px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .brand-item { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; padding: 8px 18px; background: white; border-radius: 4px; box-shadow: 2px 2px 0px #000;}
 
         /* --- FILOSOFÍA (INTERCALADO NEGRO) --- */
         .philosophy {
@@ -96,13 +111,13 @@
             color: white;
         }
         .phil-card {
-            background: #222;
+            background: #1a1a1a;
             padding: 30px;
             border-top: 5px solid var(--cat-yellow);
             transition: 0.3s;
         }
         .phil-card h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; color: var(--cat-yellow); margin-bottom: 15px; }
-        .phil-card p { opacity: 0.9; }
+        .phil-card p { opacity: 0.9; font-weight: 300;}
 
         /* --- ÁREAS DE SERVICIO (INTERCALADO GRIS ACERO) --- */
         .service-areas {
@@ -119,26 +134,28 @@
             font-weight: 900;
             border-radius: 2px;
             box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
         }
 
         /* --- CATÁLOGO --- */
         .catalog { padding: 60px 5%; background: white; }
         .catalog h2 { text-align: center; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 2.2rem; margin-bottom: 40px;}
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        /* Grid ajustado para 5 elementos */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         
         .card { 
             background: var(--white); 
-            padding: 30px; 
+            padding: 25px; 
             border: 2px solid #ddd;
             border-bottom: 8px solid var(--cat-black);
             display: flex; 
             flex-direction: column;
             transition: 0.3s;
         }
-        .card:hover { border-color: var(--cat-yellow); transform: translateY(-5px); }
+        .card:hover { border-color: var(--cat-yellow); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         
-        .weight-tag { color: var(--gap-red); font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; text-align: center; }
-        .use-case { font-size: 1rem; color: #444; margin-bottom: 25px; text-align: center; min-height: 80px; }
+        .weight-tag { color: var(--gap-red); font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 900; text-align: center; margin-bottom: 10px;}
+        .use-case { font-size: 0.95rem; color: #444; margin-bottom: 20px; text-align: center; min-height: 70px; display: flex; align-items: center; justify-content: center;}
         
         .btn-rentar { 
             background: var(--cat-black); 
@@ -149,6 +166,8 @@
             font-weight: 900; 
             text-transform: uppercase; 
             transition: 0.3s;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
         .btn-rentar:hover { background: var(--cat-yellow); color: var(--cat-black); }
 
@@ -162,15 +181,17 @@
             gap: 40px; 
             border-top: 10px solid var(--cat-yellow); 
         }
-        .footer-box h3 { color: var(--cat-yellow); text-transform: uppercase; font-family: 'Montserrat', sans-serif;}
+        .footer-box h3 { color: var(--cat-yellow); text-transform: uppercase; font-family: 'Montserrat', sans-serif; margin-bottom: 20px;}
         .footer-box p { color: #bbb; margin: 8px 0; }
 
+        /* BOTÓN WHATSAPP */
         .ws-float { 
             position: fixed; bottom: 30px; right: 30px; 
             background: #25d366; color: #fff; padding: 15px 25px; 
             border-radius: 4px; font-weight: bold; text-decoration: none; 
             z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
             font-family: 'Montserrat', sans-serif;
+            display: flex; align-items: center; gap: 10px;
         }
     </style>
 </head>
@@ -190,6 +211,7 @@
             <span class="brand-item" style="color: #d0002f;">Makita</span>
             <span class="brand-item" style="color: #000;">DeWalt</span>
             <span class="brand-item" style="color: #005691;">Bosch</span>
+            <span class="brand-item" style="color: #333; border: 2px solid #333;">Edoevom</span>
         </div>
     </section>
 
@@ -209,7 +231,7 @@
     </section>
 
     <section class="service-areas">
-        <h2 style="font-family: 'Montserrat'; text-transform: uppercase;">Zonas de Entrega Inmediata</h2>
+        <h2 style="font-family: 'Montserrat'; text-transform: uppercase; font-weight: 900;">Zonas de Entrega Inmediata</h2>
         <div class="area-grid">
             <span class="area-tag">JUÁREZ</span>
             <span class="area-tag">GUADALUPE</span>
@@ -223,13 +245,23 @@
         <h2>Catálogo de Equipos</h2>
         <div class="grid">
             <div class="card">
+                <div class="weight-tag">8 KG</div>
+                <div class="use-case">Perforaciones precisas en concreto y ranuras estéticas en pared.</div>
+                <a href="https://wa.me/528119988053?text=Renta%208kg" class="btn-rentar">Rentar Ahora</a>
+            </div>
+            <div class="card">
+                <div class="weight-tag">12 KG</div>
+                <div class="use-case">Remoción rápida de vitro piso, azulejos y acabados cerámicos.</div>
+                <a href="https://wa.me/528119988053?text=Renta%2012kg" class="btn-rentar">Rentar Ahora</a>
+            </div>
+            <div class="card">
                 <div class="weight-tag">15 KG</div>
-                <div class="use-case">Ideal para demolición de muros, vigas y contra cimientos profundos.</div>
+                <div class="use-case">Demolición de muros, vigas y contra cimientos profundos.</div>
                 <a href="https://wa.me/528119988053?text=Renta%2015kg" class="btn-rentar">Rentar Ahora</a>
             </div>
             <div class="card">
                 <div class="weight-tag">25 KG</div>
-                <div class="use-case">Perfecto para demolición de banquetas, losas y zapatas reforzadas.</div>
+                <div class="use-case">Demolición de banquetas, losas y zapatas reforzadas.</div>
                 <a href="https://wa.me/528119988053?text=Renta%2025kg" class="btn-rentar">Rentar Ahora</a>
             </div>
             <div class="card">
@@ -249,13 +281,16 @@
         </div>
         <div class="footer-box">
             <h3>Ubicación y Contacto</h3>
-            <p>WhatsApp: 811-998-80-53</p>
-            <p>Base Central: Juárez, Nuevo León</p>
+            <p><strong>WhatsApp:</strong> 811-998-80-53</p>
+            <p><strong>Base Central:</strong> Juárez, Nuevo León</p>
             <p>Cobertura en toda el área metropolitana.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/528119988053" class="ws-float">💬 WhatsApp 811-998-80-53</a>
+    <a href="https://wa.me/528119988053" class="ws-float">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 0 3.627 0 8c0 1.385.355 2.711.982 3.813l-.147.516L.068 14.902a.728.728 0 0 0 .912.912l3.06-.822c1.036.54 2.196.82 3.376.82h.001c4.368 0 7.926-3.512 7.926-7.868a7.832 7.832 0 0 0-2.326-5.723zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-1.895.508.514-1.846-.157-.288a6.558 6.558 0 0 1-1.058-3.483c0-3.611 2.933-6.57 6.553-6.57a6.573 6.573 0 0 1 4.645 1.932c1.233 1.243 1.912 2.895 1.912 4.646 0 3.612-2.932 6.579-6.551 6.579zM11.508 8.972c-.183-.094-1.08-.536-1.248-.595s-.291-.093-.41.093c-.12.183-.459.595-.563.708-.104.113-.21.127-.393.035-.183-.094-.773-.283-1.472-.905-.544-.485-.91-.1.91-1.085-1.183-.1-.113-.177-.09-.322.044-.144-.01-.459-.113-.563-.127-.104.113-.104-.21.113-.21.322 0 .163-.163.163-.359-.015-.177-.104-.291-.104-.41-.093-.119.016-.39.093-.393.183-.004.09 0 .17.034.332a.566.566 0 0 0 .1.463c.123.082.203.111.336.19.13.078.22.13.355.201.07.037.143.076.222.114.305.147.56.262.83.41.07.037.143.076.222.114-.012.315-.1.593-.114.717-.037-.113-.127-.21-.035-.183.094.09.2.03.492.38.163.11.232.183.425.291.193.108.31.114.41.094.099.1.183-.31.332.183-.01.459.1.593.12.183.01.41.09.39.183.016-.09.39.09.41.11.12.016.39-.183.332-.36-.01-.01-.094-.108-.536-.332-.717s-.01-.336-.01-.459c0-.113.113-.21.035-.183.094z"/></svg>
+        811-998-80-53
+    </a>
 
 </body>
 </html>
