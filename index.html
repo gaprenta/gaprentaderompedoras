@@ -6,116 +6,191 @@
     <title>G-A-P | Renta de Rompedoras de Concreto</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --cat-yellow: #FFCD00; --cat-black: #000000; --white: #ffffff; --gray: #f4f4f4; }
+        :root { 
+            --cat-yellow: #FFCD00; 
+            --cat-black: #000000; 
+            --dark-grey: #1a1a1a;
+            --white: #ffffff; 
+        }
         
-        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--gray); color: #333; line-height: 1.6; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: #000; color: var(--white); line-height: 1.6; }
         
-        /* --- ENCABEZADO PRINCIPAL --- */
+        /* --- ENCABEZADO CATERPILLAR --- */
         header { 
             background: var(--cat-black); 
             text-align: center; 
             padding: 40px 20px; 
-            border-bottom: 8px solid var(--cat-yellow); 
+            border-bottom: 10px solid var(--cat-yellow); 
+        }
+
+        /* Espacio para tu Logotipo de G-A-P */
+        .logo-container {
+            max-width: 300px;
+            margin: 0 auto 15px;
         }
         .logo-img { 
-            max-width: 280px; 
             width: 100%; 
-            border-radius: 8px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            margin-bottom: 20px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(255, 205, 0, 0.2);
         }
-        h1 { color: var(--white); font-family: 'Archivo Black', sans-serif; margin: 0; font-size: 2rem; text-transform: uppercase; }
+        
+        h1 { 
+            color: var(--cat-yellow); 
+            font-family: 'Archivo Black', sans-serif; 
+            margin: 10px 0 0; 
+            font-size: 1.8rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-        /* --- QUIENES SOMOS --- */
-        .intro { padding: 60px 10%; text-align: center; background: var(--white); border-bottom: 1px solid #ddd; }
-        .intro h2 { font-family: 'Archivo Black', sans-serif; font-size: 2.2rem; color: var(--cat-black); margin-bottom: 20px; }
-        .intro p { max-width: 900px; margin: auto; font-size: 1.2rem; color: #555; }
+        /* --- SECCIÓN QUIENES SOMOS --- */
+        .intro { 
+            padding: 60px 10%; 
+            text-align: center; 
+            background: var(--white); 
+            color: var(--cat-black);
+        }
+        .intro h2 { 
+            font-family: 'Archivo Black', sans-serif; 
+            font-size: 2.2rem; 
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .intro p { 
+            max-width: 900px; 
+            margin: auto; 
+            font-size: 1.2rem; 
+            font-weight: 500;
+        }
 
-        /* --- SECCIÓN DE EQUIPOS --- */
-        .catalog { padding: 60px 5%; background: var(--cat-black); color: var(--white); }
-        .catalog h2 { text-align: center; color: var(--cat-yellow); font-family: 'Archivo Black', sans-serif; margin-bottom: 40px; font-size: 2rem; }
+        /* --- CATÁLOGO INDUSTRIAL --- */
+        .catalog { padding: 60px 5%; background: var(--cat-black); }
+        .catalog h2 { 
+            text-align: center; 
+            color: var(--cat-yellow); 
+            font-family: 'Archivo Black', sans-serif; 
+            margin-bottom: 40px; 
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         
-        .card { background: #1a1a1a; border: 2px solid #333; padding: 30px; border-radius: 4px; transition: 0.3s; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--cat-yellow); transform: translateY(-5px); }
+        .card { 
+            background: var(--dark-grey); 
+            border: 2px solid #333; 
+            padding: 30px; 
+            border-radius: 2px; 
+            transition: 0.3s; 
+            display: flex; 
+            flex-direction: column;
+            border-left: 5px solid var(--cat-yellow);
+        }
+        .card:hover { border-color: var(--cat-yellow); transform: scale(1.02); }
         
         .weight-tag { 
             background: var(--cat-yellow); 
-            color: #000; 
+            color: var(--cat-black); 
             font-family: 'Archivo Black', sans-serif; 
             font-size: 2.5rem; 
             padding: 10px; 
-            display: inline-block; 
-            margin-bottom: 15px; 
+            margin-bottom: 20px; 
             text-align: center;
         }
 
-        .use-case { font-size: 1.1rem; color: #ccc; margin-bottom: 20px; min-height: 80px; }
-        .use-case strong { color: var(--white); display: block; margin-bottom: 5px; }
+        .use-case { font-size: 1.1rem; color: #ddd; margin-bottom: 20px; min-height: 90px; }
+        .use-case strong { color: var(--cat-yellow); display: block; margin-bottom: 8px; text-transform: uppercase; }
         
-        .brands-list { font-size: 0.85rem; color: var(--cat-yellow); text-transform: uppercase; font-weight: bold; margin-bottom: 20px; letter-spacing: 1px; }
+        .brands-list { 
+            font-size: 0.85rem; 
+            color: #888; 
+            text-transform: uppercase; 
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            border-top: 1px solid #333;
+            padding-top: 10px;
+        }
 
         .btn-rentar { 
             background: #25d366; 
             color: #fff; 
             text-align: center; 
-            padding: 15px; 
+            padding: 18px; 
             text-decoration: none; 
             font-weight: bold; 
             text-transform: uppercase; 
             border-radius: 4px;
             margin-top: auto;
+            font-size: 1.1rem;
         }
 
-        /* --- VIBRADORES Y EXTRAS --- */
-        .extra-action { background: var(--cat-yellow); padding: 40px; text-align: center; color: #000; }
+        /* --- SECCIÓN VIBRADORES --- */
+        .extra-action { 
+            background: var(--cat-yellow); 
+            padding: 50px 10%; 
+            text-align: center; 
+            color: var(--cat-black); 
+        }
+        .extra-action h2 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; margin: 0; }
         .btn-vibrador { 
             display: inline-block; 
-            background: #000; 
-            color: #fff; 
+            background: var(--cat-black); 
+            color: var(--cat-yellow); 
             padding: 20px 40px; 
             text-decoration: none; 
             font-family: 'Archivo Black', sans-serif; 
             font-size: 1.2rem; 
             text-transform: uppercase;
-            border-radius: 4px;
-            margin-top: 15px;
+            border-radius: 0;
+            margin-top: 20px;
+            border: 2px solid var(--cat-black);
         }
 
-        /* --- HORARIOS LARGOS --- */
-        footer { background: #000; color: #fff; padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; border-top: 5px solid var(--cat-yellow); }
-        .footer-box h3 { color: var(--cat-yellow); font-family: 'Archivo Black', sans-serif; text-transform: uppercase; margin-bottom: 15px; }
-        .footer-box p { font-size: 1.1rem; margin: 8px 0; }
+        /* --- FOOTER / HORARIOS --- */
+        footer { 
+            background: var(--cat-black); 
+            color: var(--white); 
+            padding: 60px 10%; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 40px; 
+            border-top: 5px solid var(--cat-yellow); 
+        }
+        .footer-box h3 { color: var(--cat-yellow); font-family: 'Archivo Black', sans-serif; text-transform: uppercase; margin-bottom: 20px; }
+        .footer-box p { font-size: 1.1rem; margin: 10px 0; }
 
-        /* --- BOTÓN FLOTANTE --- */
+        /* --- BOTÓN FLOTANTE WHATSAPP --- */
         .ws-float { 
             position: fixed; 
-            bottom: 25px; 
-            right: 25px; 
+            bottom: 30px; 
+            right: 30px; 
             background: #25d366; 
             color: #fff; 
-            padding: 15px 25px; 
+            padding: 15px 30px; 
             border-radius: 50px; 
             font-weight: bold; 
             text-decoration: none; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4); 
             z-index: 1000; 
             display: flex; 
             align-items: center; 
+            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="https://i.ibb.co/3WfT8Nq/GAP-Metal-Logo.png" alt="G-A-P Renta de Rompedoras" class="logo-img">
-        <h1>G-A-P Renta de Rompedoras</h1>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/3WfT8Nq/GAP-Metal-Logo.png" alt="G-A-P Renta de Rompedoras" class="logo-img">
+        </div>
+        <h1>G-A-P RENTA DE ROMPEDORAS</h1>
     </header>
 
     <section class="intro">
-        <h2>¿Quiénes somos?</h2>
-        <p>Somos una <strong>empresa local</strong> dedicada a la renta de maquinaria ligera, comprometidos con el éxito de cada proyecto en nuestra comunidad. En <strong>G-A-P</strong>, nos dedicamos a apoyar a nuestros clientes ofreciendo las mejores rompedoras y marcas del mercado, asegurando potencia, eficiencia y puntualidad en cada entrega.</p>
+        <h2>¿Quiénes Somos?</h2>
+        <p>Somos una <strong>empresa local</strong> de Juárez, N.L., dedicada a la renta de maquinaria ligera. Estamos dispuestos a apoyar a nuestros clientes ofreciendo las mejores rompedoras del mercado con marcas líderes, garantizando que su obra nunca se detenga.</p>
     </section>
 
     <section class="catalog">
@@ -125,79 +200,79 @@
             <div class="card">
                 <div class="weight-tag">8 KG</div>
                 <div class="use-case">
-                    <strong>Uso Ideal:</strong>
-                    Ideal para hacer perforaciones en concreto y realizar ranuras precisas en pared.
+                    <strong>Uso Recomendado:</strong>
+                    Ideal para hacer perforaciones precisas en concreto y realizar ranuras en pared.
                 </div>
                 <div class="brands-list">Makita | Bosch | DeWalt</div>
-                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20rompedora%20de%208kg" class="btn-rentar">Rentar / Disponibilidad</a>
+                <a href="https://wa.me/528119988053?text=Renta%208kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
             <div class="card">
                 <div class="weight-tag">12 KG</div>
                 <div class="use-case">
-                    <strong>Uso Ideal:</strong>
-                    Ideal para quitar vitro piso, azulejos y trabajos de remodelación ligera.
+                    <strong>Uso Recomendado:</strong>
+                    Equipo ideal para quitar vitro piso, azulejos y acabados.
                 </div>
                 <div class="brands-list">DeWalt | Makita | Edoevom</div>
-                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20rompedora%20de%2012kg" class="btn-rentar">Rentar / Disponibilidad</a>
+                <a href="https://wa.me/528119988053?text=Renta%2012kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
             <div class="card">
                 <div class="weight-tag">15 KG</div>
                 <div class="use-case">
-                    <strong>Uso Ideal:</strong>
-                    Ideal para demoler pared, muros, vigas y trabajos en contra cimiento.
+                    <strong>Uso Recomendado:</strong>
+                    Ideal para demoler pared, muros, vigas y contra cimientos.
                 </div>
                 <div class="brands-list">Makita | Bosch | DeWalt</div>
-                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20rompedora%20de%2015kg" class="btn-rentar">Rentar / Disponibilidad</a>
+                <a href="https://wa.me/528119988053?text=Renta%2015kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
             <div class="card">
                 <div class="weight-tag">25 KG</div>
                 <div class="use-case">
-                    <strong>Uso Ideal:</strong>
-                    Ideal para demoler piso, banquetas, losas y preparaciones para drenaje o zapatas.
+                    <strong>Uso Recomendado:</strong>
+                    Ideal para demoler piso, banquetas, losas y preparación para drenaje o zapatas.
                 </div>
                 <div class="brands-list">Edoevom | DeWalt | Makita</div>
-                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20rompedora%20de%2025kg" class="btn-rentar">Rentar / Disponibilidad</a>
+                <a href="https://wa.me/528119988053?text=Renta%2025kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
             <div class="card">
                 <div class="weight-tag">27 KG</div>
                 <div class="use-case">
-                    <strong>Uso Ideal:</strong>
-                    Potencia máxima para demoler asfalto, piedras y preparación profunda para zapatas.
+                    <strong>Uso Recomendado:</strong>
+                    Máxima potencia para demoler asfalto, piedras y preparación para zapatas.
                 </div>
                 <div class="brands-list">Bosch | Makita | DeWalt</div>
-                <a href="https://wa.me/528119988053?text=Me%20interesa%20la%20rompedora%20de%2027kg" class="btn-rentar">Rentar / Disponibilidad</a>
+                <a href="https://wa.me/528119988053?text=Renta%2027kg" class="btn-rentar">Rentar / Disponibilidad</a>
             </div>
 
         </div>
     </section>
 
     <section class="extra-action">
-        <h2>¿Necesitas vibrar concreto?</h2>
-        <p>Contamos con equipo profesional para garantizar la calidad de tu vaciado.</p>
-        <a href="https://wa.me/528119988053?text=Me%20interesa%20rentar%20un%20vibrador%20de%20concreto" class="btn-vibrador">Rentar Vibrador Aquí</a>
+        <h2>VIBRADORES DE CONCRETO</h2>
+        <p>Contamos con equipos de vibrado profesional para asegurar la resistencia de tus vaciados.</p>
+        <a href="https://wa.me/528119988053?text=Renta%20Vibrador" class="btn-vibrador">Cotizar Vibrador Ahora</a>
     </section>
 
     <footer>
         <div class="footer-box">
-            <h3>Nuestros Horarios</h3>
+            <h3>Horarios de Atención</h3>
             <p><strong>Lunes a Viernes:</strong> 8:00 AM - 8:00 PM</p>
             <p><strong>Sábado:</strong> 9:00 AM - 5:00 PM</p>
             <p><strong>Domingo:</strong> 9:00 AM - 2:00 PM</p>
         </div>
         <div class="footer-box">
-            <h3>Atención Directa</h3>
+            <h3>Contacto Directo</h3>
             <p><strong>WhatsApp:</strong> 811-998-80-53</p>
             <p><strong>Ubicación:</strong> Juárez, Nuevo León</p>
-            <p>Servicio de flete en Juárez y Área Metropolitana.</p>
+            <p>Servicio de flete disponible en toda el área metropolitana.</p>
         </div>
     </footer>
 
     <a href="https://wa.me/528119988053" class="ws-float">
-        💬 Cotizar por WhatsApp
+        💬 WhatsApp 811-998-80-53
     </a>
 
 </body>
