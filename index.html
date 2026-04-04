@@ -3,309 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Especialistas en Demolición y Concreto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;900&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>GAP | Renta de Rompedoras de Concreto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --cat-yellow: #FFD700;
-            --deep-black: #0A0A0A;
-            --soft-gray: #1A1A1A;
-            --white: #FFFFFF;
+            --gap-yellow: #FFD700;
+            --gap-black: #000000;
+            --gap-gray: #121212;
+            --gap-white: #FFFFFF;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--deep-black);
-            color: var(--white);
-            line-height: 1.6;
+        body { font-family: 'Inter', sans-serif; background-color: var(--gap-black); color: var(--gap-white); line-height: 1.5; }
+
+        /* --- ENCABEZADO CENTRADO --- */
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--gap-yellow);
+            background: linear-gradient(to bottom, #1a1a1a, #000);
         }
 
-        /* --- Navegación Refinada (Logo con menos visión) --- */
-        nav {
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--deep-black);
-            border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo-small {
+        .brand-logo {
             font-family: 'Archivo', sans-serif;
-            font-size: 1.8rem;
+            font-size: 5rem;
+            color: var(--gap-yellow);
+            letter-spacing: -2px;
+            margin-bottom: 5px;
+        }
+
+        .brand-tagline {
+            font-size: 1.5rem;
             font-weight: 900;
-            color: var(--cat-yellow);
-            letter-spacing: 2px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--gap-white);
+            margin-bottom: 30px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
             text-decoration: none;
-        }
-
-        .nav-contact {
-            color: var(--white);
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        /* --- Hero: Enfoque en el Servicio --- */
-        .hero {
-            padding: 80px 5%;
-            text-align: left;
-            background: linear-gradient(to right, var(--deep-black) 40%, rgba(0,0,0,0)), url('https://images.unsplash.com/photo-1581094794329-c8112a4e5190?q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero h1 {
-            font-family: 'Archivo', sans-serif;
-            font-size: 3.5rem;
-            line-height: 1;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .hero span { color: var(--cat-yellow); }
-
-        /* --- Sección Publicitaria: Los Equipos --- */
-        .equipos-section { padding: 80px 5%; }
-        
-        .section-tag {
-            color: var(--cat-yellow);
             font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            display: block;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
         }
 
-        .grid-publicidad {
+        .btn-whatsapp:hover { transform: scale(1.05); background-color: #1eb954; }
+
+        /* --- HORARIOS --- */
+        .horarios-bar {
+            background: var(--gap-yellow);
+            color: var(--gap-black);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-weight: 900;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            text-transform: uppercase;
+        }
+
+        /* --- SERVICIOS Y EQUIPOS --- */
+        section { padding: 80px 10%; }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            color: var(--gap-yellow);
+        }
+
+        .grid-servicios {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .ad-card {
-            background: var(--soft-gray);
-            border-top: 4px solid var(--cat-yellow);
-            padding: 40px 30px;
-            transition: 0.3s ease;
-        }
-
-        .ad-card:hover { transform: translateY(-10px); background: #222; }
-
-        .weight-num {
-            font-size: 4rem;
-            font-weight: 900;
-            color: var(--cat-yellow);
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .ad-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .ad-card ul {
-            list-style: none;
-            color: #aaa;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-        }
-
-        .ad-card li { margin-bottom: 8px; position: relative; padding-left: 20px; }
-        .ad-card li::before { content: '✓'; position: absolute; left: 0; color: var(--cat-yellow); }
-
-        .btn-rentar {
-            background: var(--cat-yellow);
-            color: var(--deep-black);
-            padding: 12px 20px;
-            text-decoration: none;
-            font-weight: 900;
-            display: inline-block;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-        }
-
-        /* --- Identidad Corporativa --- */
-        .empresa-section {
-            background: var(--white);
-            color: var(--deep-black);
-            padding: 100px 5%;
-        }
-
-        .empresa-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .corp-item h2 { font-family: 'Archivo', sans-serif; margin-bottom: 20px; text-transform: uppercase; }
-        .corp-item p { margin-bottom: 20px; font-size: 1.1rem; color: #444; }
-
-        .mvv-container {
-            display: grid;
-            grid-template-columns: 1fr;
             gap: 20px;
         }
 
-        .mvv-box {
-            border-left: 5px solid var(--cat-yellow);
-            padding-left: 20px;
+        .card-service {
+            background: var(--gap-gray);
+            border: 1px solid #222;
+            padding: 30px;
+            transition: 0.3s;
         }
 
-        .mvv-box h4 { text-transform: uppercase; font-weight: 900; margin-bottom: 5px; }
+        .card-service:hover { border-color: var(--gap-yellow); background: #1a1a1a; }
 
-        /* --- Footer & WhatsApp --- */
-        .cobertura-strip { background: var(--cat-yellow); color: var(--deep-black); padding: 15px; text-align: center; font-weight: 900; }
+        .card-service h3 { color: var(--gap-yellow); margin-bottom: 15px; font-size: 1.3rem; text-transform: uppercase; }
+        
+        .list-items { list-style: none; color: #bbb; font-size: 0.95rem; }
+        .list-items li { margin-bottom: 8px; position: relative; padding-left: 20px; }
+        .list-items li::before { content: '•'; position: absolute; left: 0; color: var(--gap-yellow); }
 
-        .ws-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 5px;
-            font-weight: 900;
-            text-decoration: none;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-            z-index: 2000;
+        /* --- CORPORATIVO --- */
+        .corp-section { background: var(--gap-white); color: var(--gap-black); }
+        
+        .corp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
         }
+
+        .corp-text h2 { font-size: 2.5rem; margin-bottom: 20px; font-family: 'Archivo'; text-transform: uppercase; }
+        .corp-text p { margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8; }
+
+        .mvv-item { margin-bottom: 25px; border-left: 4px solid var(--gap-yellow); padding-left: 20px; }
+        .mvv-item h4 { font-weight: 900; text-transform: uppercase; margin-bottom: 5px; }
+
+        /* --- COBERTURA --- */
+        .cobertura {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--gap-yellow);
+            color: var(--gap-black);
+        }
+
+        .cobertura h3 { font-size: 2rem; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; }
+        .cobertura p { font-size: 1.2rem; font-weight: 700; letter-spacing: 1px; }
+
+        /* --- FOOTER --- */
+        footer { padding: 40px; text-align: center; font-size: 0.8rem; color: #555; }
 
         @media (max-width: 768px) {
-            .empresa-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
+            .brand-logo { font-size: 3.5rem; }
+            .corp-grid { grid-template-columns: 1fr; }
+            .horarios-bar { flex-direction: column; gap: 5px; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#" class="logo-small">G-A-P</a>
-        <div class="nav-contact">811-998-80-53</div>
-    </nav>
+    <header>
+        <div class="brand-logo">GAP</div>
+        <div class="brand-tagline">RENTA DE ROMPEDORAS DE CONCRETO</div>
+        <a href="https://wa.me/528119988053" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> 811-998-80-53
+        </a>
+    </header>
 
-    <section class="hero">
-        <span class="section-tag">Líderes en Renta de Maquinaria</span>
-        <h1>POTENCIA ORIGINAL PARA <br><span>TU PROYECTO</span></h1>
-        <p style="max-width: 500px; margin-top: 20px;">Equipos certificados Makita, DeWalt, Bosch y Edoevom listos para entrega inmediata.</p>
-    </section>
-
-    <div class="cobertura-strip">
-        SERVICIO EN: JUÁREZ | GUADALUPE | APODACA | SAN NICOLÁS | MONTERREY
+    <div class="horarios-bar">
+        <span><i class="far fa-clock"></i> LUN - VIE: 8 AM - 8 PM</span>
+        <span><i class="far fa-clock"></i> SÁB: 9 AM - 5 PM</span>
+        <span><i class="far fa-clock"></i> DOM: 9 AM - 2 PM</span>
     </div>
 
-    <section class="equipos-section">
-        <h2 style="font-size: 2.5rem; margin-bottom: 50px; text-transform: uppercase;">Nuestra Flota de Poder</h2>
-        
-        <div class="grid-publicidad">
-            <div class="ad-card">
-                <span class="weight-num">08/12</span>
-                <h3>Kg • Precisión</h3>
-                <ul>
-                    <li>Orificios en concreto</li>
-                    <li>Ranuras en pared</li>
-                    <li>Demolición de muros</li>
-                    <li>Trabajo en vigas</li>
+    <section>
+        <h2 class="section-title">Especialistas en Demolición</h2>
+        <div class="grid-servicios">
+            
+            <div class="card-service">
+                <h3>Residencial y Muro</h3>
+                <ul class="list-items">
+                    <li>Retiro de Vitropiso y Azulejo</li>
+                    <li>Ranuras en Pared</li>
+                    <li>Demolición de Muros y Paredes</li>
+                    <li>Trabajos en Vigas</li>
                 </ul>
-                <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar ahora</a>
             </div>
 
-            <div class="ad-card">
-                <span class="weight-num">15</span>
-                <h3>Kg • Versatilidad</h3>
-                <ul>
-                    <li>Pisos de concreto</li>
-                    <li>Banquetas residenciales</li>
-                    <li>Zanjas para drenaje</li>
-                    <li>Remoción de azulejo</li>
+            <div class="card-service">
+                <h3>Infraestructura</h3>
+                <ul class="list-items">
+                    <li>Demolición de Asfalto</li>
+                    <li>Ruptura de Piedras</li>
+                    <li>Preparación para Drenaje</li>
+                    <li>Demolición de Banquetas</li>
                 </ul>
-                <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar ahora</a>
             </div>
 
-            <div class="ad-card">
-                <span class="weight-num">25</span>
-                <h3>Kg • Alto Poder</h3>
-                <ul>
-                    <li>Losas reforzadas</li>
-                    <li>Escaleras de concreto</li>
-                    <li>Contra cimientos</li>
-                    <li>Pavimento industrial</li>
+            <div class="card-service">
+                <h3>Cimentación Pesada</h3>
+                <ul class="list-items">
+                    <li>Contra Cimientos</li>
+                    <li>Preparación para Zapatas</li>
+                    <li>Demolición de Pisos y Losas</li>
+                    <li>Vibrado Profesional de Concreto</li>
                 </ul>
-                <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar ahora</a>
             </div>
 
-            <div class="ad-card">
-                <span class="weight-num">27</span>
-                <h3>Kg • Fuerza Bruta</h3>
-                <ul>
-                    <li>Zapatas profundas</li>
-                    <li>Cimientos masivos</li>
-                    <li>Vibrado de alta densidad</li>
-                    <li>Demolición extrema</li>
-                </ul>
-                <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar ahora</a>
-            </div>
-
-            <div class="ad-card" style="border-top-color: #eee;">
-                <span class="weight-num" style="color: #fff;">PRO</span>
-                <h3>Vibrador Concreto</h3>
-                <ul>
-                    <li>Eliminación de burbujas</li>
-                    <li>Compactación de mezcla</li>
-                    <li>Columnas y losas</li>
-                    <li>Acabado profesional</li>
-                </ul>
-                <a href="https://wa.me/528119988053" class="btn-rentar" style="background: white;">Cotizar ahora</a>
-            </div>
         </div>
     </section>
 
-    <section class="empresa-section">
-        <div class="empresa-grid">
-            <div class="corp-item">
+    <section class="corp-section">
+        <div class="corp-grid">
+            <div class="corp-text">
                 <h2>Quiénes Somos</h2>
-                <p><strong>G-A-P Renta de Rompedoras</strong> es una empresa regiomontana comprometida con el sector de la construcción. Nos especializamos en brindar soluciones de demolición mediante la renta de equipo de marcas premium.</p>
-                <p>Somos tu mejor aliado porque entendemos que en la obra la puntualidad y el rendimiento del equipo son la clave del éxito.</p>
-                
-                <h3 style="margin-top: 30px; text-transform: uppercase;">Por qué elegirnos:</h3>
-                <p>Manejamos las mejores marcas del mercado: <strong>Makita, DeWalt, Bosch y Edoevom</strong>, garantizando herramientas que no fallan.</p>
+                <p>En <strong>GAP</strong>, representamos la fuerza y la puntualidad que tu obra necesita. Somos una <strong>empresa local</strong> de Juárez, N.L., comprometida con ser tus aliados estratégicos en cada proyecto de demolición.</p>
+                <p>Nuestra identidad se basa en la confianza y el respaldo técnico. Rentamos equipos de alto rendimiento (8kg a 27kg) de marcas líderes como Makita, DeWalt, Bosch y Edoevom.</p>
             </div>
 
-            <div class="corp-item">
-                <div class="mvv-container">
-                    <div class="mvv-box">
-                        <h4>Misión</h4>
-                        <p style="font-size: 0.9rem;">Proveer equipos de demolición de la más alta calidad con un servicio logístico impecable, facilitando el avance de los proyectos de nuestros clientes.</p>
-                    </div>
-                    <div class="mvv-box">
-                        <h4>Visión</h4>
-                        <p style="font-size: 0.9rem;">Consolidarnos como el proveedor número uno de renta de maquinaria ligera en el área metropolitana de Monterrey, destacando por nuestra tecnología y confiabilidad.</p>
-                    </div>
-                    <div class="mvv-box">
-                        <h4>Valores</h4>
-                        <p style="font-size: 0.9rem;">Compromiso, Integridad, Puntualidad y Excelencia operativa en cada entrega.</p>
-                    </div>
+            <div class="corp-text">
+                <div class="mvv-item">
+                    <h4>Misión</h4>
+                    <p>Facilitar el trabajo de demolición y construcción mediante equipo de vanguardia y un servicio de entrega excepcional.</p>
+                </div>
+                <div class="mvv-item">
+                    <h4>Visión</h4>
+                    <p>Ser el referente número uno en renta de maquinaria ligera en Nuevo León, reconocidos por nuestra eficiencia y trato humano.</p>
+                </div>
+                <div class="mvv-item">
+                    <h4>Valores</h4>
+                    <p>Honestidad, Puntualidad, Calidad y Compromiso con el éxito de tu obra.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/528119988053" class="ws-float">
-        <i class="fab fa-whatsapp"></i> RENTAR POR WHATSAPP
-    </a>
+    <div class="cobertura">
+        <h3>Área de Servicio</h3>
+        <p>JUÁREZ • GUADALUPE • APODACA • SAN NICOLÁS • MONTERREY</p>
+    </div>
 
-    <footer style="padding: 50px; text-align: center; color: #555; background: #000;">
-        <p>G-A-P RENTA DE ROMPEDORAS | JUÁREZ, NUEVO LEÓN | 2026</p>
+    <footer>
+        GAP RENTA DE ROMPEDORAS | TUS ALIADOS EN DEMOLICIÓN | MONTERREY, N.L. &copy; 2026
     </footer>
 
 </body>
