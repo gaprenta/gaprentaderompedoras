@@ -3,268 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Renta de Rompedoras de Concreto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <title>G-A-P | Especialistas en Demolición y Concreto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;900&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --gap-yellow: #FFD700;
-            --gap-black: #000000;
-            --gap-white: #ffffff;
-            --gap-gray: #151515;
+            --cat-yellow: #FFD700;
+            --deep-black: #0A0A0A;
+            --soft-gray: #1A1A1A;
+            --white: #FFFFFF;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--gap-black);
-            color: var(--gap-white);
-            overflow-x: hidden;
+            background-color: var(--deep-black);
+            color: var(--white);
+            line-height: 1.6;
         }
 
-        /* --- IMPACTO INICIAL: G-A-P PRIMERO --- */
-        .brand-hero {
-            height: 100vh;
+        /* --- Navegación Refinada (Logo con menos visión) --- */
+        nav {
+            padding: 20px 5%;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
-            background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
-            border-bottom: 10px solid var(--gap-yellow);
+            background: var(--deep-black);
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .main-logo {
-            font-family: 'Archivo Black', sans-serif;
-            font-size: 25vw; /* GIGANTE */
-            line-height: 0.8;
-            color: var(--gap-yellow);
-            letter-spacing: -1vw;
-            margin-bottom: 20px;
-            text-shadow: 10px 10px 0px rgba(255, 215, 0, 0.1);
+        .logo-small {
+            font-family: 'Archivo', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--cat-yellow);
+            letter-spacing: 2px;
+            text-decoration: none;
         }
 
-        .main-subtitle {
-            font-size: 2vw;
+        .nav-contact {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1.5vw;
-            font-weight: 900;
-            color: var(--gap-white);
         }
 
-        .scroll-indicator {
-            margin-top: 50px;
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            color: var(--gap-yellow);
-            animation: bounce 2s infinite;
+        /* --- Hero: Enfoque en el Servicio --- */
+        .hero {
+            padding: 80px 5%;
+            text-align: left;
+            background: linear-gradient(to right, var(--deep-black) 40%, rgba(0,0,0,0)), url('https://images.unsplash.com/photo-1581094794329-c8112a4e5190?q=80&w=2000');
+            background-size: cover;
+            background-position: center;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-            60% {transform: translateY(-5px);}
+        .hero h1 {
+            font-family: 'Archivo', sans-serif;
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
-        /* --- SECCIÓN DE MARCAS LÍDERES --- */
-        .brands-marquee {
-            background: var(--gap-yellow);
-            color: var(--gap-black);
-            padding: 20px 0;
-            font-weight: 900;
-            font-size: 1.5rem;
-            white-space: nowrap;
-            overflow: hidden;
-        }
+        .hero span { color: var(--cat-yellow); }
 
-        .marquee-inner {
-            display: flex;
-            animation: marquee 15s linear infinite;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* --- CATÁLOGO DE EQUIPOS (8kg a 27kg + Vibradores) --- */
-        section { padding: 100px 5%; }
+        /* --- Sección Publicitaria: Los Equipos --- */
+        .equipos-section { padding: 80px 5%; }
         
-        .section-title {
-            font-family: 'Archivo Black', sans-serif;
-            font-size: 3rem;
-            color: var(--gap-yellow);
-            margin-bottom: 50px;
-            border-left: 15px solid var(--gap-yellow);
-            padding-left: 20px;
-        }
-
-        .grid-equipos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--gap-gray);
-            border: 2px solid #222;
-            padding: 40px;
-            transition: 0.4s;
-            position: relative;
-        }
-
-        .card:hover {
-            border-color: var(--gap-yellow);
-            transform: scale(1.02);
-        }
-
-        .card-weight {
-            font-size: 3rem;
+        .section-tag {
+            color: var(--cat-yellow);
             font-weight: 900;
-            color: var(--gap-yellow);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            display: block;
             margin-bottom: 10px;
         }
 
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 15px;
+        .grid-publicidad {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .card-desc {
-            color: #888;
-            font-size: 0.95rem;
-            line-height: 1.6;
+        .ad-card {
+            background: var(--soft-gray);
+            border-top: 4px solid var(--cat-yellow);
+            padding: 40px 30px;
+            transition: 0.3s ease;
+        }
+
+        .ad-card:hover { transform: translateY(-10px); background: #222; }
+
+        .weight-num {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--cat-yellow);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .ad-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .ad-card ul {
+            list-style: none;
+            color: #aaa;
+            font-size: 0.9rem;
             margin-bottom: 25px;
         }
 
-        .btn-renta {
-            background: var(--gap-yellow);
-            color: var(--gap-black);
-            padding: 15px 30px;
+        .ad-card li { margin-bottom: 8px; position: relative; padding-left: 20px; }
+        .ad-card li::before { content: '✓'; position: absolute; left: 0; color: var(--cat-yellow); }
+
+        .btn-rentar {
+            background: var(--cat-yellow);
+            color: var(--deep-black);
+            padding: 12px 20px;
             text-decoration: none;
             font-weight: 900;
-            display: block;
-            text-align: center;
-            transition: 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.8rem;
         }
 
-        .btn-renta:hover {
-            background: var(--gap-white);
+        /* --- Identidad Corporativa --- */
+        .empresa-section {
+            background: var(--white);
+            color: var(--deep-black);
+            padding: 100px 5%;
         }
 
-        /* --- COBERTURA Y CONFIANZA --- */
-        .info-footer {
-            background-color: var(--gap-gray);
-            padding: 80px 5%;
+        .empresa-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
+            max-width: 1200px;
+            margin: auto;
         }
 
-        /* --- WHATSAPP FLOTANTE --- */
+        .corp-item h2 { font-family: 'Archivo', sans-serif; margin-bottom: 20px; text-transform: uppercase; }
+        .corp-item p { margin-bottom: 20px; font-size: 1.1rem; color: #444; }
+
+        .mvv-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .mvv-box {
+            border-left: 5px solid var(--cat-yellow);
+            padding-left: 20px;
+        }
+
+        .mvv-box h4 { text-transform: uppercase; font-weight: 900; margin-bottom: 5px; }
+
+        /* --- Footer & WhatsApp --- */
+        .cobertura-strip { background: var(--cat-yellow); color: var(--deep-black); padding: 15px; text-align: center; font-weight: 900; }
+
         .ws-float {
             position: fixed;
-            bottom: 40px;
-            right: 40px;
+            bottom: 30px;
+            right: 30px;
             background: #25D366;
             color: white;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            z-index: 1000;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-weight: 900;
             text-decoration: none;
-        }
-
-        footer {
-            padding: 40px;
-            text-align: center;
-            border-top: 1px solid #222;
-            font-size: 0.8rem;
-            color: #444;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            z-index: 2000;
         }
 
         @media (max-width: 768px) {
-            .main-logo { font-size: 35vw; }
-            .main-subtitle { font-size: 4vw; }
-            .info-footer { grid-template-columns: 1fr; }
+            .empresa-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="brand-hero">
-        <div class="main-logo">G-A-P</div>
-        <div class="main-subtitle">RENTA DE ROMPEDORAS</div>
-        <div class="scroll-indicator">DESLIZA PARA POTENCIA <br> <i class="fas fa-chevron-down"></i></div>
+    <nav>
+        <a href="#" class="logo-small">G-A-P</a>
+        <div class="nav-contact">811-998-80-53</div>
+    </nav>
+
+    <section class="hero">
+        <span class="section-tag">Líderes en Renta de Maquinaria</span>
+        <h1>POTENCIA ORIGINAL PARA <br><span>TU PROYECTO</span></h1>
+        <p style="max-width: 500px; margin-top: 20px;">Equipos certificados Makita, DeWalt, Bosch y Edoevom listos para entrega inmediata.</p>
+    </section>
+
+    <div class="cobertura-strip">
+        SERVICIO EN: JUÁREZ | GUADALUPE | APODACA | SAN NICOLÁS | MONTERREY
     </div>
 
-    <div class="brands-marquee">
-        <div class="marquee-inner">
-            <span>&nbsp;MAKITA • DEWALT • BOSCH • EDOEVOM • MAKITA • DEWALT • BOSCH • EDOEVOM • MAKITA • DEWALT • BOSCH • EDOEVOM • MAKITA • DEWALT • BOSCH • EDOEVOM •</span>
-            <span>&nbsp;MAKITA • DEWALT • BOSCH • EDOEVOM • MAKITA • DEWALT • BOSCH • EDOEVOM • MAKITA • DEWALT • BOSCH • EDOEVOM • MAKITA • DEWALT • BOSCH • EDOEVOM •</span>
-        </div>
-    </div>
-
-    <section>
-        <h2 class="section-title">EQUIPOS DISPONIBLES</h2>
-        <div class="grid-equipos">
-            
-            <div class="card">
-                <div class="card-weight">08-12 KG</div>
-                <div class="card-title">Rompedora Ligera</div>
-                <p class="card-desc">Especializada en orificios precisos en concreto, ranuras en pared, demolición de muros delgados y vigas.</p>
-                <a href="https://wa.me/528119988053?text=Cotizar%208-12kg" class="btn-renta">RENTAR AHORA</a>
+    <section class="equipos-section">
+        <h2 style="font-size: 2.5rem; margin-bottom: 50px; text-transform: uppercase;">Nuestra Flota de Poder</h2>
+        
+        <div class="grid-publicidad">
+            <div class="ad-card">
+                <span class="weight-num">08/12</span>
+                <h3>Kg • Precisión</h3>
+                <ul>
+                    <li>Orificios en concreto</li>
+                    <li>Ranuras en pared</li>
+                    <li>Demolición de muros</li>
+                    <li>Trabajo en vigas</li>
+                </ul>
+                <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar ahora</a>
             </div>
 
-            <div class="card">
-                <div class="card-weight">15 KG</div>
-                <div class="card-title">Rompedora Estándar</div>
-                <p class="card-desc">La herramienta ideal para trabajos en banquetas, pisos de concreto y preparaciones para drenaje.</p>
-                <a href="https://wa.me/528119988053?text=Cotizar%2015kg" class="btn-renta">RENTAR AHORA</a>
+            <div class="ad-card">
+                <span class="weight-num">15</span>
+                <h3>Kg • Versatilidad</h3>
+                <ul>
+                    <li>Pisos de concreto</li>
+                    <li>Banquetas residenciales</li>
+                    <li>Zanjas para drenaje</li>
+                    <li>Remoción de azulejo</li>
+                </ul>
+                <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar ahora</a>
             </div>
 
-            <div class="card">
-                <div class="card-weight">25-27 KG</div>
-                <div class="card-title">Rompedora Pesada</div>
-                <p class="card-desc">Poder absoluto para demolición de losas gruesas, contra cimientos, zapatas y escaleras reforzadas.</p>
-                <a href="https://wa.me/528119988053?text=Cotizar%2025-27kg" class="btn-renta">RENTAR AHORA</a>
+            <div class="ad-card">
+                <span class="weight-num">25</span>
+                <h3>Kg • Alto Poder</h3>
+                <ul>
+                    <li>Losas reforzadas</li>
+                    <li>Escaleras de concreto</li>
+                    <li>Contra cimientos</li>
+                    <li>Pavimento industrial</li>
+                </ul>
+                <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar ahora</a>
             </div>
 
-            <div class="card" style="background-color: var(--gap-yellow); border-color: var(--gap-yellow);">
-                <div class="card-weight" style="color: var(--gap-black);">PRO</div>
-                <div class="card-title" style="color: var(--gap-black);">Vibrador de Concreto</div>
-                <p class="card-desc" style="color: #333;">Elimina burbujas de aire en columnas, losas y vigas. Asegura una estructura sólida y profesional.</p>
-                <a href="https://wa.me/528119988053?text=Cotizar%20Vibrador" class="btn-renta" style="background: black; color: white;">RENTAR AHORA</a>
+            <div class="ad-card">
+                <span class="weight-num">27</span>
+                <h3>Kg • Fuerza Bruta</h3>
+                <ul>
+                    <li>Zapatas profundas</li>
+                    <li>Cimientos masivos</li>
+                    <li>Vibrado de alta densidad</li>
+                    <li>Demolición extrema</li>
+                </ul>
+                <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar ahora</a>
             </div>
 
+            <div class="ad-card" style="border-top-color: #eee;">
+                <span class="weight-num" style="color: #fff;">PRO</span>
+                <h3>Vibrador Concreto</h3>
+                <ul>
+                    <li>Eliminación de burbujas</li>
+                    <li>Compactación de mezcla</li>
+                    <li>Columnas y losas</li>
+                    <li>Acabado profesional</li>
+                </ul>
+                <a href="https://wa.me/528119988053" class="btn-rentar" style="background: white;">Cotizar ahora</a>
+            </div>
         </div>
     </section>
 
-    <div class="info-footer">
-        <div>
-            <h2 style="color: var(--gap-yellow); font-family: 'Archivo Black';">TU MEJOR ALIADO</h2>
-            <p style="margin-top: 20px; line-height: 1.8; color: #aaa;">Somos expertos en demolición. Ofrecemos equipos Makita, DeWalt, Bosch y Edoevom garantizando que tu obra no se detenga. Nuestra misión es entregarte potencia y puntualidad en cada proyecto.</p>
+    <section class="empresa-section">
+        <div class="empresa-grid">
+            <div class="corp-item">
+                <h2>Quiénes Somos</h2>
+                <p><strong>G-A-P Renta de Rompedoras</strong> es una empresa regiomontana comprometida con el sector de la construcción. Nos especializamos en brindar soluciones de demolición mediante la renta de equipo de marcas premium.</p>
+                <p>Somos tu mejor aliado porque entendemos que en la obra la puntualidad y el rendimiento del equipo son la clave del éxito.</p>
+                
+                <h3 style="margin-top: 30px; text-transform: uppercase;">Por qué elegirnos:</h3>
+                <p>Manejamos las mejores marcas del mercado: <strong>Makita, DeWalt, Bosch y Edoevom</strong>, garantizando herramientas que no fallan.</p>
+            </div>
+
+            <div class="corp-item">
+                <div class="mvv-container">
+                    <div class="mvv-box">
+                        <h4>Misión</h4>
+                        <p style="font-size: 0.9rem;">Proveer equipos de demolición de la más alta calidad con un servicio logístico impecable, facilitando el avance de los proyectos de nuestros clientes.</p>
+                    </div>
+                    <div class="mvv-box">
+                        <h4>Visión</h4>
+                        <p style="font-size: 0.9rem;">Consolidarnos como el proveedor número uno de renta de maquinaria ligera en el área metropolitana de Monterrey, destacando por nuestra tecnología y confiabilidad.</p>
+                    </div>
+                    <div class="mvv-box">
+                        <h4>Valores</h4>
+                        <p style="font-size: 0.9rem;">Compromiso, Integridad, Puntualidad y Excelencia operativa en cada entrega.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <h3 style="color: var(--gap-white); text-transform: uppercase;">Zona de Servicio</h3>
-            <p style="font-size: 1.5rem; color: var(--gap-yellow); font-weight: 900; margin-top: 10px;">JUÁREZ • GUADALUPE • APODACA • SAN NICOLÁS • MONTERREY</p>
-        </div>
-    </div>
+    </section>
 
     <a href="https://wa.me/528119988053" class="ws-float">
-        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp"></i> RENTAR POR WHATSAPP
     </a>
 
-    <footer>
-        G-A-P RENTA DE ROMPEDORAS | WHATSAPP 811-998-80-53 | MONTERREY, N.L.
+    <footer style="padding: 50px; text-align: center; color: #555; background: #000;">
+        <p>G-A-P RENTA DE ROMPEDORAS | JUÁREZ, NUEVO LEÓN | 2026</p>
     </footer>
 
 </body>
