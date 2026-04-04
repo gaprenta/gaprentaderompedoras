@@ -3,197 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Renta de Rompedoras de Concreto</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>GAP - Renta de Rompedoras</title>
     <style>
-        /* Paleta de Colores Caterpillar */
         :root {
             --cat-yellow: #FFCD00;
-            --cat-black: #191919;
-            --cat-red: #E31212;
-            --white: #FFFFFF;
+            --black: #000000;
+            --red: #FF0000;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            background-color: var(--cat-yellow);
+            color: var(--black);
+            font-family: 'Arial Black', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            color: var(--cat-black);
-            background-color: #f4f4f4;
+            line-height: 1.4;
         }
 
-        /* LOGOTIPO G-A-P */
+        .contenedor {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
         header {
-            background-color: var(--cat-yellow);
             text-align: center;
-            padding: 20px 0;
-            border-bottom: 5px solid var(--cat-black);
-        }
-
-        .logo-container h1 {
-            margin: 0;
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--cat-black);
+            padding: 40px 0;
+            font-size: 4em;
             letter-spacing: 5px;
         }
 
-        .logo-container h1 span {
-            color: var(--cat-red);
-        }
+        .guion { color: var(--red); }
 
-        .sub-logo {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-top: -10px;
-            display: block;
-        }
-
-        /* SECCIONES */
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .brands-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-            background: #fff;
+        .seccion {
+            background: rgba(0, 0, 0, 0.05);
+            border: 2px solid var(--black);
+            border-radius: 12px;
             padding: 20px;
-            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
-        .brand { font-weight: bold; font-size: 1.2rem; color: #555; }
-
-        /* TABLA TÉCNICA */
-        .specs-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .specs-table th {
-            background-color: var(--cat-black);
+        h2 {
+            background: var(--black);
             color: var(--cat-yellow);
+            padding: 10px;
+            margin-top: 0;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            display: inline-block;
+        }
+
+        .equipo-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .equipo-card {
+            border-left: 8px solid var(--black);
+            background: rgba(255, 255, 255, 0.3);
             padding: 15px;
         }
 
-        .specs-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-        }
-
-        .specs-table tr:nth-child(even) { background-color: #f9f9f9; }
-
-        /* BANNER DE VALOR */
-        .value-banner {
-            background-color: var(--cat-black);
-            color: white;
-            padding: 40px 20px;
-        }
-
-        .value-banner h2 { color: var(--cat-yellow); }
-
-        /* BOTONES */
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            margin: 10px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
+        .equipo-card h3 { margin-top: 0; color: var(--black); }
 
         .btn-whatsapp {
-            background-color: #25D366;
+            display: block;
+            background: #25D366;
             color: white;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.5em;
+            border-radius: 50px;
+            margin: 20px 0;
+            border: 2px solid var(--black);
         }
-
-        .btn-google {
-            background-color: white;
-            color: #4285F4;
-            border: 2px solid #4285F4;
-        }
-
-        .btn:hover { transform: scale(1.05); }
 
         footer {
-            background: var(--cat-black);
-            color: #777;
+            text-align: center;
+            font-size: 0.9em;
             padding: 20px;
-            font-size: 0.8rem;
+            border-top: 2px solid var(--black);
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo-container">
-        <h1>G<span>-</span>A<span>-</span>P</h1>
-        <span class="sub-logo">renta de rompedoras</span>
+    <div class="contenedor">
+        <header>
+            G<span class="guion">-</span>A<span class="guion">-</span>P GAP
+        </header>
+
+        <section class="seccion">
+            <h2>Marcas que manejamos</h2>
+            <p><strong>MAKITA • DEWALT • BOSCH • EDOEVOM</strong></p>
+            <p>Somos tu mejor aliado en demolición en <strong>Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey</strong>.</p>
+        </section>
+
+        <a href="https://wa.me/528119988053" class="btn-whatsapp">
+            📲 WhatsApp: 811-998-80-53
+        </a>
+
+        <section class="seccion">
+            <h2>Catálogo de Equipos</h2>
+            <div class="equipo-grid">
+                
+                <div class="equipo-card">
+                    <h3>Rotomartillo 8 kg</h3>
+                    <p>720W | 6 Joules. Ideal para orificios en concreto con brocas.</p>
+                </div>
+
+                <div class="equipo-card">
+                    <h3>Rompedora 12 kg</h3>
+                    <p>960W | 12 Joules. Ideal para quitar vitro y azulejos.</p>
+                </div>
+
+                <div class="equipo-card">
+                    <h3>Rompedora 15 kg</h3>
+                    <p>1100W | 25 Joules. Ideal para demoler pared, muros, vigas o contra cimiento.</p>
+                </div>
+
+                <div class="equipo-card">
+                    <h3>Rompedora 25 kg</h3>
+                    <p>1800W | 60 Joules. Ideal para romper banquetas, pisos, losas y escaleras.</p>
+                </div>
+
+                <div class="equipo-card" style="background: rgba(255, 255, 255, 0.6);">
+                    <h3>Rompedora 27 kg (NUEVA)</h3>
+                    <p><strong>2100W | 70 Joules.</strong> Ideal para preparar zapatas y preparación para drenaje.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="seccion">
+            <h2>Horarios de Atención</h2>
+            <p><strong>Lunes a Viernes:</strong> 8:00 AM - 8:00 PM</p>
+            <p><strong>Sábados:</strong> 9:00 AM - 5:00 PM</p>
+            <p><strong>Domingos:</strong> 9:00 AM - 2:00 PM</p>
+        </section>
+
+        <footer>
+            &copy; 2024 GAP Renta de Rompedoras - Monterrey y Área Metropólitana
+        </footer>
     </div>
-</header>
-
-<section>
-    <h2>Manejamos las mejores marcas</h2>
-    <div class="brands-container">
-        <div class="brand">MAKITA</div>
-        <div class="brand">DEWALT</div>
-        <div class="brand">BOSCH</div>
-        <div class="brand">EDOEVOM</div>
-    </div>
-    <p><strong>Manejamos las mejores marcas directamente a tu obra.</strong></p>
-</section>
-
-<section class="value-banner">
-    <h2>Tu mejor aliado en demolición</h2>
-    <p>Servicio profesional en: <strong>Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey.</strong></p>
-</section>
-
-<section>
-    <h3>Especificaciones de Nuestros Equipos</h3>
-    <table class="specs-table">
-        <thead>
-            <tr>
-                <th>Peso</th>
-                <th>Potencia</th>
-                <th>Impacto</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>8 kg</td><td>720 Watts</td><td>6 Joules</td></tr>
-            <tr><td>12 kg</td><td>960 Watts</td><td>12 Joules</td></tr>
-            <tr><td>15 kg</td><td>1200 Watts</td><td>25 Joules</td></tr>
-            <tr><td>25 kg</td><td>1800 Watts</td><td>60 Joules</td></tr>
-            <tr><td>27 kg</td><td>2200 Watts</td><td>70 Joules</td></tr>
-        </tbody>
-    </table>
-</section>
-
-<section>
-    <h3>¡Cotiza ahora mismo!</h3>
-    <a href="https://wa.me/528119988053" class="btn btn-whatsapp">
-        <i class="fab fa-whatsapp"></i> 811-998-80-53
-    </a>
-    <br>
-    <a href="#" class="btn btn-google">
-        <i class="fab fa-google"></i> ¡Califica nuestro servicio en Google!
-    </a>
-</section>
-
-<footer>
-    &copy; 2026 GAP Renta de Rompedoras - Juárez, Nuevo León.
-</footer>
 
 </body>
 </html>
