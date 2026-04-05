@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P Renta de Rompedoras</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <title>G-A-P | Renta de Rompedoras de Concreto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -12,258 +12,297 @@
             --cat-yellow: #FFCD00;
             --cat-black: #101010;
             --cat-gray: #333333;
-            --white: #ffffff;
+            --success: #28a745;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            background-color: #eeeeee;
             color: var(--cat-black);
         }
 
-        /* Encabezado G-A-P */
+        /* --- Header Impactante --- */
         header {
-            background-color: var(--cat-black);
+            background: linear-gradient(rgba(16, 16, 16, 0.9), rgba(16, 16, 16, 0.9)), url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
             color: var(--cat-yellow);
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
-            border-bottom: 8px solid var(--cat-yellow);
+            border-bottom: 10px solid var(--cat-yellow);
         }
 
         header h1 {
-            font-size: 4rem;
+            font-size: 5rem;
             margin: 0;
-            letter-spacing: 10px;
             font-weight: 900;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.5);
         }
 
-        header p {
-            font-size: 1.5rem;
-            margin: 10px 0 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Contenedor de Equipos */
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            border-left: 10px solid var(--cat-yellow);
-            padding-left: 15px;
+        .badge-confianza {
+            background: var(--cat-yellow);
+            color: var(--cat-black);
+            padding: 5px 15px;
+            font-weight: bold;
+            border-radius: 4px;
             display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
+        /* --- Franja de Beneficios (Generador de Confianza) --- */
+        .trust-bar {
+            background: var(--cat-black);
+            color: white;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .trust-item i { color: var(--cat-yellow); font-size: 1.5rem; }
+
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+        /* --- Grid de Equipos Profesional --- */
         .grid-equipos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .card {
-            background: var(--white);
-            border: 2px solid var(--cat-black);
-            border-radius: 8px;
+            background: white;
+            border: 1px solid #ddd;
+            border-bottom: 5px solid var(--cat-black);
+            border-radius: 4px;
+            transition: 0.3s;
             overflow: hidden;
-            transition: transform 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--cat-yellow);
+            transform: scale(1.02);
+            border-bottom: 5px solid var(--cat-yellow);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         .card-header {
-            background-color: var(--cat-black);
+            background: var(--cat-black);
             color: var(--cat-yellow);
             padding: 15px;
             font-weight: 900;
-            font-size: 1.4rem;
             text-align: center;
         }
 
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-body ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .card-body li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .card-body li::before {
-            content: "✔";
-            color: orange;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* Área de Servicio */
-        .cobertura {
-            background-color: var(--cat-gray);
-            color: var(--white);
-            padding: 40px 20px;
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        .zonas {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .zona-tag {
-            background: var(--cat-yellow);
-            color: var(--cat-black);
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        /* Botón WhatsApp Flotante */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            z-index: 100;
+        .card-img {
+            height: 220px;
+            background: #f9f9f9;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            padding: 10px;
         }
 
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-        }
+        .card-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        footer {
+        .card-body { padding: 20px; }
+        
+        .card-body ul { list-style: none; padding: 0; }
+        .card-body li { margin-bottom: 8px; font-weight: 500; }
+        .card-body li i { color: var(--success); margin-right: 8px; }
+
+        /* --- Sección Testimonios --- */
+        .testimonios {
+            background: var(--cat-yellow);
+            padding: 60px 20px;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            color: #666;
+            margin: 60px 0;
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            header h1 { font-size: 2.5rem; }
-            .whatsapp-float { bottom: 20px; right: 20px; }
+        .testimonio-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 5px 5px 0px var(--cat-black);
         }
+
+        /* --- WhatsApp Flotante con Aviso --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .btn-rentar {
+            display: block;
+            background: var(--cat-black);
+            color: var(--cat-yellow);
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+
+        .btn-rentar:hover { background: #333; }
+
+        /* --- Área de Servicio --- */
+        .zonas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .zona { background: var(--cat-black); color: white; padding: 10px; border-radius: 4px; text-align: center; font-weight: bold;}
+
     </style>
 </head>
 <body>
 
     <header>
+        <span class="badge-confianza"><i class="fas fa-shield-alt"></i> Servicio 100% Confiable en Monterrey</span>
         <h1>G - A - P</h1>
-        <p>Renta de Rompedoras de Concreto</p>
+        <p>Renta de Rompedoras y Equipo Ligero</p>
     </header>
 
+    <div class="trust-bar">
+        <div class="trust-item"><i class="fas fa-check-double"></i> Equipos Revisados</div>
+        <div class="trust-item"><i class="fas fa-truck-moving"></i> Entrega a Obra</div>
+        <div class="trust-item"><i class="fas fa-user-hard-hat"></i> Atención Profesional</div>
+        <div class="trust-item"><i class="fas fa-tags"></i> Precios Competitivos</div>
+    </div>
+
     <div class="container">
-        <h2 class="section-title">Nuestros Equipos</h2>
         
+        <h2 style="text-align: center; text-transform: uppercase; font-size: 2rem;">Nuestro Equipo Disponible</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #666;">Equipos de alto rendimiento listos para trabajar hoy mismo.</p>
+
         <div class="grid-equipos">
             <div class="card">
                 <div class="card-header">Rompedora 8 Kg</div>
+                <div class="card-img"><img src="8.jpg" alt="8kg"></div>
                 <div class="card-body">
                     <ul>
-                        <li>Quitar Vitropiso</li>
-                        <li>Azulejos y acabados</li>
-                        <li>Ranuras precisas</li>
+                        <li><i class="fas fa-check"></i> Ideal para vitropiso y muros</li>
+                        <li><i class="fas fa-check"></i> Conexión 110v estándar</li>
+                        <li><i class="fas fa-check"></i> Incluye cincel de punta</li>
                     </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">Rompedora 12 Kg</div>
-                <div class="card-body">
-                    <ul>
-                        <li>Ranuras en pared</li>
-                        <li>Muros de ladrillo</li>
-                        <li>Instalaciones eléctricas</li>
-                    </ul>
+                    <a href="https://wa.me/528119988053?text=Me%20interesa%20la%208kg" class="btn-rentar">Cotizar Ahora</a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">Rompedora 15 Kg</div>
+                <div class="card-img"><img src="15.jpg" alt="15kg"></div>
                 <div class="card-body">
                     <ul>
-                        <li>Demolición de muros</li>
-                        <li>Pisos de concreto delgado</li>
-                        <li>Remodelaciones generales</li>
+                        <li><i class="fas fa-check"></i> Demolición de pisos y muros</li>
+                        <li><i class="fas fa-check"></i> Gran poder de impacto</li>
+                        <li><i class="fas fa-check"></i> Equipada para trabajo rudo</li>
                     </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">Rompedora 25 Kg</div>
-                <div class="card-body">
-                    <ul>
-                        <li>Banquetas y firmes</li>
-                        <li>Escaleras de concreto</li>
-                        <li>Zapatas y cimentación</li>
-                    </ul>
+                    <a href="https://wa.me/528119988053?text=Me%20interesa%20la%2015kg" class="btn-rentar">Cotizar Ahora</a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">Rompedora 27 Kg</div>
+                <div class="card-img"><img src="27.jpg" alt="27kg"></div>
                 <div class="card-body">
                     <ul>
-                        <li>Losas de concreto</li>
-                        <li>Preparación para drenaje</li>
-                        <li>Trabajo pesado industrial</li>
+                        <li><i class="fas fa-check"></i> Uso Industrial Pesado</li>
+                        <li><i class="fas fa-check"></i> Losas, Zapatas y Drenajes</li>
+                        <li><i class="fas fa-check"></i> Máxima potencia garantizada</li>
                     </ul>
+                    <a href="https://wa.me/528119988053?text=Me%20interesa%20la%2027kg" class="btn-rentar">Cotizar Ahora</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Vibrador de Concreto</div>
+                <div class="card-img"><img src="Vibrador.jpg" alt="Vibrador"></div>
+                <div class="card-body">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Compactación profesional</li>
+                        <li><i class="fas fa-check"></i> Chicote reforzado</li>
+                        <li><i class="fas fa-check"></i> Evita grietas en tu mezcla</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053?text=Me%20interesa%20el%20Vibrador" class="btn-rentar">Cotizar Ahora</a>
                 </div>
             </div>
         </div>
+
+        <div style="margin-top: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+            <div>
+                <h2 style="text-transform: uppercase;">¿Quiénes somos?</h2>
+                <p>En <strong>G-A-P</strong> no solo rentamos máquinas, somos tus aliados en la obra. Con sede en Monterrey, nos especializamos en equipos de demolición de alta gama que sí funcionan.</p>
+                <p><strong>Nuestros Valores:</strong> Honestidad en el trato, equipos siempre listos y puntualidad absoluta en la entrega.</p>
+            </div>
+            <div style="background: var(--cat-black); color: var(--cat-yellow); padding: 30px; border-radius: 4px;">
+                <h3 style="margin-top: 0;">Nuestra Misión</h3>
+                <p style="color: white;">Asegurar que ningún proyecto se detenga por falta de herramienta de calidad.</p>
+                <h3 style="">Área de Servicio</h3>
+                <div class="zonas-grid">
+                    <div class="zona">Monterrey</div>
+                    <div class="zona">Guadalupe</div>
+                    <div class="zona">Juárez</div>
+                    <div class="zona">Apodaca</div>
+                    <div class="zona">S. Nicolás</div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <section class="cobertura">
-        <h2>Área de Servicio</h2>
-        <p>Entrega rápida en las siguientes zonas:</p>
-        <div class="zonas">
-            <span class="zona-tag">Juárez</span>
-            <span class="zona-tag">Guadalupe</span>
-            <span class="zona-tag">Apodaca</span>
-            <span class="zona-tag">San Nicolás</span>
-            <span class="zona-tag">Monterrey</span>
+    <section class="testimonios">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonio-card">
+            <p>"Excelente servicio, la rompedora de 27kg estaba prácticamente nueva y me la entregaron puntual en Juárez. Super recomendados."</p>
+            <strong>- Ing. Ricardo M. (Contratista)</strong>
+        </div>
+        <div class="testimonio-card">
+            <p>"Rente la de 8kg para quitar el vitropiso de mi casa y terminé rapidísimo. Trato muy honesto."</p>
+            <strong>- Sr. Arturo G.</strong>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 G-A-P Renta de Rompedoras - Contacto: 811-998-80-53</p>
+    <footer style="background: #101010; color: white; text-align: center; padding: 40px;">
+        <p>G-A-P Renta de Rompedoras | WhatsApp 811-998-80-53</p>
+        <p style="font-size: 0.8rem; color: #666;">Monterrey, N.L. - Juárez - Guadalupe - Apodaca</p>
     </footer>
 
-    <a href="https://wa.me/528119988053?text=Hola%20G-A-P,%20solicito%20información%20sobre%20la%20renta%20de%20una%20rompedora" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/528119988053" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
