@@ -22,6 +22,12 @@
             padding: 10px 30px;
             background: #FFCD00;
         }
+        .logo-img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
         .logo-main { font-size: 70px; font-weight: 900; margin: 0; line-height: 1; color: #000; letter-spacing: -2px; }
         .subtitulo-header { 
             display: block; 
@@ -42,10 +48,10 @@
 
         /* NUEVA SECCIÓN DE MARCAS */
         .marcas-container {
-            background: #fff; 
+            background: #fff;
             padding: 30px 20px;
             text-align: center;
-            border-bottom: 5px solid #FFCD00; 
+            border-bottom: 5px solid #FFCD00;
         }
         .marcas-grid {
             display: flex;
@@ -66,7 +72,7 @@
         .logo-makita { color: #CC0000; }
         .logo-dewalt { color: #FEB81C; text-shadow: 1px 1px 0 #000; }
         .logo-bosch  { color: #DA291C; }
-        .logo-hilti  { color: #D2051E; }
+        .logo-edoevom { color: #D2051E; } /* Color mantenido de la marca anterior */
 
         /* VALORES DE LA EMPRESA */
         .distintivo-gap { 
@@ -94,15 +100,12 @@
         .card { border: 4px solid #000; background: #fff; position: relative; transition: 0.3s; display: flex; flex-direction: column; overflow: hidden; }
         .card:hover { border-color: #FFCD00; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transform: translateY(-8px); }
         
-        /* ESTILO DE IMÁGENES AGREGADO */
-        .img-producto {
+        /* Ajuste de Imágenes en Cards */
+        .card-img {
             width: 100%;
             height: 250px;
-            object-fit: contain;
-            background: #f9f9f9;
-            padding: 15px;
-            box-sizing: border-box;
-            border-bottom: 2px solid #eee;
+            object-fit: cover;
+            border-bottom: 4px solid #000;
         }
 
         .card-header-vibrador {
@@ -147,12 +150,14 @@
             transition: 0.3s;
             font-size: 18px;
         }
+        .ws-flotante:hover { transform: scale(1.1); background-color: #128C7E; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-container">
+            <img src="logotipo.jpg" alt="Logo GAP" class="logo-img">
             <h1 class="logo-main">G-A-P</h1>
             <span class="subtitulo-header">Renta de Rompedoras</span>
         </div>
@@ -168,7 +173,7 @@
             <span class="marca-logo logo-makita">Makita</span>
             <span class="marca-logo logo-dewalt">DeWalt</span>
             <span class="marca-logo logo-bosch">Bosch</span>
-            <span class="marca-logo logo-hilti">Hilti</span>
+            <span class="marca-logo logo-edoevom">edoevom</span>
         </div>
     </section>
 
@@ -194,7 +199,7 @@
         <div class="grid">
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 8 KG</span></div>
-                <img src="8.jpg" alt="Rompedora 8kg" class="img-producto">
+                <img src="8.jpg" alt="Rompedora 8kg" class="card-img">
                 <div class="card-specs-bar">720 Watts | 6 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
@@ -206,7 +211,7 @@
             </div>
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG</span></div>
-                <img src="12.jpg" alt="Rompedora 12kg" class="img-producto">
+                <img src="12.jpg" alt="Rompedora 12kg" class="card-img">
                 <div class="card-specs-bar">960 Watts | 12 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
@@ -218,7 +223,7 @@
             </div>
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG</span></div>
-                <img src="15.jpg" alt="Rompedora 15kg" class="img-producto">
+                <img src="15.jpg" alt="Rompedora 15kg" class="card-img">
                 <div class="card-specs-bar">1200 Watts | 25 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
@@ -230,7 +235,7 @@
             </div>
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG</span></div>
-                <img src="25.jpg" alt="Rompedora 25kg" class="img-producto">
+                <img src="25.jpg" alt="Rompedora 25kg" class="card-img">
                 <div class="card-specs-bar">1800 Watts | 60 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
@@ -242,7 +247,7 @@
             </div>
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 27 KG</span></div>
-                <img src="27.jpg" alt="Rompedora 27kg" class="img-producto">
+                <img src="27.jpg" alt="Rompedora 27kg" class="card-img">
                 <div class="card-specs-bar">2100 Watts | 70 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
@@ -258,6 +263,7 @@
         <div class="grid">
             <div class="card">
                 <div class="card-header-vibrador"><span class="modelo-txt" style="font-weight: 900; font-size: 1.5em; text-transform: uppercase;">Vibrador Eléctrico</span></div>
+                <img src="Vibrador.jpg" alt="Vibrador de Concreto" class="card-img">
                 <div class="card-specs-bar">Alta Frecuencia</div>
                 <div class="card-body">
                     <ul class="ideal-list">
