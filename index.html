@@ -36,16 +36,16 @@
         }
 
         /* SECCIÓN SOBRE NOSOTROS */
-        .nosotros { background: #000; color: #fff; padding: 50px 20px; text-align: center; }
+        .nosotros { background: #000; color: #fff; padding: 50px 20px; text-align: center; /* Eliminado border-bottom aquí para unir con marcas */ }
         .nosotros h2 { color: #FFCD00; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 28px; }
         .nosotros p { max-width: 850px; margin: 0 auto; line-height: 1.6; font-size: 19px; font-family: 'Arial', sans-serif; font-weight: bold; }
 
-        /* SECCIÓN DE MARCAS */
+        /* NUEVA SECCIÓN DE MARCAS */
         .marcas-container {
-            background: #fff;
+            background: #fff; /* Fondo blanco para que resalten los colores originales */
             padding: 30px 20px;
             text-align: center;
-            border-bottom: 5px solid #FFCD00;
+            border-bottom: 5px solid #FFCD00; /* El borde amarillo ahora va aquí */
         }
         .marcas-grid {
             display: flex;
@@ -63,8 +63,9 @@
             text-transform: uppercase;
             letter-spacing: -1px;
         }
+        /* Colores Originales de Marcas */
         .logo-makita { color: #CC0000; }
-        .logo-dewalt { color: #FEB81C; text-shadow: 1px 1px 0 #000; }
+        .logo-dewalt { color: #FEB81C; text-shadow: 1px 1px 0 #000; } /* Amarillo DeWalt con borde ligero */
         .logo-bosch  { color: #DA291C; }
         .logo-hilti  { color: #D2051E; }
 
@@ -94,6 +95,7 @@
         .card { border: 4px solid #000; background: #fff; position: relative; transition: 0.3s; display: flex; flex-direction: column; overflow: hidden; }
         .card:hover { border-color: #FFCD00; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transform: translateY(-8px); }
         
+        /* Encabezado especial para Vibradores (Efecto Precaución) */
         .card-header-vibrador {
             background: repeating-linear-gradient(45deg, #FFCD00, #FFCD00 10px, #e6b800 10px, #e6b800 20px);
             color: #000; padding: 20px; text-align: center; border-bottom: 5px solid #000;
@@ -103,21 +105,6 @@
         .card-header-kg .modelo-txt { display: block; font-size: 1.5em; font-weight: 900; text-transform: uppercase; }
         
         .card-specs-bar { background: #FFCD00; color: #000; padding: 12px; text-align: center; font-weight: 900; font-size: 1.2em; border-bottom: 3px solid #000; }
-        
-        /* Contenedor de Imagen de Equipo */
-        .card-img-container { 
-            text-align: center; 
-            padding: 15px; 
-            background: #f9f9f9; 
-            border-bottom: 1px solid #eee;
-        }
-        .card-img-container img {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-            filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.2));
-        }
-
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; font-family: 'Arial', sans-serif; }
         
         .ideal-list { list-style: none; padding: 0; margin: 15px 0 25px 0; font-size: 1em; color: #000; flex-grow: 1; font-weight: bold; }
@@ -126,11 +113,12 @@
         
         .btn-rentar { display: block; background: #000; color: #FFCD00; text-align: center; padding: 20px; text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 1.2em; transition: 0.3s; border: none; cursor: pointer; }
         .btn-rentar:hover { background: #FFCD00; color: #000; }
+        .btn-rentar:active { transform: scale(0.95); }
 
         .footer-info { background: #000; color: #fff; padding: 60px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; border-top: 8px solid #FFCD00; }
         .info-box h4 { border-bottom: 4px solid #FFCD00; color: #FFCD00; display: inline-block; padding-bottom: 8px; text-transform: uppercase; font-size: 22px; margin-bottom: 20px; }
         .info-box p { font-family: 'Arial', sans-serif; margin: 12px 0; font-size: 18px; font-weight: bold; }
-        .horario-domingo { color: #FFCD00; }
+        .horario-domingo { color: #FFCD00; } /* Resaltado para indicar que sí abren */
 
         .ws-flotante {
             position: fixed;
@@ -151,7 +139,8 @@
             transition: 0.3s;
             font-size: 18px;
         }
-        .ws-flotante:hover { transform: scale(1.1); }
+        .ws-flotante:hover { transform: scale(1.1); background-color: #128C7E; }
+        .ws-flotante:active { transform: scale(0.9); }
     </style>
 </head>
 <body>
@@ -177,6 +166,23 @@
         </div>
     </section>
 
+    <section class="distintivo-gap">
+        <div class="distintivo-grid">
+            <div class="valor-box">
+                <h3>Potencia Real</h3>
+                <p>Equipos de marcas líderes como Makita, Bosch y DeWalt que aseguran el mejor rendimiento por Joule de impacto.</p>
+            </div>
+            <div class="valor-box">
+                <h3>Cero Fallas</h3>
+                <p>Mantenimiento preventivo riguroso en cada entrega para evitar paros innecesarios en tu construcción.</p>
+            </div>
+            <div class="valor-box">
+                <h3>Logística Local</h3>
+                <p>Entregas puntuales en toda el área metropolitana, optimizadas para que el equipo llegue cuando lo necesitas.</p>
+            </div>
+        </div>
+    </section>
+
     <main class="seccion-equipos">
         <div style="text-align: center;"><h2 class="titulo-seccion">Catálogo de Rompedoras</h2></div>
         <div class="grid">
@@ -191,7 +197,6 @@
                     <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar Ahora</a>
                 </div>
             </div>
-
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG</span></div>
                 <div class="card-specs-bar">960 Watts | 12 Joules</div>
@@ -203,15 +208,9 @@
                     <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar Ahora</a>
                 </div>
             </div>
-
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG</span></div>
                 <div class="card-specs-bar">1200 Watts | 25 Joules</div>
-                
-                <div class="card-img-container">
-                    <img src="Image_eb974367.png" alt="Rompedora de concreto 15 kg Edoevom">
-                </div>
-
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Muros y vigas</li>
@@ -220,7 +219,6 @@
                     <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
                 </div>
             </div>
-
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG</span></div>
                 <div class="card-specs-bar">1800 Watts | 60 Joules</div>
@@ -232,7 +230,6 @@
                     <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
                 </div>
             </div>
-
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 27 KG</span></div>
                 <div class="card-specs-bar">2100 Watts | 70 Joules</div>
