@@ -3,257 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P Renta de Rompedoras - CAT Industrial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>G-A-P | Force Panel | Renta de Maquinaria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
             --cat-yellow: #FFCD00;
-            --cat-heavy-blue: #003366;
-            --heavy-industrial-gray: #1a1a1a; /* Fondo principal oscuro */
+            --neon-yellow: #fffa00; /* Color de acción de alto contraste */
+            --dark-steel: #121212; /* Fondo casi negro */
+            --panel-gray: #1f1f1f; /* Color de los módulos */
+            --text-gray: #b0b0b0;
             --white: #ffffff;
-            --gray-bg: #f2f2f2;
+            --font-main: 'Roboto', sans-serif;
+            --font-display: 'Archivo Black', sans-serif;
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: var(--font-main);
             margin: 0;
-            background-color: var(--heavy-industrial-gray); /* Fondo oscuro industrial */
+            background-color: var(--dark-steel);
             color: var(--white);
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* --- Header con Logotipo Ajustado --- */
+        /* --- Encabezado Tipo Placa de Identificación --- */
         header {
-            background-color: #000; /* Fondo negro sólido para el logo */
-            padding: 30px 20px;
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            padding: 20px;
             text-align: center;
-            border-bottom: 6px solid var(--cat-heavy-blue);
+            border-bottom: 2px solid #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: repeating-linear-gradient(45deg, var(--cat-yellow), var(--cat-yellow) 10px, #000 10px, #000 20px);
         }
 
         .header-logo {
-            max-width: 200px; /* Tamaño ajustado para el logotipo */
+            max-width: 150px;
             height: auto;
-            border-radius: 8px; /* Pequeño redondeado */
+            margin-bottom: 10px;
         }
 
         .brand-title {
-            color: var(--cat-yellow); /* Amarillo vibrante */
-            font-size: 3.5rem;
-            margin: 10px 0 0;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            font-weight: 900;
-        }
-
-        .aliado-banner {
-            background-color: var(--cat-heavy-blue);
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-weight: 900;
-            text-transform: uppercase;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* --- Grid de Maquinaria --- */
-        .equipment-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--gray-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            border-top: 5px solid var(--cat-yellow);
-            display: flex;
-            flex-direction: column;
-            transition: 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .card-img {
-            height: 250px;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-        }
-
-        .card-img img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .card-body {
-            padding: 25px;
-            flex-grow: 1;
-            text-align: center;
-            color: var(--heavy-industrial-gray);
-        }
-
-        .card-body h3 {
-            color: var(--cat-heavy-blue);
-            font-size: 1.5rem;
-            margin: 0 0 15px;
-            text-transform: uppercase;
-            font-weight: 900;
-        }
-
-        .card-body p {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .btn-rentar {
-            display: block;
-            background-color: var(--cat-heavy-blue);
+            font-family: var(--font-display);
             color: var(--white);
-            text-decoration: none;
-            padding: 15px;
-            font-weight: 900;
-            text-transform: uppercase;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .btn-rentar:hover {
-            background-color: var(--cat-yellow);
-            color: var(--heavy-industrial-gray);
-        }
-
-        /* --- WhatsApp Flotante --- */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 35px;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            text-decoration: none;
-        }
-
-        footer {
-            background-color: #000;
-            color: #666;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.8rem;
-        }
-
-        @media (max-width: 768px) {
-            .brand-title { font-size: 2.5rem; letter-spacing: 2px; }
-            .header-logo { max-width: 150px; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div style="text-align: left; padding: 0 20px;">
-            <img src="logotipo.jpg" alt="Logotipo G-A-P" class="header-logo">
-        </div>
-        <h1 class="brand-title">G - A - P</h1>
-    </header>
-
-    <div class="aliado-banner">
-        Somos tu aliado en demolición en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey
-    </div>
-
-    <div class="container">
-        <div class="equipment-grid">
-
-            <div class="card">
-                <div class="card-img"><img src="8.jpg" alt="Rompedora 8kg"></div>
-                <div class="card-body">
-                    <h3>Rompedora 8 Kg</h3>
-                    <p>Especialista en quitar vitropiso, azulejo y realizar ranuras precisas en pared sin dañar la estructura.</p>
-                    <a href="https://wa.me/528119988053?text=Hola%20G-A-P,%20me%20interesa%20rentar%20la%20rompedora%20de%208kg" class="btn-rentar">Rentar Equipo</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="12.jpg" alt="Rompedora 12kg"></div>
-                <div class="card-body">
-                    <h3>Rompedora 12 Kg</h3>
-                    <p>Perfecta para demoler muros de block, ladrillo y realizar ranuras para tuberías de drenaje o electricidad.</p>
-                    <a href="https://wa.me/528119988053?text=Hola%20G-A-P,%20me%20interesa%20rentar%20la%20rompedora%20de%2012kg" class="btn-rentar">Rentar Equipo</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="15.1.jpg" alt="Rompedora 15.1kg"></div>
-                <div class="card-body">
-                    <h3>Rompedora 15.1 Kg</h3>
-                    <p>Equipo reforzado para firmes de concreto, demoliciones continuas en piso y muros gruesos.</p>
-                    <a href="https://wa.me/528119988053?text=Hola%20G-A-P,%20me%20interesa%20rentar%20la%20rompedora%20de%2015.1kg" class="btn-rentar">Rentar Equipo</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="25.jpg" alt="Rompedora 25kg"></div>
-                <div class="card-body">
-                    <h3>Rompedora 25 Kg</h3>
-                    <p>Poder puro para demoler losas de concreto, banquetas reforzadas y preparación de zapatas.</p>
-                    <a href="https://wa.me/528119988053?text=Hola%20G-A-P,%20me%20interesa%20rentar%20la%20rompedora%20de%2025kg" class="btn-rentar">Rentar Equipo</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="27.jpg" alt="Rompedora 27kg"></div>
-                <div class="card-body">
-                    <h3>Rompedora 27 Kg</h3>
-                    <p>Nuestra unidad más potente. Diseñada para demolición industrial, losas gruesas y drenajes profundos.</p>
-                    <a href="https://wa.me/528119988053?text=Hola%20G-A-P,%20me%20interesa%20rentar%20la%20rompedora%20de%2027kg" class="btn-rentar">Rentar Equipo</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="Vibrador.jpg" alt="Vibrador de Concreto"></div>
-                <div class="card-body">
-                    <h3>Vibrador de Concreto</h3>
-                    <p>Compactación profesional de mezcla. Asegura la resistencia de tus estructuras y evita grietas.</p>
-                    <a href="https://wa.me/528119988053?text=Hola%20G-A-P,%20me%20interesa%20rentar%20el%20vibrador%20de%20concreto" class="btn-rentar">Rentar Equipo</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 G-A-P Maquinaria - Monterrey, N.L.</p>
-    </footer>
-
-    <a href="https://wa.me/528119988053" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-</body>
-</html>
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: -2px;
+            text-transform
