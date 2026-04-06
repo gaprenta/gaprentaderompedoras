@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renta de Rompedoras y Vibradores de Concreto GAP</title>
-    <meta name="description" content="Renta de rompedoras de concreto (8kg a 27kg) y vibradores en Monterrey, Guadalupe, Juárez y Apodaca. Equipos GAP de alta potencia, mantenimiento garantizado y entrega puntual.">
+    <title>G-A-P | Renta de Rompedoras y Vibradores de Concreto</title>
+    <meta name="description" content="Renta de rompedoras de concreto (8kg a 27kg) y vibradores en Monterrey, Guadalupe, Juárez y Apodaca. Equipos de alta potencia, mantenimiento garantizado y entrega puntual.">
     
     <style>
         /* ESTILO CATERPILLAR: Amarillo (#FFCD00), Negro (#000000) */
@@ -13,22 +13,25 @@
         header { 
             background: #FFCD00; 
             text-align: center; 
-            padding: 0; 
+            padding: 0; /* Eliminado para que el logo toque los bordes */
             border-bottom: 8px solid #000; 
         }
         .logo-container {
-            display: block; 
+            display: block; /* Bloque completo */
             padding: 0;
             background: #FFCD00;
         }
+        /* Ajuste de Logotipo para llenar el ancho y alto del recuadro */
         .header-logo-img {
-            width: 100%; 
-            height: auto; 
-            max-height: 250px; 
-            object-fit: cover; 
+            width: 100%; /* Ocupa todo el ancho */
+            height: auto; /* Altura proporcional */
+            max-height: 250px; /* Límite de altura para estética */
+            object-fit: cover; /* Asegura que llene el espacio asignado */
             display: block;
             margin: 0;
+            filter: none; /* Color original */
         }
+        /* Textos ocultos para eliminar sobrantes */
         .logo-main, .subtitulo-header { display: none; }
 
         /* SECCIÓN SOBRE NOSOTROS */
@@ -115,6 +118,7 @@
         
         .btn-rentar { display: block; background: #000; color: #FFCD00; text-align: center; padding: 20px; text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 1.2em; transition: 0.3s; border: none; cursor: pointer; }
         .btn-rentar:hover { background: #FFCD00; color: #000; }
+        .btn-rentar:active { transform: scale(0.95); }
 
         .footer-info { background: #000; color: #fff; padding: 60px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; border-top: 8px solid #FFCD00; }
         .info-box h4 { border-bottom: 4px solid #FFCD00; color: #FFCD00; display: inline-block; padding-bottom: 8px; text-transform: uppercase; font-size: 22px; margin-bottom: 20px; }
@@ -140,19 +144,23 @@
             transition: 0.3s;
             font-size: 18px;
         }
+        .ws-flotante:hover { transform: scale(1.1); background-color: #128C7E; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="logotipo.jpg" alt="Logo GAP" class="header-logo-img">
+            <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">
+                Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey | Renta de Rompedoras y Vibradores de Concreto GAP
+            </h1>
+            <img src="logotipo.jpg" alt="GAP Renta de Rompedoras en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey" class="header-logo-img">
         </div>
     </header>
 
     <section class="nosotros">
         <h2>Especialistas en Equipo Ligero</h2>
-        <p>Tu aliado estratégico en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey. Ofrecemos equipos GAP de demolición y vibrado de alta eficiencia con mantenimiento garantizado.</p>
+        <p>Tu aliado estratégico en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey. Ofrecemos equipos de demolición y vibrado de alta eficiencia con mantenimiento garantizado para que tu obra nunca se detenga.</p>
     </section>
 
     <section class="marcas-container">
@@ -168,15 +176,15 @@
         <div class="distintivo-grid">
             <div class="valor-box">
                 <h3>Potencia Real</h3>
-                <p>Equipos de marcas líderes que aseguran el mejor rendimiento por Joule de impacto.</p>
+                <p>Equipos de marcas líderes como Makita, Bosch y DeWalt que aseguran el mejor rendimiento por Joule de impacto.</p>
             </div>
             <div class="valor-box">
                 <h3>Cero Fallas</h3>
-                <p>Mantenimiento preventivo riguroso en cada entrega para evitar paros en tu obra.</p>
+                <p>Mantenimiento preventivo riguroso en cada entrega para evitar paros innecesarios en tu construcción.</p>
             </div>
             <div class="valor-box">
                 <h3>Logística Local</h3>
-                <p>Entregas puntuales en toda el área metropolitana de Monterrey.</p>
+                <p>Entregas puntuales en toda el área metropolitana, optimizadas para que el equipo llegue cuando lo necesitas.</p>
             </div>
         </div>
     </section>
@@ -250,12 +258,12 @@
         <div class="grid">
             <div class="card">
                 <div class="card-header-vibrador"><span class="modelo-txt" style="font-weight: 900; font-size: 1.5em; text-transform: uppercase;">Vibrador Eléctrico</span></div>
-                <img src="Vibrador.jpg" alt="Vibrador de Concreto" class="card-img">
+                <img src="Vibrador.jpg" alt="Vibrador de Concreto Profesional" class="card-img">
                 <div class="card-specs-bar">Alta Frecuencia</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Compactación de colados</li>
-                        <li><span class="icon-usage">GAP</span> Acabado profesional</li>
+                        <li><span class="icon-usage">GAP</span> Acabado profesional sin burbujas</li>
                     </ul>
                     <a href="https://wa.me/528119988053" class="btn-rentar">Consultar Disponibilidad</a>
                 </div>
@@ -272,8 +280,7 @@
         </div>
         <div class="info-box">
             <h4>Zonas de Cobertura</h4>
-            <p>Juárez | Guadalupe | Apodaca</p>
-            <p>San Nicolás | Monterrey</p>
+            <p>Servicio a domicilio en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey, Nuevo León.</p>
         </div>
     </footer>
 
