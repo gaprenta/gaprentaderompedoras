@@ -260,5 +260,43 @@
         811-998-80-53
     </a>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. WhatsApp Inteligente: Personaliza el mensaje según el equipo
+            const rentButtons = document.querySelectorAll('.btn-rentar');
+            
+            rentButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const card = btn.closest('.card');
+                    const equipoNombre = card.querySelector('.modelo-txt').innerText;
+                    const telefono = "528119988053";
+                    const mensaje = encodeURIComponent(`Hola G-A-P, me interesa rentar el equipo: ${equipoNombre}. ¿Me podrían dar informes?`);
+                    window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
+                });
+            });
+
+            // 2. Animación suave al aparecer (Scroll Reveal)
+            const cards = document.querySelectorAll('.card');
+            const observerOptions = { threshold: 0.1 };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                card.style.opacity = "0";
+                card.style.transform = "translateY(30px)";
+                card.style.transition = "all 0.6s ease-out";
+                observer.observe(card);
+            });
+        });
+    </script>
+
 </body>
 </html>
