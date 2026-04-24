@@ -3,319 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAP - Renta de Vibradores de Concreto Profesionales</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>GAP - Renta de Vibradores de Concreto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Estilos Generales */
-        body { 
-            font-family: 'Roboto', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #e0e0e0; /* Fondo gris muy claro para contraste */
-            color: #333; 
-        }
-        
-        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
-        
-        /* Contenedor Principal */
-        .container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 20px; 
+        :root {
+            --amarillo: #ffcc00;
+            --negro: #1a1a1a;
+            --gris-claro: #f4f4f4;
         }
 
-        /* --- ENCABEZADO PROFESIONAL CON LOGO --- */
-        header { 
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1590216174783-d9d26be55b41?q=80&w=1600&auto=format&fit=crop'); /* Imagen de fondo de obra */
-            background-size: cover;
-            background-position: center;
-            color: #fff; 
-            padding: 60px 20px; 
-            text-align: center; 
-            border-bottom: 8px solid #ffcc00; /* Línea amarilla industrial */
-        }
-        
-        .logo-box {
-            background-color: rgba(34, 34, 34, 0.9); /* Recuadro oscuro para el logo */
-            display: inline-block;
-            padding: 20px 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-            margin-bottom: 20px;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--gris-claro);
+            color: #333;
         }
 
-        .logo-box img { 
-            max-height: 80px; /* Ajusta este valor al tamaño de tu logo real */
-            display: block;
-            margin: 0 auto;
-        }
-        
-        header h1 { 
-            color: #ffcc00; /* Amarillo para el nombre de la empresa */
-            margin: 10px 0 5px 0; 
-            font-size: 2.5em;
-            letter-spacing: 1px;
-        }
-        
-        header p { 
-            font-size: 1.2em; 
-            margin: 0; 
-            font-weight: bold;
-        }
-
-        /* --- SECCIÓN DE PRODUCTOS CON IMÁGENES A COLOR --- */
-        .catalog {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .product-card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 250px;
-            background-color: #333; /* Fondo oscuro para que resalte la imagen */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        
-        .product-image img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain; /* Para que la imagen no se corte */
-        }
-
-        .product-info {
-            padding: 20px;
+        /* Encabezado */
+        header {
+            background-color: var(--negro);
+            color: white;
+            padding: 20px 0;
             text-align: center;
-            flex-grow: 1;
+            border-bottom: 4px solid var(--amarillo);
         }
 
-        .product-info h3 { margin: 0 0 10px 0; color: #222; font-size: 1.5em; }
-        
-        .price-tag {
-            background-color: #ffcc00;
-            color: #222;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.2em;
-            display: inline-block;
+        .logo-container img {
+            max-width: 150px; /* Ajuste del tamaño del logo */
+            height: auto;
             margin-bottom: 10px;
         }
-        
-        .per-day { font-size: 0.8em; color: #555; }
 
-        /* --- SECCIONES DE INFORMACIÓN ORDENADAS --- */
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: var(--amarillo);
+            margin: 5px 0 0;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Sección de Equipos */
+        .grid-equipos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid #ddd;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--amarillo);
+        }
+
+        .card-info { padding: 20px; }
+
+        .card-info h3 { margin: 0; color: var(--negro); }
+
+        .precio {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #d32f2f;
+            margin: 10px 0;
+        }
+
+        .btn-cotizar {
+            display: inline-block;
+            background-color: var(--negro);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-cotizar:hover { background-color: #444; }
+
+        /* Información y Horarios */
+        .info-seccion {
+            background: white;
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
-        .info-card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 5px solid #ffcc00; /* Acento amarillo */
-        }
-        
-        .info-card h2 { 
-            color: #222; 
-            margin-top: 0; 
-            display: flex; 
-            align-items: center; 
-            gap: 10px;
-        }
-        
-        .info-card h2 i { color: #ffcc00; }
-
-        .info-card ul { list-style: none; padding: 0; margin: 0; }
-        
-        .info-card li { 
-            padding: 8px 0; 
-            border-bottom: 1px solid #eee; 
-            display: flex; 
-            justify-content: space-between; 
+        .badge {
+            background: var(--amarillo);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
             font-weight: bold;
-        }
-        
-        .info-card li:last-child { border-bottom: none; }
-        
-        .municipios {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .municipio-tag {
-            background-color: #eee;
-            color: #444;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 5px;
         }
 
-        /* Nota de flete */
-        .flete-note {
-            background-color: #fff3cd;
-            color: #856404;
+        .flete-aviso {
+            background: #fff3cd;
             padding: 15px;
-            border: 1px solid #ffeeba;
-            border-radius: 5px;
+            border-radius: 8px;
+            border-left: 5px solid #ffeeba;
             margin-top: 20px;
-            font-style: italic;
-            text-align: center;
+            font-weight: bold;
         }
 
-        /* --- FOOTER --- */
-        footer { 
-            background: #222; 
-            color: #fff; 
-            text-align: center; 
-            padding: 30px 20px; 
-            margin-top: 50px; 
-            border-top: 5px solid #ffcc00;
-        }
-        
-        footer p { margin: 5px 0; }
-
-        /* --- BOTÓN FLOTANTE DE WHATSAPP (SOLO ICONO) --- */
-        .whatsapp-float {
+        /* WhatsApp Flotante */
+        .btn-float {
             position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
             width: 60px;
             height: 60px;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366; /* Verde de WhatsApp */
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 35px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            z-index: 100;
+            border-radius: 50%;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
             text-decoration: none;
-            transition: transform 0.3s ease;
         }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1); /* Efecto al pasar el mouse */
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: #666;
         }
-        
+
+        @media (max-width: 600px) {
+            .info-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo-box">
-        <img src="logo.png" alt="Logotipo GAP Rentas"> 
+    <div class="logo-container">
+        <img src="logotipo.png" alt="GAP Logotipo">
     </div>
-    <h1>RENTAS GAP</h1>
-    <p>RENTA DE VIBRADORES DE CONCRETO</p>
+    <h1>Renta de Vibradores para Concreto</h1>
+    <p>SERVICIO PROFESIONAL (GAP)</p>
 </header>
 
 <div class="container">
 
-    <div class="catalog">
-        
-        <div class="product-card">
-            <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1590496191761-4a413b5a198c?q=80&w=600&auto=format&fit=crop" alt="Vibrador Portátil V1">
-            </div>
-            <div class="product-info">
+    <div class="grid-equipos">
+        <div class="card">
+            <img src="vibrador1.jpg" alt="Vibrador Portátil V1">
+            <div class="card-info">
                 <h3>Portátil V1</h3>
-                <div class="price-tag">$300 <span class="per-day">/ DÍA</span></div>
-                <p>Ideal para trabajos ligeros y de difícil acceso.</p>
+                <p class="precio">$300 / Día</p>
+                <a href="https://wa.me/528119988053?text=Hola,%20me%20interesa%20el%20Portátil%20V1" class="btn-cotizar">Cotizar Ahora</a>
             </div>
         </div>
 
-        <div class="product-card">
-            <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1591823616212-0051e06c10b7?q=80&w=600&auto=format&fit=crop" alt="Vibrador Industrial V2">
-            </div>
-            <div class="product-info">
+        <div class="card">
+            <img src="vibrador2.jpg" alt="Industrial V2">
+            <div class="card-info">
                 <h3>Industrial V2</h3>
-                <div class="price-tag">$200 <span class="per-day">/ DÍA</span></div>
-                <p>Potencia para obras medianas y grandes.</p>
+                <p class="precio">$200 / Día</p>
+                <a href="https://wa.me/528119988053?text=Hola,%20me%20interesa%20el%20Industrial%20V2" class="btn-cotizar">Cotizar Ahora</a>
             </div>
         </div>
-        
-        <div class="product-card">
-            <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1613010534282-9016e78dbfba?q=80&w=600&auto=format&fit=crop" alt="Vibrador Precisión V3">
-            </div>
-            <div class="product-info">
+
+        <div class="card">
+            <img src="vibrador3.jpg" alt="Precisión V3">
+            <div class="card-info">
                 <h3>Precisión V3</h3>
-                <div class="price-tag">$200 <span class="per-day">/ DÍA</span></div>
-                <p>Diseño compacto para acabados de alta calidad.</p>
+                <p class="precio">$200 / Día</p>
+                <a href="https://wa.me/528119988053?text=Hola,%20me%20interesa%20el%20Precisión%20V3" class="btn-cotizar">Cotizar Ahora</a>
             </div>
         </div>
-
     </div>
 
-    <div class="info-grid">
-        
-        <div class="info-card">
-            <h2><i class="fas fa-clock"></i> Horarios de Atención</h2>
-            <ul>
-                <li><span>Lunes a Viernes</span> <span>8:00 AM - 8:00 PM</span></li>
-                <li><span>Sábados</span> <span>9:00 AM - 5:00 PM</span></li>
-                <li><span>Domingos</span> <span>9:00 AM - 2:00 PM</span></li>
-            </ul>
-        </div>
-
-        <div class="info-card">
-            <h2><i class="fas fa-map-marked-alt"></i> Cobertura</h2>
-            <p>Damos servicio confiable en todos los municipios de:</p>
-            <div class="municipios">
-                <span class="municipio-tag">Cadereyta</span>
-                <span class="municipio-tag">Juárez</span>
-                <span class="municipio-tag">Guadalupe</span>
-                <span class="municipio-tag">Apodaca</span>
-                <span class="municipio-tag">San Nicolás</span>
-                <span class="municipio-tag">Monterrey</span>
+    <div class="info-seccion">
+        <div class="info-grid">
+            <div>
+                <h3><i class="fas fa-truck"></i> Cobertura</h3>
+                <span class="badge">Cadereyta</span>
+                <span class="badge">Juárez</span>
+                <span class="badge">Guadalupe</span>
+                <span class="badge">Apodaca</span>
+                <span class="badge">San Nicolás</span>
+                <span class="badge">Monterrey</span>
+            </div>
+            <div>
+                <h3><i class="fas fa-clock"></i> Horarios</h3>
+                <p><strong>Lunes a Viernes:</strong> 8:00 - 8:00</p>
+                <p><strong>Sábados:</strong> 9:00 - 5:00</p>
+                <p><strong>Domingos:</strong> 9:00 - 2:00</p>
             </div>
         </div>
         
-    </div>
-
-    <div class="flete-note">
-        <i class="fas fa-truck"></i> El costo del flete se calcula según la ubicación exacta de la obra o domicilio.
+        <div class="flete-aviso">
+            <i class="fas fa-exclamation-circle"></i> Flete se calcula según la ubicación de obra o domicilio.
+        </div>
     </div>
 
 </div>
 
 <footer>
-    <p><strong>Rentas GAP - Profesionales en Concreto</strong></p>
-    <p>WhatsApp: 811-998-80-53</p>
-    <p>© 2024 GAP Renta de Maquinaria</p>
+    <p><strong>GAP Renta de Maquinaria</strong><br>
+    Teléfono: 811-998-80-53<br>
+    Profesionalismo y puntualidad en tu obra.</p>
 </footer>
 
-<a href="https://wa.me/528119988053" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/528119988053" class="btn-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 
